@@ -1,0 +1,301 @@
+# Entity: post
+
+main: kit: entity: post: {
+
+  alias: field: {}
+
+  fields: [
+    {
+      name: "actual_preview_height"
+      req: false
+      type: "`$INTEGER`"
+    }
+    {
+      name: "actual_preview_width"
+      req: false
+      type: "`$INTEGER`"
+    }
+    {
+      name: "author"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "change"
+      req: false
+      type: "`$INTEGER`"
+    }
+    {
+      name: "created_at"
+      req: false
+      type: "`$INTEGER`"
+    }
+    {
+      name: "creator_id"
+      req: false
+      type: "`$INTEGER`"
+    }
+    {
+      name: "file_size"
+      req: false
+      type: "`$INTEGER`"
+    }
+    {
+      name: "file_url"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "flag_detail"
+      req: false
+      type: "`$OBJECT`"
+    }
+    {
+      name: "frame"
+      req: false
+      type: "`$ARRAY`"
+    }
+    {
+      name: "frames_pending"
+      req: false
+      type: "`$ARRAY`"
+    }
+    {
+      name: "frames_pending_string"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "frames_string"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "has_child"
+      req: false
+      type: "`$BOOLEAN`"
+    }
+    {
+      name: "height"
+      req: false
+      type: "`$INTEGER`"
+    }
+    {
+      name: "id"
+      req: false
+      type: "`$INTEGER`"
+    }
+    {
+      name: "is_held"
+      req: false
+      type: "`$BOOLEAN`"
+    }
+    {
+      name: "is_shown_in_index"
+      req: false
+      type: "`$BOOLEAN`"
+    }
+    {
+      name: "jpeg_file_size"
+      req: false
+      type: "`$INTEGER`"
+    }
+    {
+      name: "jpeg_height"
+      req: false
+      type: "`$INTEGER`"
+    }
+    {
+      name: "jpeg_url"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "jpeg_width"
+      req: false
+      type: "`$INTEGER`"
+    }
+    {
+      name: "md5"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "parent_id"
+      req: false
+      type: "`$INTEGER`"
+    }
+    {
+      name: "pool_id"
+      req: false
+      type: "`$ARRAY`"
+    }
+    {
+      name: "preview_height"
+      req: false
+      type: "`$INTEGER`"
+    }
+    {
+      name: "preview_url"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "preview_width"
+      req: false
+      type: "`$INTEGER`"
+    }
+    {
+      name: "rating"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "sample_file_size"
+      req: false
+      type: "`$INTEGER`"
+    }
+    {
+      name: "sample_height"
+      req: false
+      type: "`$INTEGER`"
+    }
+    {
+      name: "sample_url"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "sample_width"
+      req: false
+      type: "`$INTEGER`"
+    }
+    {
+      name: "score"
+      req: false
+      type: "`$INTEGER`"
+    }
+    {
+      name: "source"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "status"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "tag"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "vote"
+      req: false
+      type: "`$OBJECT`"
+    }
+    {
+      name: "width"
+      req: false
+      type: "`$INTEGER`"
+    }
+  ]
+
+  id: {
+    field: "id"
+    name: "id"
+  }
+
+  name: "post"
+  op: {
+    list: {
+      name: "list"
+      points: [
+        {
+          args: {
+            query: [
+              {
+                kind: "query"
+                name: "api_version"
+                orig: "api_version"
+                reqd: true
+                type: "`$INTEGER`"
+              }
+              {
+                kind: "query"
+                name: "filter"
+                orig: "filter"
+                reqd: false
+                type: "`$INTEGER`"
+              }
+              {
+                example: 0
+                kind: "query"
+                name: "include_pool"
+                orig: "include_pool"
+                reqd: false
+                type: "`$INTEGER`"
+              }
+              {
+                example: 0
+                kind: "query"
+                name: "include_tag"
+                orig: "include_tag"
+                reqd: false
+                type: "`$INTEGER`"
+              }
+              {
+                example: 0
+                kind: "query"
+                name: "include_vote"
+                orig: "include_vote"
+                reqd: false
+                type: "`$INTEGER`"
+              }
+              {
+                example: 20
+                kind: "query"
+                name: "limit"
+                orig: "limit"
+                reqd: false
+                type: "`$INTEGER`"
+              }
+              {
+                example: "holds:false"
+                kind: "query"
+                name: "tag"
+                orig: "tag"
+                reqd: false
+                type: "`$STRING`"
+              }
+            ]
+          }
+          method: "GET"
+          orig: "/post.json"
+          parts: [
+            "post.json"
+          ]
+          select: {
+            exist: [
+              "api_version"
+              "filter"
+              "include_pool"
+              "include_tag"
+              "include_vote"
+              "limit"
+              "tag"
+            ]
+          }
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

@@ -1,0 +1,359 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Yande.re API v2",
+    "description": "Version 2 API for /post that returns responses in json only. Provides additional information over the standard API with features like tag searches, limiting responses, including tag types, votes, and pool membership.",
+    "version": "2.0.0",
+    "contact": {
+      "url": "https://yande.re/wiki/show?title=api_v2"
+    }
+  },
+  "servers": [
+    {
+      "url": "https://yande.re",
+      "description": "Yande.re production server"
+    }
+  ],
+  "paths": {
+    "/post.json": {
+      "get": {
+        "summary": "Search posts",
+        "description": "Retrieve posts from Yande.re with filtering, tag information, votes, and pool membership. This endpoint requires api_version=2 to access the v2 API features.",
+        "operationId": "searchPosts",
+        "tags": [
+          "Posts"
+        ],
+        "parameters": [
+          {
+            "name": "api_version",
+            "in": "query",
+            "description": "API version - must be set to 2 to use the v2 API",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "enum": [
+                2
+              ]
+            }
+          },
+          {
+            "name": "tags",
+            "in": "query",
+            "description": "Tag list for searching posts. All tag searches are supported, including meta tags. Separate multiple tags with + (e.g., tag1+tag2). Supports meta tags like holds:false",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "example": "holds:false"
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Limit the number of responses returned for your query. Must be between 1 and 100.",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 100,
+              "default": 20
+            }
+          },
+          {
+            "name": "include_tags",
+            "in": "query",
+            "description": "Include the tag types (e.g. character, copyright, artist) for each of the tags in the response",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "enum": [
+                0,
+                1
+              ],
+              "default": 0
+            }
+          },
+          {
+            "name": "include_votes",
+            "in": "query",
+            "description": "Include the votes for each post in the response (not currently implemented)",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "enum": [
+                0,
+                1
+              ],
+              "default": 0
+            }
+          },
+          {
+            "name": "include_pools",
+            "in": "query",
+            "description": "Include the pool membership of each post in the response",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "enum": [
+                0,
+                1
+              ],
+              "default": 0
+            }
+          },
+          {
+            "name": "filter",
+            "in": "query",
+            "description": "Filter parameter (functionality unknown)",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "enum": [
+                1
+              ]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response with post data",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "posts": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/Post"
+                      }
+                    },
+                    "tags": {
+                      "type": "object",
+                      "description": "Tag type information (included when include_tags=1)",
+                      "additionalProperties": {
+                        "type": "object",
+                        "properties": {
+                          "type": {
+                            "type": "string",
+                            "description": "Tag type (e.g., character, copyright, artist, general)"
+                          }
+                        }
+                      }
+                    },
+                    "pools": {
+                      "type": "object",
+                      "description": "Pool information (included when include_pools=1)",
+                      "additionalProperties": {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "integer"
+                          },
+                          "name": {
+                            "type": "string"
+                          },
+                          "description": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request - invalid parameters"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Post": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "description": "Post ID"
+          },
+          "tags": {
+            "type": "string",
+            "description": "Space-separated list of tags associated with the post"
+          },
+          "created_at": {
+            "type": "integer",
+            "description": "Unix timestamp of when the post was created"
+          },
+          "creator_id": {
+            "type": "integer",
+            "description": "User ID of the post creator"
+          },
+          "author": {
+            "type": "string",
+            "description": "Username of the post creator"
+          },
+          "change": {
+            "type": "integer",
+            "description": "Change number/version"
+          },
+          "source": {
+            "type": "string",
+            "description": "Source URL of the image"
+          },
+          "score": {
+            "type": "integer",
+            "description": "Post score"
+          },
+          "md5": {
+            "type": "string",
+            "description": "MD5 hash of the image file"
+          },
+          "file_size": {
+            "type": "integer",
+            "description": "File size in bytes"
+          },
+          "file_url": {
+            "type": "string",
+            "description": "URL to the full-size image"
+          },
+          "is_shown_in_index": {
+            "type": "boolean",
+            "description": "Whether the post is shown in the index"
+          },
+          "preview_url": {
+            "type": "string",
+            "description": "URL to the preview/thumbnail image"
+          },
+          "preview_width": {
+            "type": "integer",
+            "description": "Width of the preview image"
+          },
+          "preview_height": {
+            "type": "integer",
+            "description": "Height of the preview image"
+          },
+          "actual_preview_width": {
+            "type": "integer",
+            "description": "Actual width of the preview image"
+          },
+          "actual_preview_height": {
+            "type": "integer",
+            "description": "Actual height of the preview image"
+          },
+          "sample_url": {
+            "type": "string",
+            "description": "URL to the sample-size image"
+          },
+          "sample_width": {
+            "type": "integer",
+            "description": "Width of the sample image"
+          },
+          "sample_height": {
+            "type": "integer",
+            "description": "Height of the sample image"
+          },
+          "sample_file_size": {
+            "type": "integer",
+            "description": "File size of the sample image in bytes"
+          },
+          "jpeg_url": {
+            "type": "string",
+            "description": "URL to the JPEG version"
+          },
+          "jpeg_width": {
+            "type": "integer",
+            "description": "Width of the JPEG version"
+          },
+          "jpeg_height": {
+            "type": "integer",
+            "description": "Height of the JPEG version"
+          },
+          "jpeg_file_size": {
+            "type": "integer",
+            "description": "File size of the JPEG version in bytes"
+          },
+          "rating": {
+            "type": "string",
+            "description": "Post rating (s=safe, q=questionable, e=explicit)"
+          },
+          "has_children": {
+            "type": "boolean",
+            "description": "Whether the post has child posts"
+          },
+          "parent_id": {
+            "type": "integer",
+            "nullable": true,
+            "description": "ID of the parent post"
+          },
+          "status": {
+            "type": "string",
+            "description": "Post status"
+          },
+          "width": {
+            "type": "integer",
+            "description": "Original image width"
+          },
+          "height": {
+            "type": "integer",
+            "description": "Original image height"
+          },
+          "is_held": {
+            "type": "boolean",
+            "description": "Whether the post is held"
+          },
+          "frames_pending_string": {
+            "type": "string",
+            "description": "Pending frames information"
+          },
+          "frames_pending": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Array of pending frames"
+          },
+          "frames_string": {
+            "type": "string",
+            "description": "Frames information"
+          },
+          "frames": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Array of frames"
+          },
+          "flag_detail": {
+            "type": "object",
+            "description": "Flag details if the post is flagged"
+          },
+          "votes": {
+            "type": "object",
+            "description": "Vote information (included when include_votes=1)",
+            "properties": {
+              "up": {
+                "type": "integer"
+              },
+              "down": {
+                "type": "integer"
+              }
+            }
+          },
+          "pool_ids": {
+            "type": "array",
+            "items": {
+              "type": "integer"
+            },
+            "description": "Array of pool IDs this post belongs to (included when include_pools=1)"
+          }
+        }
+      }
+    }
+  }
+}

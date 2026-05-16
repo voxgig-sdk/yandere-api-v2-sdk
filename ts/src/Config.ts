@@ -1,0 +1,447 @@
+
+import { BaseFeature } from './feature/base/BaseFeature'
+import { TestFeature } from './feature/test/TestFeature'
+
+
+
+const FEATURE_CLASS: Record<string, typeof BaseFeature> = {
+   test: TestFeature
+
+}
+
+
+class Config {
+
+  makeFeature(this: any, fn: string) {
+    const fc = FEATURE_CLASS[fn]
+    const fi = new fc()
+    // TODO: errors etc
+    return fi
+  }
+
+
+  main = {
+    name: 'ProjectName',
+  }
+
+
+  feature = {
+     test:     {
+      "options": {
+        "active": false
+      }
+    }
+
+  }
+
+
+  options = {
+    base: 'https://yande.re',
+
+    auth: {
+      prefix: 'Bearer',
+    },
+
+    headers: {
+      "content-type": "application/json"
+    },
+
+    entity: {
+      
+      post: {
+      },
+
+    }
+  }
+
+
+  entity = {
+    "post": {
+      "fields": [
+        {
+          "name": "actual_preview_height",
+          "req": false,
+          "type": "`$INTEGER`",
+          "active": true,
+          "index$": 0
+        },
+        {
+          "name": "actual_preview_width",
+          "req": false,
+          "type": "`$INTEGER`",
+          "active": true,
+          "index$": 1
+        },
+        {
+          "name": "author",
+          "req": false,
+          "type": "`$STRING`",
+          "active": true,
+          "index$": 2
+        },
+        {
+          "name": "change",
+          "req": false,
+          "type": "`$INTEGER`",
+          "active": true,
+          "index$": 3
+        },
+        {
+          "name": "created_at",
+          "req": false,
+          "type": "`$INTEGER`",
+          "active": true,
+          "index$": 4
+        },
+        {
+          "name": "creator_id",
+          "req": false,
+          "type": "`$INTEGER`",
+          "active": true,
+          "index$": 5
+        },
+        {
+          "name": "file_size",
+          "req": false,
+          "type": "`$INTEGER`",
+          "active": true,
+          "index$": 6
+        },
+        {
+          "name": "file_url",
+          "req": false,
+          "type": "`$STRING`",
+          "active": true,
+          "index$": 7
+        },
+        {
+          "name": "flag_detail",
+          "req": false,
+          "type": "`$OBJECT`",
+          "active": true,
+          "index$": 8
+        },
+        {
+          "name": "frame",
+          "req": false,
+          "type": "`$ARRAY`",
+          "active": true,
+          "index$": 9
+        },
+        {
+          "name": "frames_pending",
+          "req": false,
+          "type": "`$ARRAY`",
+          "active": true,
+          "index$": 10
+        },
+        {
+          "name": "frames_pending_string",
+          "req": false,
+          "type": "`$STRING`",
+          "active": true,
+          "index$": 11
+        },
+        {
+          "name": "frames_string",
+          "req": false,
+          "type": "`$STRING`",
+          "active": true,
+          "index$": 12
+        },
+        {
+          "name": "has_child",
+          "req": false,
+          "type": "`$BOOLEAN`",
+          "active": true,
+          "index$": 13
+        },
+        {
+          "name": "height",
+          "req": false,
+          "type": "`$INTEGER`",
+          "active": true,
+          "index$": 14
+        },
+        {
+          "name": "id",
+          "req": false,
+          "type": "`$INTEGER`",
+          "active": true,
+          "index$": 15
+        },
+        {
+          "name": "is_held",
+          "req": false,
+          "type": "`$BOOLEAN`",
+          "active": true,
+          "index$": 16
+        },
+        {
+          "name": "is_shown_in_index",
+          "req": false,
+          "type": "`$BOOLEAN`",
+          "active": true,
+          "index$": 17
+        },
+        {
+          "name": "jpeg_file_size",
+          "req": false,
+          "type": "`$INTEGER`",
+          "active": true,
+          "index$": 18
+        },
+        {
+          "name": "jpeg_height",
+          "req": false,
+          "type": "`$INTEGER`",
+          "active": true,
+          "index$": 19
+        },
+        {
+          "name": "jpeg_url",
+          "req": false,
+          "type": "`$STRING`",
+          "active": true,
+          "index$": 20
+        },
+        {
+          "name": "jpeg_width",
+          "req": false,
+          "type": "`$INTEGER`",
+          "active": true,
+          "index$": 21
+        },
+        {
+          "name": "md5",
+          "req": false,
+          "type": "`$STRING`",
+          "active": true,
+          "index$": 22
+        },
+        {
+          "name": "parent_id",
+          "req": false,
+          "type": "`$INTEGER`",
+          "active": true,
+          "index$": 23
+        },
+        {
+          "name": "pool_id",
+          "req": false,
+          "type": "`$ARRAY`",
+          "active": true,
+          "index$": 24
+        },
+        {
+          "name": "preview_height",
+          "req": false,
+          "type": "`$INTEGER`",
+          "active": true,
+          "index$": 25
+        },
+        {
+          "name": "preview_url",
+          "req": false,
+          "type": "`$STRING`",
+          "active": true,
+          "index$": 26
+        },
+        {
+          "name": "preview_width",
+          "req": false,
+          "type": "`$INTEGER`",
+          "active": true,
+          "index$": 27
+        },
+        {
+          "name": "rating",
+          "req": false,
+          "type": "`$STRING`",
+          "active": true,
+          "index$": 28
+        },
+        {
+          "name": "sample_file_size",
+          "req": false,
+          "type": "`$INTEGER`",
+          "active": true,
+          "index$": 29
+        },
+        {
+          "name": "sample_height",
+          "req": false,
+          "type": "`$INTEGER`",
+          "active": true,
+          "index$": 30
+        },
+        {
+          "name": "sample_url",
+          "req": false,
+          "type": "`$STRING`",
+          "active": true,
+          "index$": 31
+        },
+        {
+          "name": "sample_width",
+          "req": false,
+          "type": "`$INTEGER`",
+          "active": true,
+          "index$": 32
+        },
+        {
+          "name": "score",
+          "req": false,
+          "type": "`$INTEGER`",
+          "active": true,
+          "index$": 33
+        },
+        {
+          "name": "source",
+          "req": false,
+          "type": "`$STRING`",
+          "active": true,
+          "index$": 34
+        },
+        {
+          "name": "status",
+          "req": false,
+          "type": "`$STRING`",
+          "active": true,
+          "index$": 35
+        },
+        {
+          "name": "tag",
+          "req": false,
+          "type": "`$STRING`",
+          "active": true,
+          "index$": 36
+        },
+        {
+          "name": "vote",
+          "req": false,
+          "type": "`$OBJECT`",
+          "active": true,
+          "index$": 37
+        },
+        {
+          "name": "width",
+          "req": false,
+          "type": "`$INTEGER`",
+          "active": true,
+          "index$": 38
+        }
+      ],
+      "name": "post",
+      "op": {
+        "list": {
+          "name": "list",
+          "points": [
+            {
+              "args": {
+                "query": [
+                  {
+                    "kind": "query",
+                    "name": "api_version",
+                    "orig": "api_version",
+                    "reqd": true,
+                    "type": "`$INTEGER`",
+                    "active": true
+                  },
+                  {
+                    "kind": "query",
+                    "name": "filter",
+                    "orig": "filter",
+                    "reqd": false,
+                    "type": "`$INTEGER`",
+                    "active": true
+                  },
+                  {
+                    "example": 0,
+                    "kind": "query",
+                    "name": "include_pool",
+                    "orig": "include_pool",
+                    "reqd": false,
+                    "type": "`$INTEGER`",
+                    "active": true
+                  },
+                  {
+                    "example": 0,
+                    "kind": "query",
+                    "name": "include_tag",
+                    "orig": "include_tag",
+                    "reqd": false,
+                    "type": "`$INTEGER`",
+                    "active": true
+                  },
+                  {
+                    "example": 0,
+                    "kind": "query",
+                    "name": "include_vote",
+                    "orig": "include_vote",
+                    "reqd": false,
+                    "type": "`$INTEGER`",
+                    "active": true
+                  },
+                  {
+                    "example": 20,
+                    "kind": "query",
+                    "name": "limit",
+                    "orig": "limit",
+                    "reqd": false,
+                    "type": "`$INTEGER`",
+                    "active": true
+                  },
+                  {
+                    "example": "holds:false",
+                    "kind": "query",
+                    "name": "tag",
+                    "orig": "tag",
+                    "reqd": false,
+                    "type": "`$STRING`",
+                    "active": true
+                  }
+                ]
+              },
+              "method": "GET",
+              "orig": "/post.json",
+              "parts": [
+                "post.json"
+              ],
+              "select": {
+                "exist": [
+                  "api_version",
+                  "filter",
+                  "include_pool",
+                  "include_tag",
+                  "include_vote",
+                  "limit",
+                  "tag"
+                ]
+              },
+              "transform": {
+                "req": "`reqdata`",
+                "res": "`body`"
+              },
+              "active": true,
+              "index$": 0
+            }
+          ],
+          "input": "data",
+          "key$": "list"
+        }
+      },
+      "relations": {
+        "ancestors": []
+      }
+    }
+  }
+}
+
+
+const config = new Config()
+
+export {
+  config
+}
+

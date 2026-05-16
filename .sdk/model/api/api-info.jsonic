@@ -1,0 +1,23 @@
+# API Information
+
+
+main: {
+  kit: {
+    info: {
+      contact: {
+        url: "https://yande.re/wiki/show?title=api_v2"
+      }
+      description: "Version 2 API for /post that returns responses in json only. Provides additional information over the standard API with features like tag searches, limiting responses, including tag types, votes, and pool membership."
+      servers: [
+        {
+          description: "Yande.re production server"
+          url: "https://yande.re"
+        }
+      ]
+      title: "Yande.re API v2"
+      version: "2.0.0"
+    }
+  }
+}
+
+}
