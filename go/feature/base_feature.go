@@ -1,7 +1,7 @@
 package feature
 
 import (
-	"github.com/voxgig-sdk/yandere-api-v2-sdk/core"
+	"github.com/voxgig-sdk/yandere-api-v2-sdk/go/core"
 )
 
 type BaseFeature struct {

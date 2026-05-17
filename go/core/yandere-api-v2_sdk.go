@@ -3,7 +3,7 @@ package core
 import (
 	"fmt"
 
-	vs "github.com/voxgig/struct"
+	vs "github.com/voxgig-sdk/yandere-api-v2-sdk/go/utility/struct"
 )
 
 type YandereApiV2SDK struct {

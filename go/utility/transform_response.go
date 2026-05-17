@@ -1,9 +1,9 @@
 package utility
 
 import (
-	vs "github.com/voxgig/struct"
+	vs "github.com/voxgig-sdk/yandere-api-v2-sdk/go/utility/struct"
 
-	"github.com/voxgig-sdk/yandere-api-v2-sdk/core"
+	"github.com/voxgig-sdk/yandere-api-v2-sdk/go/core"
 )
 
 func transformResponseUtil(ctx *core.Context) any {

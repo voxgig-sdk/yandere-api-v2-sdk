@@ -9,10 +9,10 @@ import (
 	"testing"
 	"time"
 
-	sdk "github.com/voxgig-sdk/yandere-api-v2-sdk"
-	"github.com/voxgig-sdk/yandere-api-v2-sdk/core"
+	sdk "github.com/voxgig-sdk/yandere-api-v2-sdk/go"
+	"github.com/voxgig-sdk/yandere-api-v2-sdk/go/core"
 
-	vs "github.com/voxgig/struct"
+	vs "github.com/voxgig-sdk/yandere-api-v2-sdk/go/utility/struct"
 )
 
 func TestPostEntity(t *testing.T) {

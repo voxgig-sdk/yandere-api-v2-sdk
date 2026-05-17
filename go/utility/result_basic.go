@@ -3,7 +3,7 @@ package utility
 import (
 	"fmt"
 
-	"github.com/voxgig-sdk/yandere-api-v2-sdk/core"
+	"github.com/voxgig-sdk/yandere-api-v2-sdk/go/core"
 )
 
 func resultBasicUtil(ctx *core.Context) *core.Result {

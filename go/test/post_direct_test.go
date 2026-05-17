@@ -6,8 +6,8 @@ import (
 	"strings"
 	"testing"
 
-	sdk "github.com/voxgig-sdk/yandere-api-v2-sdk"
-	"github.com/voxgig-sdk/yandere-api-v2-sdk/core"
+	sdk "github.com/voxgig-sdk/yandere-api-v2-sdk/go"
+	"github.com/voxgig-sdk/yandere-api-v2-sdk/go/core"
 )
 
 func TestPostDirect(t *testing.T) {
