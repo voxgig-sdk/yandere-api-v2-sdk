@@ -15,9 +15,6 @@ def make_config():
         },
         "options": {
             "base": "https://yande.re",
-            "auth": {
-                "prefix": "Bearer",
-            },
             "headers": {
         "content-type": "application/json",
       },

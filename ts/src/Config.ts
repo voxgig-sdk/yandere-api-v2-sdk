@@ -38,10 +38,6 @@ class Config {
   options = {
     base: 'https://yande.re',
 
-    auth: {
-      prefix: 'Bearer',
-    },
-
     headers: {
       "content-type": "application/json"
     },

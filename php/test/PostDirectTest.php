@@ -68,14 +68,12 @@ function post_direct_setup($mockres)
     $env = Runner::env_override([
         "YANDEREAPIV__TEST_POST_ENTID" => [],
         "YANDEREAPIV__TEST_LIVE" => "FALSE",
-        "YANDEREAPIV__APIKEY" => "NONE",
     ]);
 
     $live = $env["YANDEREAPIV__TEST_LIVE"] === "TRUE";
 
     if ($live) {
         $merged_opts = [
-            "apikey" => $env["YANDEREAPIV__APIKEY"],
         ];
         $client = new YandereApiV2SDK($merged_opts);
         return [

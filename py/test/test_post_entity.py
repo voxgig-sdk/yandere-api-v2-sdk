@@ -92,7 +92,6 @@ def _post_basic_setup(extra):
         "YANDEREAPIV__TEST_POST_ENTID": idmap,
         "YANDEREAPIV__TEST_LIVE": "FALSE",
         "YANDEREAPIV__TEST_EXPLAIN": "FALSE",
-        "YANDEREAPIV__APIKEY": "NONE",
     })
 
     idmap_resolved = helpers.to_map(
@@ -103,7 +102,6 @@ def _post_basic_setup(extra):
     if env.get("YANDEREAPIV__TEST_LIVE") == "TRUE":
         merged_opts = vs.merge([
             {
-                "apikey": env.get("YANDEREAPIV__APIKEY"),
             },
             extra or {},
         ])

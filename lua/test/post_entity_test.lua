@@ -92,7 +92,6 @@ function post_basic_setup(extra)
     ["YANDEREAPIV__TEST_POST_ENTID"] = idmap,
     ["YANDEREAPIV__TEST_LIVE"] = "FALSE",
     ["YANDEREAPIV__TEST_EXPLAIN"] = "FALSE",
-    ["YANDEREAPIV__APIKEY"] = "NONE",
   })
 
   local idmap_resolved = helpers.to_map(
@@ -104,7 +103,6 @@ function post_basic_setup(extra)
   if env["YANDEREAPIV__TEST_LIVE"] == "TRUE" then
     local merged_opts = vs.merge({
       {
-        apikey = env["YANDEREAPIV__APIKEY"],
       },
       extra or {},
     })

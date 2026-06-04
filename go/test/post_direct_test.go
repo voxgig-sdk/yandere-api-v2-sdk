@@ -93,14 +93,12 @@ func postDirectSetup(mockres any) *postDirectSetupResult {
 	env := envOverride(map[string]any{
 		"YANDEREAPIV__TEST_POST_ENTID": map[string]any{},
 		"YANDEREAPIV__TEST_LIVE":    "FALSE",
-		"YANDEREAPIV__APIKEY":       "NONE",
 	})
 
 	live := env["YANDEREAPIV__TEST_LIVE"] == "TRUE"
 
 	if live {
 		mergedOpts := map[string]any{
-			"apikey": env["YANDEREAPIV__APIKEY"],
 		}
 		client := sdk.NewYandereApiV2SDK(mergedOpts)
 

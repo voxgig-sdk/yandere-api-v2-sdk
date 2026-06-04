@@ -79,14 +79,12 @@ function directSetup(mockres?: any) {
   const env = envOverride({
     'YANDEREAPIV__TEST_POST_ENTID': {},
     'YANDEREAPIV__TEST_LIVE': 'FALSE',
-    'YANDEREAPIV__APIKEY': 'NONE',
   })
 
   const live = 'TRUE' === env.YANDEREAPIV__TEST_LIVE
 
   if (live) {
     const client = new YandereApiV2SDK({
-      apikey: env.YANDEREAPIV__APIKEY,
     })
 
     let idmap: any = env['YANDEREAPIV__TEST_POST_ENTID']

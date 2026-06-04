@@ -16,8 +16,31 @@ main: {
       ]
       title: "Yande.re API v2"
       version: "2.0.0"
+      tagline: "Browse Yande.re booru posts (anime/game artwork) as JSON with tags, votes, and pool data"
+      homepage: "https://yande.re"
+      docs_url: "https://yande.re/help/api"
+      license_short: "Image rights belong to their original artists; check each post's source and tags before reuse."
+      license_md: `- No public licence is published for the Yande.re API itself.
+- Images are uploaded by the community; copyright remains with the original artists and publishers.
+- Respect the per-post \`source\`, \`rating\`, and artist tags when redistributing.
+- Treat content as third-party; do not assume commercial reuse is permitted.`
+      about_md: `[Yande.re](https://yande.re) is a long-running image board (a [Moebooru](https://github.com/moebooru/moebooru) instance, Danbooru-compatible) that catalogues high-quality anime and game artwork with a tag-based metadata system. The \`api_version=2\` flag selects the newer JSON shape returned by the Moebooru post endpoint.
+
+What you get from the API:
+
+- A list of posts via \`GET https://yande.re/post.json?api_version=2\`, each with image URLs, dimensions, MD5, tags, rating, score, and source.
+- Tag-search support through the standard \`tags\` query parameter, plus \`limit\` and \`page\` for pagination.
+- Version-2 extras such as tag-type classification, vote data, and pool membership embedded in the post objects.
+
+Operational notes:
+
+- The endpoint is publicly reachable without authentication for read access; write operations on the wider Moebooru API require a \`login\` and a salted \`password_hash\`.
+- CORS is not enabled, so browser-side calls need a proxy.
+- No published rate limits, but be polite — identify your client and avoid hammering the server.`
+      entity_desc: {
+        post: "An image entry on the booru — artwork plus metadata (tags, rating, score, dimensions, source, sample/preview URLs); listed via `GET /post.json?api_version=2`."
+      }
+      auth: false
     }
   }
-}
-
 }
