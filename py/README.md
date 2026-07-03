@@ -10,7 +10,7 @@ The Python SDK for the YandereApiV2 API — an entity-oriented client following 
 
 ## Install
 ```bash
-pip install yandere-api-v2-sdk
+pip install voxgig-sdk-yandere-api-v2
 ```
 
 Or install from source:

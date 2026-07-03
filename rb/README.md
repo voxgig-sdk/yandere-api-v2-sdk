@@ -10,13 +10,13 @@ The Ruby SDK for the YandereApiV2 API — an entity-oriented client using idioma
 
 ## Install
 ```bash
-gem install yandere-api-v2-sdk
+gem install voxgig-sdk-yandere-api-v2
 ```
 
 Or add to your `Gemfile`:
 
 ```ruby
-gem "yandere-api-v2-sdk"
+gem "voxgig-sdk-yandere-api-v2"
 ```
 
 Then run:

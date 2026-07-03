@@ -10,7 +10,7 @@ The PHP SDK for the YandereApiV2 API — an entity-oriented client using PHP con
 
 ## Install
 ```bash
-composer require voxgig/yandere-api-v2-sdk
+composer require voxgig-sdk/yandere-api-v2
 ```
 
 

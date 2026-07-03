@@ -10,7 +10,7 @@ The TypeScript SDK for the YandereApiV2 API — a type-safe, entity-oriented cli
 
 ## Install
 ```bash
-npm install yandere-api-v2
+npm install @voxgig-sdk/yandere-api-v2
 ```
 ## Tutorial: your first API call
 

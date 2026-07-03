@@ -10,7 +10,7 @@ The Lua SDK for the YandereApiV2 API — an entity-oriented client using Lua con
 
 ## Install
 ```bash
-luarocks install yandere-api-v2-sdk
+luarocks install voxgig-sdk-yandere-api-v2
 ```
 
 If the module is not yet published, add the source directory to
