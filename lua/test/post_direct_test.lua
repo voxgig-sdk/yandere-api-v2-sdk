@@ -63,12 +63,14 @@ function post_direct_setup(mockres)
   local env = runner.env_override({
     ["YANDEREAPIV__TEST_POST_ENTID"] = {},
     ["YANDEREAPIV__TEST_LIVE"] = "FALSE",
+    ["YANDEREAPIV__APIKEY"] = "NONE",
   })
 
   local live = env["YANDEREAPIV__TEST_LIVE"] == "TRUE"
 
   if live then
     local merged_opts = {
+      apikey = env["YANDEREAPIV__APIKEY"],
     }
     local client = sdk.new(merged_opts)
     return {

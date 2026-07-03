@@ -1,24 +1,8 @@
 # YandereApiV2 SDK
 
-Browse Yande.re booru posts (anime/game artwork) as JSON with tags, votes, and pool data
+Yande.re API v2 client, generated from the OpenAPI spec.
 
 > TypeScript, Python, PHP, Golang, Ruby, Lua SDKs, a CLI, an interactive REPL, and an MCP server for AI agents — all generated from one OpenAPI spec by [@voxgig/sdkgen](https://github.com/voxgig/sdkgen).
-
-## About Yande.re API v2
-
-[Yande.re](https://yande.re) is a long-running image board (a [Moebooru](https://github.com/moebooru/moebooru) instance, Danbooru-compatible) that catalogues high-quality anime and game artwork with a tag-based metadata system. The `api_version=2` flag selects the newer JSON shape returned by the Moebooru post endpoint.
-
-What you get from the API:
-
-- A list of posts via `GET https://yande.re/post.json?api_version=2`, each with image URLs, dimensions, MD5, tags, rating, score, and source.
-- Tag-search support through the standard `tags` query parameter, plus `limit` and `page` for pagination.
-- Version-2 extras such as tag-type classification, vote data, and pool membership embedded in the post objects.
-
-Operational notes:
-
-- The endpoint is publicly reachable without authentication for read access; write operations on the wider Moebooru API require a `login` and a salted `password_hash`.
-- CORS is not enabled, so browser-side calls need a proxy.
-- No published rate limits, but be polite — identify your client and avoid hammering the server.
 
 ## Try it
 
@@ -52,29 +36,31 @@ gem install yandere-api-v2-sdk
 luarocks install yandere-api-v2-sdk
 ```
 
-## 30-second quickstart
+## Quickstart
 
 ### TypeScript
 
 ```ts
 import { YandereApiV2SDK } from 'yandere-api-v2'
 
-const client = new YandereApiV2SDK({})
+const client = new YandereApiV2SDK({
+  apikey: process.env.YANDERE-API-V2_APIKEY,
+})
 
 // List all posts
 const posts = await client.Post().list()
+console.log(posts.data)
 ```
 
-See the [TypeScript README](ts/README.md) for the
-full guide, or scroll down for the same example in other languages.
+See the [TypeScript README](ts/README.md) for the full guide.
 
-## What's in the box
+## Surfaces
 
-| Surface | Use it for | Path |
-| --- | --- | --- |
-| **SDK** (TypeScript, Python, PHP, Golang, Ruby, Lua) | App integration | `ts/` `py/` `php/` `go/` `rb/` `lua/` |
-| **CLI** | Scripts, CI, ops, one-off API calls | `go-cli/` |
-| **MCP server** | AI agents (Claude, Cursor, Cline) | `go-mcp/` |
+| Surface | Path |
+| --- | --- |
+| **SDK** (TypeScript, Python, PHP, Golang, Ruby, Lua) | `ts/` `py/` `php/` `go/` `rb/` `lua/` |
+| **CLI** | `go-cli/` |
+| **MCP server** | `go-mcp/` |
 
 ## Use it from an AI agent (MCP)
 
@@ -104,7 +90,7 @@ The API exposes one entity:
 
 | Entity | Description | API path |
 | --- | --- | --- |
-| **Post** | An image entry on the booru — artwork plus metadata (tags, rating, score, dimensions, source, sample/preview URLs); listed via `GET /post.json?api_version=2`. | `/post.json` |
+| **Post** |  | `/post.json` |
 
 Each entity supports the following operations where available: **load**,
 **list**, **create**, **update**, and **remove**.
@@ -114,12 +100,16 @@ Each entity supports the following operations where available: **load**,
 ### Python
 
 ```python
+import os
 from yandereapiv2_sdk import YandereApiV2SDK
 
-client = YandereApiV2SDK({})
+client = YandereApiV2SDK({
+    "apikey": os.environ.get("YANDERE-API-V2_APIKEY"),
+})
 
 # List all posts
-posts, err = client.Post(None).list(None, None)
+posts, err = client.Post().list()
+print(posts)
 ```
 
 ### PHP
@@ -128,10 +118,13 @@ posts, err = client.Post(None).list(None, None)
 <?php
 require_once 'yandereapiv2_sdk.php';
 
-$client = new YandereApiV2SDK([]);
+$client = new YandereApiV2SDK([
+    "apikey" => getenv("YANDERE-API-V2_APIKEY"),
+]);
 
 // List all posts
-[$posts, $err] = $client->Post(null)->list(null, null);
+[$posts, $err] = $client->Post()->list();
+print_r($posts);
 ```
 
 ### Golang
@@ -139,10 +132,13 @@ $client = new YandereApiV2SDK([]);
 ```go
 import sdk "github.com/voxgig-sdk/yandere-api-v2-sdk/go"
 
-client := sdk.NewYandereApiV2SDK(map[string]any{})
+client := sdk.NewYandereApiV2SDK(map[string]any{
+    "apikey": os.Getenv("YANDERE-API-V2_APIKEY"),
+})
 
 // List all posts
 posts, err := client.Post(nil).List(nil, nil)
+fmt.Println(posts)
 ```
 
 ### Ruby
@@ -150,10 +146,13 @@ posts, err := client.Post(nil).List(nil, nil)
 ```ruby
 require_relative "YandereApiV2_sdk"
 
-client = YandereApiV2SDK.new({})
+client = YandereApiV2SDK.new({
+  "apikey" => ENV["YANDERE-API-V2_APIKEY"],
+})
 
 # List all posts
-posts, err = client.Post(nil).list(nil, nil)
+posts, err = client.Post().list
+puts posts
 ```
 
 ### Lua
@@ -161,10 +160,13 @@ posts, err = client.Post(nil).list(nil, nil)
 ```lua
 local sdk = require("yandere-api-v2_sdk")
 
-local client = sdk.new({})
+local client = sdk.new({
+  apikey = os.getenv("YANDERE-API-V2_APIKEY"),
+})
 
 -- List all posts
-local posts, err = client:Post(nil):list(nil, nil)
+local posts, err = client:Post():list()
+print(posts)
 ```
 
 ## Unit testing in offline mode
@@ -183,25 +185,21 @@ const result = await client.Post().load({ id: 'test01' })
 ### Python
 
 ```python
-client = YandereApiV2SDK.test(None, None)
-result, err = client.Post(None).load(
-    {"id": "test01"}, None
-)
+client = YandereApiV2SDK.test()
+result, err = client.Post().load({"id": "test01"})
 ```
 
 ### PHP
 
 ```php
-$client = YandereApiV2SDK::test(null, null);
-[$result, $err] = $client->Post(null)->load(
-    ["id" => "test01"], null
-);
+$client = YandereApiV2SDK::test();
+[$result, $err] = $client->Post()->load(["id" => "test01"]);
 ```
 
 ### Golang
 
 ```go
-client := sdk.TestSDK(nil, nil)
+client := sdk.Test()
 result, err := client.Post(nil).Load(
     map[string]any{"id": "test01"}, nil,
 )
@@ -210,19 +208,15 @@ result, err := client.Post(nil).Load(
 ### Ruby
 
 ```ruby
-client = YandereApiV2SDK.test(nil, nil)
-result, err = client.Post(nil).load(
-  { "id" => "test01" }, nil
-)
+client = YandereApiV2SDK.test
+result, err = client.Post().load({ "id" => "test01" })
 ```
 
 ### Lua
 
 ```lua
-local client = sdk.test(nil, nil)
-local result, err = client:Post(nil):load(
-  { id = "test01" }, nil
-)
+local client = sdk.test()
+local result, err = client:Post():load({ id = "test01" })
 ```
 
 ## How it works
@@ -326,16 +320,6 @@ local result, err = client:direct({
 - [Golang](go/README.md)
 - [Ruby](rb/README.md)
 - [Lua](lua/README.md)
-
-## Using the Yande.re API v2
-
-- Upstream: [https://yande.re](https://yande.re)
-- API docs: [https://yande.re/help/api](https://yande.re/help/api)
-
-- No public licence is published for the Yande.re API itself.
-- Images are uploaded by the community; copyright remains with the original artists and publishers.
-- Respect the per-post `source`, `rating`, and artist tags when redistributing.
-- Treat content as third-party; do not assume commercial reuse is permitted.
 
 ---
 

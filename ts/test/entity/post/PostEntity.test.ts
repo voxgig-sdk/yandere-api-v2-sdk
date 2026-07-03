@@ -113,6 +113,7 @@ function basicSetup(extra?: any) {
     'YANDERE_API_V__TEST_POST_ENTID': idmap,
     'YANDERE_API_V__TEST_LIVE': 'FALSE',
     'YANDERE_API_V__TEST_EXPLAIN': 'FALSE',
+    'YANDERE_API_V__APIKEY': 'NONE',
   })
 
   idmap = env['YANDERE_API_V__TEST_POST_ENTID']
@@ -122,6 +123,7 @@ function basicSetup(extra?: any) {
   if (live) {
     client = new YandereApiV2SDK(merge([
       {
+        apikey: env.YANDERE_API_V__APIKEY,
       },
       extra
     ]))

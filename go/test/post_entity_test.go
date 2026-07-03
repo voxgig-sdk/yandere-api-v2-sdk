@@ -119,6 +119,7 @@ func postBasicSetup(extra map[string]any) *entityTestSetup {
 		"YANDEREAPIV__TEST_POST_ENTID": idmap,
 		"YANDEREAPIV__TEST_LIVE":      "FALSE",
 		"YANDEREAPIV__TEST_EXPLAIN":   "FALSE",
+		"YANDEREAPIV__APIKEY":         "NONE",
 	})
 
 	idmapResolved := core.ToMapAny(env["YANDEREAPIV__TEST_POST_ENTID"])
@@ -129,6 +130,7 @@ func postBasicSetup(extra map[string]any) *entityTestSetup {
 	if env["YANDEREAPIV__TEST_LIVE"] == "TRUE" {
 		mergedOpts := vs.Merge([]any{
 			map[string]any{
+				"apikey": env["YANDEREAPIV__APIKEY"],
 			},
 			extra,
 		})

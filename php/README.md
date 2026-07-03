@@ -1,6 +1,11 @@
 # YandereApiV2 PHP SDK
 
-The PHP SDK for the YandereApiV2 API. Provides an entity-oriented interface using PHP conventions.
+
+
+The PHP SDK for the YandereApiV2 API — an entity-oriented client using PHP conventions.
+
+> Other languages, the CLI, and MCP server live alongside this one — see
+> the [top-level README](../README.md).
 
 
 ## Install
@@ -20,13 +25,15 @@ loading a specific record.
 <?php
 require_once 'yandereapiv2_sdk.php';
 
-$client = new YandereApiV2SDK([]);
+$client = new YandereApiV2SDK([
+    "apikey" => getenv("YANDERE-API-V2_APIKEY"),
+]);
 ```
 
 ### 2. List posts
 
 ```php
-[$result, $err] = $client->Post(null)->list(null, null);
+[$result, $err] = $client->Post()->list();
 if ($err) { throw new \Exception($err); }
 
 if (is_array($result)) {
@@ -78,11 +85,9 @@ print_r($fetchdef["headers"]);
 Create a mock client for unit testing — no server required:
 
 ```php
-$client = YandereApiV2SDK::test(null, null);
+$client = YandereApiV2SDK::test();
 
-[$result, $err] = $client->YandereApiV2(null)->load(
-    ["id" => "test01"], null
-);
+[$result, $err] = $client->YandereApiV2()->load(["id" => "test01"]);
 // $result contains mock response data
 ```
 
@@ -117,6 +122,7 @@ Create a `.env.local` file at the project root:
 
 ```
 YANDERE-API-V2_TEST_LIVE=TRUE
+YANDERE-API-V2_APIKEY=<your-key>
 ```
 
 Then run:
@@ -139,6 +145,7 @@ Creates a new SDK client.
 
 | Option | Type | Description |
 | --- | --- | --- |
+| `apikey` | `string` | API key for authentication. |
 | `base` | `string` | Base URL of the API server. |
 | `prefix` | `string` | URL path prefix prepended to all requests. |
 | `suffix` | `string` | URL path suffix appended to all requests. |
