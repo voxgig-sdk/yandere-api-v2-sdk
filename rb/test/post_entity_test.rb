@@ -43,8 +43,7 @@ class PostEntityTest < Minitest::Test
     post_ref01_ent = client.Post(nil)
     post_ref01_match = {}
 
-    post_ref01_list_result, err = post_ref01_ent.list(post_ref01_match, nil)
-    assert_nil err
+    post_ref01_list_result = post_ref01_ent.list(post_ref01_match, nil)
     assert post_ref01_list_result.is_a?(Array)
 
   end
@@ -83,7 +82,6 @@ def post_basic_setup(extra)
     "YANDEREAPIV__TEST_POST_ENTID" => idmap,
     "YANDEREAPIV__TEST_LIVE" => "FALSE",
     "YANDEREAPIV__TEST_EXPLAIN" => "FALSE",
-    "YANDEREAPIV__APIKEY" => "NONE",
   })
 
   idmap_resolved = Helpers.to_map(
@@ -95,7 +93,6 @@ def post_basic_setup(extra)
   if env["YANDEREAPIV__TEST_LIVE"] == "TRUE"
     merged_opts = Vs.merge([
       {
-        "apikey" => env["YANDEREAPIV__APIKEY"],
       },
       extra || {},
     ])

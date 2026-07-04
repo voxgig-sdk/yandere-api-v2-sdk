@@ -4,6 +4,7 @@
 main: {
   kit: {
     info: {
+      auth: false
       contact: {
         url: "https://yande.re/wiki/show?title=api_v2"
       }

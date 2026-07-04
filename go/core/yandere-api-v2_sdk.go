@@ -245,6 +245,9 @@ func (sdk *YandereApiV2SDK) Direct(fetchargs map[string]any) (map[string]any, er
 }
 
 
+// Post returns a Post entity bound to this client.
+// Idiomatic usage: client.Post(nil).List(nil, nil) or
+// client.Post(nil).Load(map[string]any{"id": ...}, nil).
 func (sdk *YandereApiV2SDK) Post(data map[string]any) YandereApiV2Entity {
 	return NewPostEntityFunc(sdk, data)
 }

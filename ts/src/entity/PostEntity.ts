@@ -14,9 +14,13 @@ import type {
   Control,
 } from '../types'
 
+import type {
+  Post,
+  PostListMatch,
+} from '../YandereApiV2Types'
 
 // TODO: needs Entity superclass
-class PostEntity extends YandereApiV2EntityBase {
+class PostEntity extends YandereApiV2EntityBase<Post> {
 
   constructor(client: YandereApiV2SDK, entopts: any) {
     super(client, entopts)
@@ -33,7 +37,7 @@ class PostEntity extends YandereApiV2EntityBase {
 
 
 
-  async list(this: any, reqmatch?: any, ctrl?: Control) {
+  async list(this: any, reqmatch?: PostListMatch, ctrl?: Control): Promise<Post[]> {
 
     const utility = this._utility
 
@@ -133,7 +137,9 @@ class PostEntity extends YandereApiV2EntityBase {
         throw err
       }
       else {
-        return undefined
+        // Off-happy-path (throw disabled): typed as any so the method's
+        // Promise<Post[]> return stays clean under strict null checks.
+        return undefined as any
       }
     }
   }

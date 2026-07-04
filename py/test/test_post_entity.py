@@ -50,8 +50,7 @@ class TestPostEntity:
         post_ref01_ent = client.Post(None)
         post_ref01_match = {}
 
-        post_ref01_list_result, err = post_ref01_ent.list(post_ref01_match, None)
-        assert err is None
+        post_ref01_list_result = post_ref01_ent.list(post_ref01_match, None)
         assert isinstance(post_ref01_list_result, list)
 
 
@@ -92,7 +91,6 @@ def _post_basic_setup(extra):
         "YANDEREAPIV__TEST_POST_ENTID": idmap,
         "YANDEREAPIV__TEST_LIVE": "FALSE",
         "YANDEREAPIV__TEST_EXPLAIN": "FALSE",
-        "YANDEREAPIV__APIKEY": "NONE",
     })
 
     idmap_resolved = helpers.to_map(
@@ -103,7 +101,6 @@ def _post_basic_setup(extra):
     if env.get("YANDEREAPIV__TEST_LIVE") == "TRUE":
         merged_opts = vs.merge([
             {
-                "apikey": env.get("YANDEREAPIV__APIKEY"),
             },
             extra or {},
         ])

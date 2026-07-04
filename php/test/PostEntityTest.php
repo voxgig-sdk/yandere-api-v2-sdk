@@ -50,8 +50,7 @@ class PostEntityTest extends TestCase
         $post_ref01_ent = $client->Post(null);
         $post_ref01_match = [];
 
-        [$post_ref01_list_result, $err] = $post_ref01_ent->list($post_ref01_match, null);
-        $this->assertNull($err);
+        $post_ref01_list_result = $post_ref01_ent->list($post_ref01_match, null);
         $this->assertIsArray($post_ref01_list_result);
 
     }
@@ -86,7 +85,6 @@ function post_basic_setup($extra)
         "YANDEREAPIV__TEST_POST_ENTID" => $idmap,
         "YANDEREAPIV__TEST_LIVE" => "FALSE",
         "YANDEREAPIV__TEST_EXPLAIN" => "FALSE",
-        "YANDEREAPIV__APIKEY" => "NONE",
     ]);
 
     $idmap_resolved = Helpers::to_map(
@@ -98,7 +96,6 @@ function post_basic_setup($extra)
     if ($env["YANDEREAPIV__TEST_LIVE"] === "TRUE") {
         $merged_opts = Vs::merge([
             [
-                "apikey" => $env["YANDEREAPIV__APIKEY"],
             ],
             $extra ?? [],
         ]);

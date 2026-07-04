@@ -9,9 +9,12 @@ The TypeScript SDK for the YandereApiV2 API — a type-safe, entity-oriented cli
 
 
 ## Install
-```bash
-npm install @voxgig-sdk/yandere-api-v2
-```
+This package is not yet published to npm. Install it from the GitHub
+release tag (`ts/vX.Y.Z`):
+
+- Releases: [https://github.com/voxgig-sdk/yandere-api-v2-sdk/releases](https://github.com/voxgig-sdk/yandere-api-v2-sdk/releases)
+
+
 ## Tutorial: your first API call
 
 This tutorial walks through creating a client, listing entities, and
@@ -20,17 +23,15 @@ loading a specific record.
 ### 1. Create a client
 
 ```ts
-import { YandereApiV2SDK } from 'yandere-api-v2'
+import { YandereApiV2SDK } from '@voxgig-sdk/yandere-api-v2'
 
-const client = new YandereApiV2SDK({
-  apikey: process.env.YANDERE-API-V2_APIKEY,
-})
+const client = new YandereApiV2SDK()
 ```
 
 ### 2. List posts
 
 ```ts
-const result = await client.Post().list()
+const result = await client.post.list()
 
 if (result.ok) {
   for (const item of result.data) {
@@ -81,7 +82,7 @@ Create a mock client for unit testing — no server required:
 ```ts
 const client = YandereApiV2SDK.test()
 
-const result = await client.Planet().load({ id: 'test01' })
+const result = await client.post.load({ id: 'test01' })
 // result.ok === true
 // result.data contains mock response data
 ```
@@ -89,7 +90,7 @@ const result = await client.Planet().load({ id: 'test01' })
 You can also use the instance method:
 
 ```ts
-const client = new YandereApiV2SDK({ apikey: '...' })
+const client = new YandereApiV2SDK()
 const testClient = client.tester()
 ```
 
@@ -98,7 +99,7 @@ const testClient = client.tester()
 Entity instances remember their last match and data:
 
 ```ts
-const entity = client.Planet()
+const entity = client.post
 
 // First call sets internal match
 await entity.load({ id: 'example' })
@@ -125,7 +126,6 @@ const logger = {
 }
 
 const client = new YandereApiV2SDK({
-  apikey: '...',
   extend: [logger],
 })
 ```
@@ -135,8 +135,7 @@ const client = new YandereApiV2SDK({
 Create a `.env.local` file at the project root:
 
 ```
-YANDERE-API-V2_TEST_LIVE=TRUE
-YANDERE-API-V2_APIKEY=<your-key>
+YANDERE_API_V2_TEST_LIVE=TRUE
 ```
 
 Then run:
@@ -154,7 +153,6 @@ cd ts && npm test
 
 ```ts
 new YandereApiV2SDK(options?: {
-  apikey?: string
   base?: string
   prefix?: string
   suffix?: string
@@ -165,7 +163,6 @@ new YandereApiV2SDK(options?: {
 
 | Option | Type | Description |
 | --- | --- | --- |
-| `apikey` | `string` | API key for authentication. |
 | `base` | `string` | Base URL of the API server. |
 | `prefix` | `string` | URL path prefix prepended to all requests. |
 | `suffix` | `string` | URL path suffix appended to all requests. |
@@ -306,7 +303,7 @@ API path: `/post.json`
 
 ### Post
 
-Create an instance: `const post = client.Post()`
+Create an instance: `const post = client.post`
 
 #### Operations
 
@@ -361,7 +358,7 @@ Create an instance: `const post = client.Post()`
 #### Example: List
 
 ```ts
-const posts = await client.Post().list()
+const posts = await client.post.list()
 ```
 
 
@@ -422,7 +419,7 @@ yandere-api-v2/
 Import the SDK from the package root:
 
 ```ts
-import { YandereApiV2SDK } from 'yandere-api-v2'
+import { YandereApiV2SDK } from '@voxgig-sdk/yandere-api-v2'
 ```
 
 ### Entity state
@@ -432,11 +429,11 @@ stores the returned data and match criteria internally. Subsequent
 calls on the same instance can rely on this state.
 
 ```ts
-const moon = client.Moon()
-await moon.load({ planet_id: 'earth', id: 'luna' })
+const post = client.post
+await post.load({ id: "example_id" })
 
-// moon.data() now returns the loaded moon data
-// moon.match() returns { planet_id: 'earth', id: 'luna' }
+// post.data() now returns the loaded post data
+// post.match() returns { id: "example_id" }
 ```
 
 Call `make()` to create a fresh instance with the same configuration

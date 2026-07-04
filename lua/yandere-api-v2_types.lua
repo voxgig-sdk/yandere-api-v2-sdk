@@ -1,0 +1,54 @@
+-- Typed models for the YandereApiV2 SDK (LuaLS annotations).
+--
+-- GENERATED from the API model: main.kit.entity.<e>.fields[] and per-op
+-- params (op.<name>.points[].args.params[]). Field/param types come from the
+-- canonical type sentinels via @voxgig/sdkgen canonToType (source of truth:
+-- @voxgig/apidef VALID_CANON). Annotations only — no runtime effect. Do not
+-- edit by hand.
+
+---@class Post
+---@field actual_preview_height? number
+---@field actual_preview_width? number
+---@field author? string
+---@field change? number
+---@field created_at? number
+---@field creator_id? number
+---@field file_size? number
+---@field file_url? string
+---@field flag_detail? table
+---@field frame? table
+---@field frames_pending? table
+---@field frames_pending_string? string
+---@field frames_string? string
+---@field has_child? boolean
+---@field height? number
+---@field id? number
+---@field is_held? boolean
+---@field is_shown_in_index? boolean
+---@field jpeg_file_size? number
+---@field jpeg_height? number
+---@field jpeg_url? string
+---@field jpeg_width? number
+---@field md5? string
+---@field parent_id? number
+---@field pool_id? table
+---@field preview_height? number
+---@field preview_url? string
+---@field preview_width? number
+---@field rating? string
+---@field sample_file_size? number
+---@field sample_height? number
+---@field sample_url? string
+---@field sample_width? number
+---@field score? number
+---@field source? string
+---@field status? string
+---@field tag? string
+---@field vote? table
+---@field width? number
+
+---@class PostListMatch
+
+local M = {}
+
+return M

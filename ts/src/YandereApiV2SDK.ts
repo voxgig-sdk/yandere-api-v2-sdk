@@ -2,6 +2,8 @@
 
 import { PostEntity } from './entity/PostEntity'
 
+export type * from './YandereApiV2Types'
+
 
 import { inspect } from 'node:util'
 
@@ -202,6 +204,14 @@ class YandereApiV2SDK {
 
 
 
+  _post?: PostEntity
+
+  // Idiomatic facade: `client.post.list()` / `client.post.load({ id })`.
+  get post(): PostEntity {
+    return (this._post ??= new PostEntity(this, undefined))
+  }
+
+  /** @deprecated Use `client.post` instead. */
   Post(data?: any) {
     const self = this
     return new PostEntity(self,data)

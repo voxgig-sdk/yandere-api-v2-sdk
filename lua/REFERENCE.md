@@ -19,7 +19,6 @@ Create a new SDK client instance.
 | Name | Type | Description |
 | --- | --- | --- |
 | `options` | `table` | SDK configuration options. |
-| `options.apikey` | `string` | API key for authentication. |
 | `options.base` | `string` | Base URL for API requests. |
 | `options.prefix` | `string` | URL prefix appended after base. |
 | `options.suffix` | `string` | URL suffix appended after path. |
@@ -84,7 +83,7 @@ same parameters as `direct()`.
 ## PostEntity
 
 ```lua
-local post = client:Post(nil)
+local post = client:post(nil)
 ```
 
 ### Fields
@@ -138,7 +137,7 @@ local post = client:Post(nil)
 List entities matching the given criteria. Returns an array.
 
 ```lua
-local results, err = client:Post():list()
+local results, err = client:post():list()
 ```
 
 ### Common Methods
