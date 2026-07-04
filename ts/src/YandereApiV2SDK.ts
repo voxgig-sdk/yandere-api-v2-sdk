@@ -204,14 +204,7 @@ class YandereApiV2SDK {
 
 
 
-  _post?: PostEntity
-
-  // Idiomatic facade: `client.post.list()` / `client.post.load({ id })`.
-  get post(): PostEntity {
-    return (this._post ??= new PostEntity(this, undefined))
-  }
-
-  /** @deprecated Use `client.post` instead. */
+  // Entity access: `client.Post().list()` / `client.Post().load({ id })`.
   Post(data?: any) {
     const self = this
     return new PostEntity(self,data)

@@ -29,18 +29,16 @@ require_once 'yandereapiv2_sdk.php';
 $client = new YandereApiV2SDK();
 ```
 
-### 2. List posts
+### 2. List post records
 
 ```php
 try {
-    $result = $client->post()->list();
-    if (is_array($result)) {
-        foreach ($result as $item) {
-            $d = $item->data_get();
-            echo $d["id"] . " " . $d["name"] . "\n";
-        }
+    // list() returns an array of Post records — iterate directly.
+    $posts = $client->Post()->list();
+    foreach ($posts as $item) {
+        echo $item["id"] . " " . $item["name"] . "\n";
     }
-} catch (\Exception $err) {
+} catch (\Throwable $err) {
     echo "Error: " . $err->getMessage();
 }
 ```
@@ -86,13 +84,17 @@ print_r($fetchdef["headers"]);
 
 ### Use test mode
 
-Create a mock client for unit testing — no server required:
+Create a mock client for unit testing — no server required. Seed fixture
+data via the `entity` option so offline calls resolve without a live server:
 
 ```php
-$client = YandereApiV2SDK::test();
+$client = YandereApiV2SDK::test([
+    "entity" => ["post" => ["test01" => ["id" => "test01"]]],
+]);
 
-$result = $client->post()->load(["id" => "test01"]);
-// $result contains mock response data
+// load() returns the bare mock record (throws on error).
+$post = $client->Post()->load(["id" => "test01"]);
+print_r($post);
 ```
 
 ### Use a custom fetch function
@@ -266,7 +268,7 @@ API path: `/post.json`
 
 ### Post
 
-Create an instance: `const post = client.post`
+Create an instance: `$post = $client->Post();`
 
 #### Operations
 
@@ -320,8 +322,9 @@ Create an instance: `const post = client.post`
 
 #### Example: List
 
-```ts
-const posts = await client.post.list()
+```php
+// list() returns an array of Post records (throws on error).
+$posts = $client->Post()->list();
 ```
 
 
@@ -396,7 +399,7 @@ Entity instances are stateful. After a successful `load`, the entity
 stores the returned data and match criteria internally.
 
 ```php
-$post = $client->post();
+$post = $client->Post();
 $post->load(["id" => "example_id"]);
 
 // $post->dataGet() now returns the loaded post data

@@ -26,9 +26,11 @@ import { YandereApiV2SDK } from '@voxgig-sdk/yandere-api-v2'
 
 const client = new YandereApiV2SDK()
 
-// List all posts
-const posts = await client.post.list()
-console.log(posts.data)
+// List all posts (returns Post[])
+const posts = await client.Post().list()
+for (const post of posts) {
+  console.log(post)
+}
 ```
 
 See the [TypeScript README](ts/README.md) for the full guide.
@@ -83,9 +85,10 @@ from yandereapiv2_sdk import YandereApiV2SDK
 
 client = YandereApiV2SDK()
 
-# List all posts
-posts = client.post.list()
-print(posts)
+# List all posts (returns a list, raises on error)
+posts = client.Post().list({})
+for post in posts:
+    print(post)
 ```
 
 ### PHP
@@ -96,8 +99,8 @@ require_once 'yandereapiv2_sdk.php';
 
 $client = new YandereApiV2SDK();
 
-// List all posts (throws on error)
-$posts = $client->post()->list();
+// List all posts (returns an array; throws on error)
+$posts = $client->Post()->list();
 print_r($posts);
 ```
 
@@ -120,8 +123,8 @@ require_relative "YandereApiV2_sdk"
 
 client = YandereApiV2SDK.new
 
-# List all posts
-posts = client.post.list
+# List all posts (returns an Array; raises on error)
+posts = client.Post.list
 puts posts
 ```
 
@@ -133,7 +136,7 @@ local sdk = require("yandere-api-v2_sdk")
 local client = sdk.new()
 
 -- List all posts
-local posts, err = client:post():list()
+local posts, err = client:Post():list()
 print(posts)
 ```
 
@@ -146,22 +149,27 @@ in-memory mock, so unit tests run offline.
 
 ```ts
 const client = YandereApiV2SDK.test()
-const result = await client.post.load({ id: 'test01' })
-// result.ok === true, result.data contains mock data
+const post = await client.Post().load({ id: 1 })
+// post is a bare Post populated with mock data
+console.log(post)
 ```
 
 ### Python
 
 ```python
 client = YandereApiV2SDK.test()
-result = client.post.load({"id": "test01"})
+post = client.Post().load({"id": "test01"})
+print(post)
 ```
 
 ### PHP
 
 ```php
-$client = YandereApiV2SDK::test();
-$result = $client->post()->load(["id" => "test01"]);
+// Seed fixture data so offline calls resolve without a live server.
+$client = YandereApiV2SDK::test([
+    "entity" => ["post" => ["test01" => ["id" => "test01"]]],
+]);
+$post = $client->Post()->load(["id" => "test01"]);
 ```
 
 ### Golang
@@ -176,15 +184,18 @@ result, err := client.Post(nil).Load(
 ### Ruby
 
 ```ruby
-client = YandereApiV2SDK.test
-result = client.post.load({ "id" => "test01" })
+# Seed fixture data so offline calls resolve without a live server.
+client = YandereApiV2SDK.test({
+  "entity" => { "post" => { "test01" => { "id" => "test01" } } },
+})
+post = client.Post.load({ "id" => "test01" })
 ```
 
 ### Lua
 
 ```lua
 local client = sdk.test()
-local result, err = client:post():load({ id = "test01" })
+local result, err = client:Post():load({ id = "test01" })
 ```
 
 ## How it works
@@ -232,6 +243,9 @@ const result = await client.direct({
   method: 'GET',
   params: { id: 'example' },
 })
+if (result instanceof Error) {
+  throw result
+}
 console.log(result.data)
 ```
 

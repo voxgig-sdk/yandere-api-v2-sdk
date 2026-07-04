@@ -4,95 +4,97 @@
 # params (op.<name>.points[].args.params[]). Field/param types come from the
 # canonical type sentinels via @voxgig/sdkgen canonToType (source of truth:
 # @voxgig/apidef VALID_CANON). Do not edit by hand.
+#
+# These are TypedDicts, not dataclasses: the SDK ops return/accept plain dicts
+# at runtime, and a TypedDict IS a dict shape, so the types match the runtime.
+# Optional (req:false) keys are modelled as TypedDict key-optionality
+# (total=False), split into a required base + total=False subclass when a type
+# has both required and optional keys.
 
 from __future__ import annotations
 
-from dataclasses import dataclass
-from typing import Optional, Any
+from typing import TypedDict, Any
 
 
-@dataclass
-class Post:
-    actual_preview_height: Optional[int] = None
-    actual_preview_width: Optional[int] = None
-    author: Optional[str] = None
-    change: Optional[int] = None
-    created_at: Optional[int] = None
-    creator_id: Optional[int] = None
-    file_size: Optional[int] = None
-    file_url: Optional[str] = None
-    flag_detail: Optional[dict] = None
-    frame: Optional[list] = None
-    frames_pending: Optional[list] = None
-    frames_pending_string: Optional[str] = None
-    frames_string: Optional[str] = None
-    has_child: Optional[bool] = None
-    height: Optional[int] = None
-    id: Optional[int] = None
-    is_held: Optional[bool] = None
-    is_shown_in_index: Optional[bool] = None
-    jpeg_file_size: Optional[int] = None
-    jpeg_height: Optional[int] = None
-    jpeg_url: Optional[str] = None
-    jpeg_width: Optional[int] = None
-    md5: Optional[str] = None
-    parent_id: Optional[int] = None
-    pool_id: Optional[list] = None
-    preview_height: Optional[int] = None
-    preview_url: Optional[str] = None
-    preview_width: Optional[int] = None
-    rating: Optional[str] = None
-    sample_file_size: Optional[int] = None
-    sample_height: Optional[int] = None
-    sample_url: Optional[str] = None
-    sample_width: Optional[int] = None
-    score: Optional[int] = None
-    source: Optional[str] = None
-    status: Optional[str] = None
-    tag: Optional[str] = None
-    vote: Optional[dict] = None
-    width: Optional[int] = None
+class Post(TypedDict, total=False):
+    actual_preview_height: int
+    actual_preview_width: int
+    author: str
+    change: int
+    created_at: int
+    creator_id: int
+    file_size: int
+    file_url: str
+    flag_detail: dict
+    frame: list
+    frames_pending: list
+    frames_pending_string: str
+    frames_string: str
+    has_child: bool
+    height: int
+    id: int
+    is_held: bool
+    is_shown_in_index: bool
+    jpeg_file_size: int
+    jpeg_height: int
+    jpeg_url: str
+    jpeg_width: int
+    md5: str
+    parent_id: int
+    pool_id: list
+    preview_height: int
+    preview_url: str
+    preview_width: int
+    rating: str
+    sample_file_size: int
+    sample_height: int
+    sample_url: str
+    sample_width: int
+    score: int
+    source: str
+    status: str
+    tag: str
+    vote: dict
+    width: int
 
 
-@dataclass
-class PostListMatch:
-    actual_preview_height: Optional[int] = None
-    actual_preview_width: Optional[int] = None
-    author: Optional[str] = None
-    change: Optional[int] = None
-    created_at: Optional[int] = None
-    creator_id: Optional[int] = None
-    file_size: Optional[int] = None
-    file_url: Optional[str] = None
-    flag_detail: Optional[dict] = None
-    frame: Optional[list] = None
-    frames_pending: Optional[list] = None
-    frames_pending_string: Optional[str] = None
-    frames_string: Optional[str] = None
-    has_child: Optional[bool] = None
-    height: Optional[int] = None
-    id: Optional[int] = None
-    is_held: Optional[bool] = None
-    is_shown_in_index: Optional[bool] = None
-    jpeg_file_size: Optional[int] = None
-    jpeg_height: Optional[int] = None
-    jpeg_url: Optional[str] = None
-    jpeg_width: Optional[int] = None
-    md5: Optional[str] = None
-    parent_id: Optional[int] = None
-    pool_id: Optional[list] = None
-    preview_height: Optional[int] = None
-    preview_url: Optional[str] = None
-    preview_width: Optional[int] = None
-    rating: Optional[str] = None
-    sample_file_size: Optional[int] = None
-    sample_height: Optional[int] = None
-    sample_url: Optional[str] = None
-    sample_width: Optional[int] = None
-    score: Optional[int] = None
-    source: Optional[str] = None
-    status: Optional[str] = None
-    tag: Optional[str] = None
-    vote: Optional[dict] = None
-    width: Optional[int] = None
-
+class PostListMatch(TypedDict, total=False):
+    actual_preview_height: int
+    actual_preview_width: int
+    author: str
+    change: int
+    created_at: int
+    creator_id: int
+    file_size: int
+    file_url: str
+    flag_detail: dict
+    frame: list
+    frames_pending: list
+    frames_pending_string: str
+    frames_string: str
+    has_child: bool
+    height: int
+    id: int
+    is_held: bool
+    is_shown_in_index: bool
+    jpeg_file_size: int
+    jpeg_height: int
+    jpeg_url: str
+    jpeg_width: int
+    md5: str
+    parent_id: int
+    pool_id: list
+    preview_height: int
+    preview_url: str
+    preview_width: int
+    rating: str
+    sample_file_size: int
+    sample_height: int
+    sample_url: str
+    sample_width: int
+    score: int
+    source: str
+    status: str
+    tag: str
+    vote: dict
+    width: int

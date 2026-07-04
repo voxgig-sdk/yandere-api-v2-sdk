@@ -109,7 +109,7 @@ Alias for `YandereApiV2SDK.test()`.
 ## PostEntity
 
 ```ts
-const post = client.post
+const post = client.Post()
 ```
 
 ### Fields
@@ -163,7 +163,7 @@ const post = client.post
 List entities matching the given criteria. Returns an array.
 
 ```ts
-const results = await client.post.list()
+const results = await client.Post().list()
 ```
 
 ### Common Methods

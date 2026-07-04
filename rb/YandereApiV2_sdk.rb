@@ -208,13 +208,7 @@ class YandereApiV2SDK
   end
 
 
-  # Idiomatic facade: client.post.list / client.post.load({ "id" => ... })
-  def post
-    require_relative 'entity/post_entity'
-    @post ||= PostEntity.new(self, nil)
-  end
-
-  # Deprecated: use client.post instead.
+  # Canonical facade: client.Post.list / client.Post.load({ "id" => ... })
   def Post(data = nil)
     require_relative 'entity/post_entity'
     PostEntity.new(self, data)

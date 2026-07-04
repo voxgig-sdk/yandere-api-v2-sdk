@@ -86,7 +86,7 @@ same parameters as `direct()`. Raises on error.
 ## PostEntity
 
 ```ruby
-post = client.post
+post = client.Post
 ```
 
 ### Fields
@@ -140,7 +140,7 @@ post = client.post
 List entities matching the given criteria. Returns an array. Raises on error.
 
 ```ruby
-results = client.post.list(nil)
+results = client.Post.list(nil)
 ```
 
 ### Common Methods

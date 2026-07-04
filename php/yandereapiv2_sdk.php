@@ -233,10 +233,10 @@ class YandereApiV2SDK
 
     private $_post = null;
 
-    // Idiomatic facade: $client->post()->list() / ->load(["id" => ...]).
-    // Also serves the deprecated PascalCase alias Post() (PHP method
-    // names are case-insensitive).
-    public function post($data = null)
+    // Canonical facade: $client->Post()->list() / ->load(["id" => ...]).
+    // PHP method names are case-insensitive, so lowercase $client->post()
+    // resolves here too.
+    public function Post($data = null)
     {
         require_once __DIR__ . '/entity/post_entity.php';
         if ($data === null) {

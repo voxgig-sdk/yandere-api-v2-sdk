@@ -83,7 +83,7 @@ same parameters as `direct()`.
 ## PostEntity
 
 ```lua
-local post = client:post(nil)
+local post = client:Post(nil)
 ```
 
 ### Fields
@@ -137,7 +137,7 @@ local post = client:post(nil)
 List entities matching the given criteria. Returns an array.
 
 ```lua
-local results, err = client:post():list()
+local results, err = client:Post():list()
 ```
 
 ### Common Methods

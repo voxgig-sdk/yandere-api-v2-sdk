@@ -220,25 +220,15 @@ class YandereApiV2SDK:
         }
 
 
-    @property
-    def post(self):
-        """Idiomatic facade: client.post.list() / client.post.load({"id": ...})."""
-        from entity.post_entity import PostEntity
-        cached = getattr(self, "_post", None)
-        if cached is None:
-            cached = PostEntity(self, None)
-            self._post = cached
-        return cached
-
-    def Post(self, data=None):
-        # Deprecated: use client.post instead.
+    def Post(self, data=None) -> "PostEntity":
+        """Entity factory: client.Post().list({}) / client.Post().load({"id": ...})."""
         from entity.post_entity import PostEntity
         return PostEntity(self, data)
 
 
 
     @classmethod
-    def test(cls, testopts=None, sdkopts=None):
+    def test(cls, testopts=None, sdkopts=None) -> "YandereApiV2SDK":
         if sdkopts is None:
             sdkopts = {}
         sdkopts = vs.clone(sdkopts)
@@ -258,3 +248,9 @@ class YandereApiV2SDK:
         sdk.mode = "test"
 
         return sdk
+
+
+from typing import TYPE_CHECKING
+
+if TYPE_CHECKING:
+    from entity.post_entity import PostEntity

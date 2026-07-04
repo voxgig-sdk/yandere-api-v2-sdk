@@ -244,8 +244,9 @@ end
 
 
 
--- Idiomatic facade: client:post():list() / client:post():load({ id = ... })
-function YandereApiV2SDK:post(data)
+-- Idiomatic facade: client:Post():list() / client:Post():load({ id = ... })
+-- Entity access is capitalised (PascalCase) for parity with the other SDKs.
+function YandereApiV2SDK:Post(data)
   local EntityMod = require("entity.post_entity")
   if data == nil then
     if self._post == nil then
@@ -253,12 +254,6 @@ function YandereApiV2SDK:post(data)
     end
     return self._post
   end
-  return EntityMod.new(self, data)
-end
-
--- Deprecated: use client:post() instead.
-function YandereApiV2SDK:Post(data)
-  local EntityMod = require("entity.post_entity")
   return EntityMod.new(self, data)
 end
 
