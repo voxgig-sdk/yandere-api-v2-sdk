@@ -8,7 +8,7 @@ Complete API reference for the YandereApiV2 PHP SDK.
 ### Constructor
 
 ```php
-require_once __DIR__ . '/yandere-api-v2_sdk.php';
+require_once __DIR__ . '/yandereapiv2_sdk.php';
 
 $client = new YandereApiV2SDK($options);
 ```
@@ -45,11 +45,11 @@ $client = YandereApiV2SDK::test();
 
 Create a new `PostEntity` instance. Pass `null` for no initial data.
 
-#### `optionsMap(): array`
+#### `options_map(): array`
 
 Return a deep copy of the current SDK options.
 
-#### `getUtility(): ProjectNameUtility`
+#### `get_utility(): YandereApiV2Utility`
 
 Return a copy of the SDK utility object.
 
@@ -92,71 +92,71 @@ $post = $client->Post();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `actual_preview_height` | ``$INTEGER`` | No |  |
-| `actual_preview_width` | ``$INTEGER`` | No |  |
-| `author` | ``$STRING`` | No |  |
-| `change` | ``$INTEGER`` | No |  |
-| `created_at` | ``$INTEGER`` | No |  |
-| `creator_id` | ``$INTEGER`` | No |  |
-| `file_size` | ``$INTEGER`` | No |  |
-| `file_url` | ``$STRING`` | No |  |
-| `flag_detail` | ``$OBJECT`` | No |  |
-| `frame` | ``$ARRAY`` | No |  |
-| `frames_pending` | ``$ARRAY`` | No |  |
-| `frames_pending_string` | ``$STRING`` | No |  |
-| `frames_string` | ``$STRING`` | No |  |
-| `has_child` | ``$BOOLEAN`` | No |  |
-| `height` | ``$INTEGER`` | No |  |
-| `id` | ``$INTEGER`` | No |  |
-| `is_held` | ``$BOOLEAN`` | No |  |
-| `is_shown_in_index` | ``$BOOLEAN`` | No |  |
-| `jpeg_file_size` | ``$INTEGER`` | No |  |
-| `jpeg_height` | ``$INTEGER`` | No |  |
-| `jpeg_url` | ``$STRING`` | No |  |
-| `jpeg_width` | ``$INTEGER`` | No |  |
-| `md5` | ``$STRING`` | No |  |
-| `parent_id` | ``$INTEGER`` | No |  |
-| `pool_id` | ``$ARRAY`` | No |  |
-| `preview_height` | ``$INTEGER`` | No |  |
-| `preview_url` | ``$STRING`` | No |  |
-| `preview_width` | ``$INTEGER`` | No |  |
-| `rating` | ``$STRING`` | No |  |
-| `sample_file_size` | ``$INTEGER`` | No |  |
-| `sample_height` | ``$INTEGER`` | No |  |
-| `sample_url` | ``$STRING`` | No |  |
-| `sample_width` | ``$INTEGER`` | No |  |
-| `score` | ``$INTEGER`` | No |  |
-| `source` | ``$STRING`` | No |  |
-| `status` | ``$STRING`` | No |  |
-| `tag` | ``$STRING`` | No |  |
-| `vote` | ``$OBJECT`` | No |  |
-| `width` | ``$INTEGER`` | No |  |
+| `actual_preview_height` | `int` | No |  |
+| `actual_preview_width` | `int` | No |  |
+| `author` | `string` | No |  |
+| `change` | `int` | No |  |
+| `created_at` | `int` | No |  |
+| `creator_id` | `int` | No |  |
+| `file_size` | `int` | No |  |
+| `file_url` | `string` | No |  |
+| `flag_detail` | `array` | No |  |
+| `frame` | `array` | No |  |
+| `frames_pending` | `array` | No |  |
+| `frames_pending_string` | `string` | No |  |
+| `frames_string` | `string` | No |  |
+| `has_child` | `bool` | No |  |
+| `height` | `int` | No |  |
+| `id` | `int` | No |  |
+| `is_held` | `bool` | No |  |
+| `is_shown_in_index` | `bool` | No |  |
+| `jpeg_file_size` | `int` | No |  |
+| `jpeg_height` | `int` | No |  |
+| `jpeg_url` | `string` | No |  |
+| `jpeg_width` | `int` | No |  |
+| `md5` | `string` | No |  |
+| `parent_id` | `int` | No |  |
+| `pool_id` | `array` | No |  |
+| `preview_height` | `int` | No |  |
+| `preview_url` | `string` | No |  |
+| `preview_width` | `int` | No |  |
+| `rating` | `string` | No |  |
+| `sample_file_size` | `int` | No |  |
+| `sample_height` | `int` | No |  |
+| `sample_url` | `string` | No |  |
+| `sample_width` | `int` | No |  |
+| `score` | `int` | No |  |
+| `source` | `string` | No |  |
+| `status` | `string` | No |  |
+| `tag` | `string` | No |  |
+| `vote` | `array` | No |  |
+| `width` | `int` | No |  |
 
 ### Operations
 
-#### `list(array $reqmatch, ?array $ctrl = null): mixed`
+#### `list(?array $reqmatch = null, ?array $ctrl = null): mixed`
 
-List entities matching the given criteria. Returns an array. Throws on error.
+List entities matching the given criteria (call with no argument to list all). Returns an array. Throws on error.
 
 ```php
-$results = $client->Post()->list([]);
+$results = $client->Post()->list();
 ```
 
 ### Common Methods
 
-#### `dataGet(): array`
+#### `data_get(): array`
 
 Get the entity data. Returns a copy of the current data.
 
-#### `dataSet($data): void`
+#### `data_set($data): void`
 
 Set the entity data.
 
-#### `matchGet(): array`
+#### `match_get(): array`
 
 Get the entity match criteria.
 
-#### `matchSet($match): void`
+#### `match_set($match): void`
 
 Set the entity match criteria.
 
@@ -165,7 +165,7 @@ Set the entity match criteria.
 Create a new `PostEntity` instance with the same client and
 options.
 
-#### `getName(): string`
+#### `get_name(): string`
 
 Return the entity name.
 

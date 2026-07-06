@@ -116,45 +116,45 @@ const post = client.Post()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `actual_preview_height` | ``$INTEGER`` | No |  |
-| `actual_preview_width` | ``$INTEGER`` | No |  |
-| `author` | ``$STRING`` | No |  |
-| `change` | ``$INTEGER`` | No |  |
-| `created_at` | ``$INTEGER`` | No |  |
-| `creator_id` | ``$INTEGER`` | No |  |
-| `file_size` | ``$INTEGER`` | No |  |
-| `file_url` | ``$STRING`` | No |  |
-| `flag_detail` | ``$OBJECT`` | No |  |
-| `frame` | ``$ARRAY`` | No |  |
-| `frames_pending` | ``$ARRAY`` | No |  |
-| `frames_pending_string` | ``$STRING`` | No |  |
-| `frames_string` | ``$STRING`` | No |  |
-| `has_child` | ``$BOOLEAN`` | No |  |
-| `height` | ``$INTEGER`` | No |  |
-| `id` | ``$INTEGER`` | No |  |
-| `is_held` | ``$BOOLEAN`` | No |  |
-| `is_shown_in_index` | ``$BOOLEAN`` | No |  |
-| `jpeg_file_size` | ``$INTEGER`` | No |  |
-| `jpeg_height` | ``$INTEGER`` | No |  |
-| `jpeg_url` | ``$STRING`` | No |  |
-| `jpeg_width` | ``$INTEGER`` | No |  |
-| `md5` | ``$STRING`` | No |  |
-| `parent_id` | ``$INTEGER`` | No |  |
-| `pool_id` | ``$ARRAY`` | No |  |
-| `preview_height` | ``$INTEGER`` | No |  |
-| `preview_url` | ``$STRING`` | No |  |
-| `preview_width` | ``$INTEGER`` | No |  |
-| `rating` | ``$STRING`` | No |  |
-| `sample_file_size` | ``$INTEGER`` | No |  |
-| `sample_height` | ``$INTEGER`` | No |  |
-| `sample_url` | ``$STRING`` | No |  |
-| `sample_width` | ``$INTEGER`` | No |  |
-| `score` | ``$INTEGER`` | No |  |
-| `source` | ``$STRING`` | No |  |
-| `status` | ``$STRING`` | No |  |
-| `tag` | ``$STRING`` | No |  |
-| `vote` | ``$OBJECT`` | No |  |
-| `width` | ``$INTEGER`` | No |  |
+| `actual_preview_height` | `number` | No |  |
+| `actual_preview_width` | `number` | No |  |
+| `author` | `string` | No |  |
+| `change` | `number` | No |  |
+| `created_at` | `number` | No |  |
+| `creator_id` | `number` | No |  |
+| `file_size` | `number` | No |  |
+| `file_url` | `string` | No |  |
+| `flag_detail` | `Record<string, any>` | No |  |
+| `frame` | `any[]` | No |  |
+| `frames_pending` | `any[]` | No |  |
+| `frames_pending_string` | `string` | No |  |
+| `frames_string` | `string` | No |  |
+| `has_child` | `boolean` | No |  |
+| `height` | `number` | No |  |
+| `id` | `number` | No |  |
+| `is_held` | `boolean` | No |  |
+| `is_shown_in_index` | `boolean` | No |  |
+| `jpeg_file_size` | `number` | No |  |
+| `jpeg_height` | `number` | No |  |
+| `jpeg_url` | `string` | No |  |
+| `jpeg_width` | `number` | No |  |
+| `md5` | `string` | No |  |
+| `parent_id` | `number` | No |  |
+| `pool_id` | `any[]` | No |  |
+| `preview_height` | `number` | No |  |
+| `preview_url` | `string` | No |  |
+| `preview_width` | `number` | No |  |
+| `rating` | `string` | No |  |
+| `sample_file_size` | `number` | No |  |
+| `sample_height` | `number` | No |  |
+| `sample_url` | `string` | No |  |
+| `sample_width` | `number` | No |  |
+| `score` | `number` | No |  |
+| `source` | `string` | No |  |
+| `status` | `string` | No |  |
+| `tag` | `string` | No |  |
+| `vote` | `Record<string, any>` | No |  |
+| `width` | `number` | No |  |
 
 ### Operations
 

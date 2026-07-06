@@ -8,7 +8,7 @@ Complete API reference for the YandereApiV2 Ruby SDK.
 ### Constructor
 
 ```ruby
-require_relative 'yandere-api-v2_sdk'
+require_relative 'YandereApiV2_sdk'
 
 client = YandereApiV2SDK.new(options)
 ```
@@ -93,54 +93,54 @@ post = client.Post
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `actual_preview_height` | ``$INTEGER`` | No |  |
-| `actual_preview_width` | ``$INTEGER`` | No |  |
-| `author` | ``$STRING`` | No |  |
-| `change` | ``$INTEGER`` | No |  |
-| `created_at` | ``$INTEGER`` | No |  |
-| `creator_id` | ``$INTEGER`` | No |  |
-| `file_size` | ``$INTEGER`` | No |  |
-| `file_url` | ``$STRING`` | No |  |
-| `flag_detail` | ``$OBJECT`` | No |  |
-| `frame` | ``$ARRAY`` | No |  |
-| `frames_pending` | ``$ARRAY`` | No |  |
-| `frames_pending_string` | ``$STRING`` | No |  |
-| `frames_string` | ``$STRING`` | No |  |
-| `has_child` | ``$BOOLEAN`` | No |  |
-| `height` | ``$INTEGER`` | No |  |
-| `id` | ``$INTEGER`` | No |  |
-| `is_held` | ``$BOOLEAN`` | No |  |
-| `is_shown_in_index` | ``$BOOLEAN`` | No |  |
-| `jpeg_file_size` | ``$INTEGER`` | No |  |
-| `jpeg_height` | ``$INTEGER`` | No |  |
-| `jpeg_url` | ``$STRING`` | No |  |
-| `jpeg_width` | ``$INTEGER`` | No |  |
-| `md5` | ``$STRING`` | No |  |
-| `parent_id` | ``$INTEGER`` | No |  |
-| `pool_id` | ``$ARRAY`` | No |  |
-| `preview_height` | ``$INTEGER`` | No |  |
-| `preview_url` | ``$STRING`` | No |  |
-| `preview_width` | ``$INTEGER`` | No |  |
-| `rating` | ``$STRING`` | No |  |
-| `sample_file_size` | ``$INTEGER`` | No |  |
-| `sample_height` | ``$INTEGER`` | No |  |
-| `sample_url` | ``$STRING`` | No |  |
-| `sample_width` | ``$INTEGER`` | No |  |
-| `score` | ``$INTEGER`` | No |  |
-| `source` | ``$STRING`` | No |  |
-| `status` | ``$STRING`` | No |  |
-| `tag` | ``$STRING`` | No |  |
-| `vote` | ``$OBJECT`` | No |  |
-| `width` | ``$INTEGER`` | No |  |
+| `actual_preview_height` | `Integer` | No |  |
+| `actual_preview_width` | `Integer` | No |  |
+| `author` | `String` | No |  |
+| `change` | `Integer` | No |  |
+| `created_at` | `Integer` | No |  |
+| `creator_id` | `Integer` | No |  |
+| `file_size` | `Integer` | No |  |
+| `file_url` | `String` | No |  |
+| `flag_detail` | `Hash` | No |  |
+| `frame` | `Array` | No |  |
+| `frames_pending` | `Array` | No |  |
+| `frames_pending_string` | `String` | No |  |
+| `frames_string` | `String` | No |  |
+| `has_child` | `Boolean` | No |  |
+| `height` | `Integer` | No |  |
+| `id` | `Integer` | No |  |
+| `is_held` | `Boolean` | No |  |
+| `is_shown_in_index` | `Boolean` | No |  |
+| `jpeg_file_size` | `Integer` | No |  |
+| `jpeg_height` | `Integer` | No |  |
+| `jpeg_url` | `String` | No |  |
+| `jpeg_width` | `Integer` | No |  |
+| `md5` | `String` | No |  |
+| `parent_id` | `Integer` | No |  |
+| `pool_id` | `Array` | No |  |
+| `preview_height` | `Integer` | No |  |
+| `preview_url` | `String` | No |  |
+| `preview_width` | `Integer` | No |  |
+| `rating` | `String` | No |  |
+| `sample_file_size` | `Integer` | No |  |
+| `sample_height` | `Integer` | No |  |
+| `sample_url` | `String` | No |  |
+| `sample_width` | `Integer` | No |  |
+| `score` | `Integer` | No |  |
+| `source` | `String` | No |  |
+| `status` | `String` | No |  |
+| `tag` | `String` | No |  |
+| `vote` | `Hash` | No |  |
+| `width` | `Integer` | No |  |
 
 ### Operations
 
-#### `list(reqmatch, ctrl = nil) -> Array`
+#### `list(reqmatch = nil, ctrl = nil) -> Array`
 
-List entities matching the given criteria. Returns an array. Raises on error.
+List entities matching the given criteria (call with no argument to list all). Returns an array. Raises on error.
 
 ```ruby
-results = client.Post.list(nil)
+results = client.Post.list
 ```
 
 ### Common Methods

@@ -4,6 +4,8 @@
 
 The PHP SDK for the YandereApiV2 API — an entity-oriented client using PHP conventions.
 
+The SDK exposes the API as capitalised, semantic **Entities** — for example `$client->Post()` — with named operations (`list`) instead of raw URL paths and query strings. Working with resources and verbs keeps call sites self-describing and reduces cognitive load.
+
 > Other languages, the CLI, and MCP server live alongside this one — see
 > the [top-level README](../README.md).
 
@@ -36,10 +38,41 @@ try {
     // list() returns an array of Post records — iterate directly.
     $posts = $client->Post()->list();
     foreach ($posts as $item) {
-        echo $item["id"] . " " . $item["name"] . "\n";
+        echo $item["id"] . " " . $item["actual_preview_height"] . "\n";
     }
 } catch (\Throwable $err) {
     echo "Error: " . $err->getMessage();
+}
+```
+
+
+## Error handling
+
+Entity operations throw a `\Throwable` on failure, so wrap them in
+`try` / `catch`:
+
+```php
+try {
+    $posts = $client->Post()->list();
+} catch (\Throwable $err) {
+    echo "Error: " . $err->getMessage();
+}
+```
+
+`direct()` does **not** throw — it returns the result array. Branch on
+`ok`; on failure `status` holds the HTTP status (for error responses) and
+`err` holds a transport error, so read both defensively:
+
+```php
+$result = $client->direct([
+    "path" => "/api/resource/{id}",
+    "method" => "GET",
+    "params" => ["id" => "example_id"],
+]);
+
+if (! $result["ok"]) {
+    $err = $result["err"] ?? null;
+    echo "request failed: " . ($err ? $err->getMessage() : "HTTP " . $result["status"]);
 }
 ```
 
@@ -63,7 +96,10 @@ if ($result["ok"]) {
     echo $result["status"];  // 200
     print_r($result["data"]);  // response body
 } else {
-    echo "Error: " . $result["err"]->getMessage();
+    // On an HTTP error status there is no err (only a transport failure sets
+    // it), so fall back to the status code.
+    $err = $result["err"] ?? null;
+    echo "Error: " . ($err ? $err->getMessage() : "HTTP " . $result["status"]);
 }
 ```
 
@@ -84,16 +120,13 @@ print_r($fetchdef["headers"]);
 
 ### Use test mode
 
-Create a mock client for unit testing — no server required. Seed fixture
-data via the `entity` option so offline calls resolve without a live server:
+Create a mock client for unit testing — no server required:
 
 ```php
-$client = YandereApiV2SDK::test([
-    "entity" => ["post" => ["test01" => ["id" => "test01"]]],
-]);
+$client = YandereApiV2SDK::test();
 
-// load() returns the bare mock record (throws on error).
-$post = $client->Post()->load(["id" => "test01"]);
+// Entity ops return the bare mock record (throws on error).
+$post = $client->Post()->list();
 print_r($post);
 ```
 
@@ -181,11 +214,7 @@ All entities share the same interface.
 
 | Method | Signature | Description |
 | --- | --- | --- |
-| `load` | `($reqmatch, $ctrl): array` | Load a single entity by match criteria. |
-| `list` | `($reqmatch, $ctrl): array` | List entities matching the criteria. |
-| `create` | `($reqdata, $ctrl): array` | Create a new entity. |
-| `update` | `($reqdata, $ctrl): array` | Update an existing entity. |
-| `remove` | `($reqmatch, $ctrl): array` | Remove an entity. |
+| `list` | `(?array $reqmatch = null, $ctrl): array` | List entities matching the criteria (call with no argument to list all). |
 | `data_get` | `(): array` | Get entity data. |
 | `data_set` | `($data): void` | Set entity data. |
 | `match_get` | `(): array` | Get entity match criteria. |
@@ -280,45 +309,45 @@ Create an instance: `$post = $client->Post();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `actual_preview_height` | ``$INTEGER`` |  |
-| `actual_preview_width` | ``$INTEGER`` |  |
-| `author` | ``$STRING`` |  |
-| `change` | ``$INTEGER`` |  |
-| `created_at` | ``$INTEGER`` |  |
-| `creator_id` | ``$INTEGER`` |  |
-| `file_size` | ``$INTEGER`` |  |
-| `file_url` | ``$STRING`` |  |
-| `flag_detail` | ``$OBJECT`` |  |
-| `frame` | ``$ARRAY`` |  |
-| `frames_pending` | ``$ARRAY`` |  |
-| `frames_pending_string` | ``$STRING`` |  |
-| `frames_string` | ``$STRING`` |  |
-| `has_child` | ``$BOOLEAN`` |  |
-| `height` | ``$INTEGER`` |  |
-| `id` | ``$INTEGER`` |  |
-| `is_held` | ``$BOOLEAN`` |  |
-| `is_shown_in_index` | ``$BOOLEAN`` |  |
-| `jpeg_file_size` | ``$INTEGER`` |  |
-| `jpeg_height` | ``$INTEGER`` |  |
-| `jpeg_url` | ``$STRING`` |  |
-| `jpeg_width` | ``$INTEGER`` |  |
-| `md5` | ``$STRING`` |  |
-| `parent_id` | ``$INTEGER`` |  |
-| `pool_id` | ``$ARRAY`` |  |
-| `preview_height` | ``$INTEGER`` |  |
-| `preview_url` | ``$STRING`` |  |
-| `preview_width` | ``$INTEGER`` |  |
-| `rating` | ``$STRING`` |  |
-| `sample_file_size` | ``$INTEGER`` |  |
-| `sample_height` | ``$INTEGER`` |  |
-| `sample_url` | ``$STRING`` |  |
-| `sample_width` | ``$INTEGER`` |  |
-| `score` | ``$INTEGER`` |  |
-| `source` | ``$STRING`` |  |
-| `status` | ``$STRING`` |  |
-| `tag` | ``$STRING`` |  |
-| `vote` | ``$OBJECT`` |  |
-| `width` | ``$INTEGER`` |  |
+| `actual_preview_height` | `int` |  |
+| `actual_preview_width` | `int` |  |
+| `author` | `string` |  |
+| `change` | `int` |  |
+| `created_at` | `int` |  |
+| `creator_id` | `int` |  |
+| `file_size` | `int` |  |
+| `file_url` | `string` |  |
+| `flag_detail` | `array` |  |
+| `frame` | `array` |  |
+| `frames_pending` | `array` |  |
+| `frames_pending_string` | `string` |  |
+| `frames_string` | `string` |  |
+| `has_child` | `bool` |  |
+| `height` | `int` |  |
+| `id` | `int` |  |
+| `is_held` | `bool` |  |
+| `is_shown_in_index` | `bool` |  |
+| `jpeg_file_size` | `int` |  |
+| `jpeg_height` | `int` |  |
+| `jpeg_url` | `string` |  |
+| `jpeg_width` | `int` |  |
+| `md5` | `string` |  |
+| `parent_id` | `int` |  |
+| `pool_id` | `array` |  |
+| `preview_height` | `int` |  |
+| `preview_url` | `string` |  |
+| `preview_width` | `int` |  |
+| `rating` | `string` |  |
+| `sample_file_size` | `int` |  |
+| `sample_height` | `int` |  |
+| `sample_url` | `string` |  |
+| `sample_width` | `int` |  |
+| `score` | `int` |  |
+| `source` | `string` |  |
+| `status` | `string` |  |
+| `tag` | `string` |  |
+| `vote` | `array` |  |
+| `width` | `int` |  |
 
 #### Example: List
 
@@ -328,12 +357,16 @@ $posts = $client->Post()->list();
 ```
 
 
-## Explanation
+## Advanced
+
+> The sections above cover everyday use. The material below explains the
+> SDK's internals — useful when extending it with custom features, but not
+> needed for normal use.
 
 ### The operation pipeline
 
-Every entity operation (load, list, create, update, remove) follows a
-six-stage pipeline. Each stage fires a feature hook before executing:
+Every entity operation follows a six-stage pipeline. Each stage fires a
+feature hook before executing:
 
 ```
 PrePoint → PreSpec → PreRequest → PreResponse → PreResult → PreDone
@@ -350,8 +383,9 @@ PrePoint → PreSpec → PreRequest → PreResponse → PreResult → PreDone
 - **PreDone**: Final stage before returning to the caller. Entity
   state (match, data) is updated here.
 
-If any stage returns an error, the pipeline short-circuits and the
-error is returned to the caller as the second element in the return array.
+If any stage errors, the pipeline short-circuits and the error surfaces
+to the caller — see [Error handling](#error-handling) for how that looks
+in this language.
 
 ### Features and hooks
 
@@ -395,15 +429,15 @@ when needed.
 
 ### Entity state
 
-Entity instances are stateful. After a successful `load`, the entity
+Entity instances are stateful. After a successful `list`, the entity
 stores the returned data and match criteria internally.
 
 ```php
 $post = $client->Post();
-$post->load(["id" => "example_id"]);
+$post->list();
 
-// $post->dataGet() now returns the loaded post data
-// $post->matchGet() returns the last match criteria
+// $post->data_get() now returns the post data from the last list
+// $post->match_get() returns the last match criteria
 ```
 
 Call `make()` to create a fresh instance with the same configuration

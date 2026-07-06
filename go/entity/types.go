@@ -51,8 +51,7 @@ type Post struct {
 	Width *int `json:"width,omitempty"`
 }
 
-// PostListMatch mirrors the post fields as an all-optional match
-// filter (Go analog of Partial<Post>).
+// PostListMatch is the typed request payload for Post.ListTyped.
 type PostListMatch struct {
 	ActualPreviewHeight *int `json:"actual_preview_height,omitempty"`
 	ActualPreviewWidth *int `json:"actual_preview_width,omitempty"`

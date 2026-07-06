@@ -221,7 +221,7 @@ class YandereApiV2SDK:
 
 
     def Post(self, data=None) -> "PostEntity":
-        """Entity factory: client.Post().list({}) / client.Post().load({"id": ...})."""
+        """Entity factory: client.Post().list() / client.Post().load({"id": ...})."""
         from entity.post_entity import PostEntity
         return PostEntity(self, data)
 

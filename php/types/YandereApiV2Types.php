@@ -56,7 +56,7 @@ class Post
     public ?int $width = null;
 }
 
-/** Match filter for Post#list (any subset of Post fields). */
+/** Request payload for Post#list. */
 class PostListMatch
 {
     public ?int $actual_preview_height = null;

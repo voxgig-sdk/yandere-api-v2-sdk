@@ -8,7 +8,7 @@ Complete API reference for the YandereApiV2 Python SDK.
 ### Constructor
 
 ```python
-from yandere-api-v2_sdk import YandereApiV2SDK
+from yandereapiv2_sdk import YandereApiV2SDK
 
 client = YandereApiV2SDK(options)
 ```
@@ -87,54 +87,54 @@ post = client.Post()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `actual_preview_height` | ``$INTEGER`` | No |  |
-| `actual_preview_width` | ``$INTEGER`` | No |  |
-| `author` | ``$STRING`` | No |  |
-| `change` | ``$INTEGER`` | No |  |
-| `created_at` | ``$INTEGER`` | No |  |
-| `creator_id` | ``$INTEGER`` | No |  |
-| `file_size` | ``$INTEGER`` | No |  |
-| `file_url` | ``$STRING`` | No |  |
-| `flag_detail` | ``$OBJECT`` | No |  |
-| `frame` | ``$ARRAY`` | No |  |
-| `frames_pending` | ``$ARRAY`` | No |  |
-| `frames_pending_string` | ``$STRING`` | No |  |
-| `frames_string` | ``$STRING`` | No |  |
-| `has_child` | ``$BOOLEAN`` | No |  |
-| `height` | ``$INTEGER`` | No |  |
-| `id` | ``$INTEGER`` | No |  |
-| `is_held` | ``$BOOLEAN`` | No |  |
-| `is_shown_in_index` | ``$BOOLEAN`` | No |  |
-| `jpeg_file_size` | ``$INTEGER`` | No |  |
-| `jpeg_height` | ``$INTEGER`` | No |  |
-| `jpeg_url` | ``$STRING`` | No |  |
-| `jpeg_width` | ``$INTEGER`` | No |  |
-| `md5` | ``$STRING`` | No |  |
-| `parent_id` | ``$INTEGER`` | No |  |
-| `pool_id` | ``$ARRAY`` | No |  |
-| `preview_height` | ``$INTEGER`` | No |  |
-| `preview_url` | ``$STRING`` | No |  |
-| `preview_width` | ``$INTEGER`` | No |  |
-| `rating` | ``$STRING`` | No |  |
-| `sample_file_size` | ``$INTEGER`` | No |  |
-| `sample_height` | ``$INTEGER`` | No |  |
-| `sample_url` | ``$STRING`` | No |  |
-| `sample_width` | ``$INTEGER`` | No |  |
-| `score` | ``$INTEGER`` | No |  |
-| `source` | ``$STRING`` | No |  |
-| `status` | ``$STRING`` | No |  |
-| `tag` | ``$STRING`` | No |  |
-| `vote` | ``$OBJECT`` | No |  |
-| `width` | ``$INTEGER`` | No |  |
+| `actual_preview_height` | `int` | No |  |
+| `actual_preview_width` | `int` | No |  |
+| `author` | `str` | No |  |
+| `change` | `int` | No |  |
+| `created_at` | `int` | No |  |
+| `creator_id` | `int` | No |  |
+| `file_size` | `int` | No |  |
+| `file_url` | `str` | No |  |
+| `flag_detail` | `dict` | No |  |
+| `frame` | `list` | No |  |
+| `frames_pending` | `list` | No |  |
+| `frames_pending_string` | `str` | No |  |
+| `frames_string` | `str` | No |  |
+| `has_child` | `bool` | No |  |
+| `height` | `int` | No |  |
+| `id` | `int` | No |  |
+| `is_held` | `bool` | No |  |
+| `is_shown_in_index` | `bool` | No |  |
+| `jpeg_file_size` | `int` | No |  |
+| `jpeg_height` | `int` | No |  |
+| `jpeg_url` | `str` | No |  |
+| `jpeg_width` | `int` | No |  |
+| `md5` | `str` | No |  |
+| `parent_id` | `int` | No |  |
+| `pool_id` | `list` | No |  |
+| `preview_height` | `int` | No |  |
+| `preview_url` | `str` | No |  |
+| `preview_width` | `int` | No |  |
+| `rating` | `str` | No |  |
+| `sample_file_size` | `int` | No |  |
+| `sample_height` | `int` | No |  |
+| `sample_url` | `str` | No |  |
+| `sample_width` | `int` | No |  |
+| `score` | `int` | No |  |
+| `source` | `str` | No |  |
+| `status` | `str` | No |  |
+| `tag` | `str` | No |  |
+| `vote` | `dict` | No |  |
+| `width` | `int` | No |  |
 
 ### Operations
 
-#### `list(reqmatch, ctrl=None) -> list`
+#### `list(reqmatch=None, ctrl=None) -> list`
 
-List entities matching the given criteria. Returns a list and raises on error.
+List entities matching the given criteria. The match is optional — call `list()` with no argument to list all records. Returns a list and raises on error.
 
 ```python
-results = client.Post().list({})
+results = client.Post().list()
 for post in results:
     print(post)
 ```

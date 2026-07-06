@@ -4,6 +4,11 @@
 
 The TypeScript SDK for the YandereApiV2 API — a type-safe, entity-oriented client with full async/await support.
 
+The API is exposed as capitalised, semantic **Entities** — e.g.
+`client.Post()` — each with a small set of operations (`list`)
+instead of raw URL paths and query parameters. This keeps the surface
+predictable and low-friction for both humans and AI agents.
+
 > Other languages, the CLI, and MCP server live alongside this one — see
 > the [top-level README](../README.md).
 
@@ -37,6 +42,35 @@ const posts = await client.Post().list()
 
 for (const post of posts) {
   console.log(post)
+}
+```
+
+
+## Error handling
+
+Entity operations reject on failure, so wrap them in `try` / `catch`:
+
+```ts
+try {
+  const posts = await client.Post().list()
+  console.log(posts)
+} catch (err) {
+  console.error('list failed:', err)
+}
+```
+
+The low-level `direct()` method does **not** throw — it returns the
+value or an `Error`, so check the result before using it:
+
+```ts
+const result = await client.direct({
+  path: '/api/resource/{id}',
+  method: 'GET',
+  params: { id: 'example_id' },
+})
+
+if (result instanceof Error) {
+  throw result
 }
 ```
 
@@ -85,7 +119,7 @@ Create a mock client for unit testing — no server required:
 ```ts
 const client = YandereApiV2SDK.test()
 
-const post = await client.Post().load({ id: 'test01' })
+const post = await client.Post().list()
 // post is a bare entity populated with mock response data
 console.log(post)
 ```
@@ -104,12 +138,12 @@ Entity instances remember their last match and data:
 ```ts
 const entity = client.Post()
 
-// First call sets internal match
-await entity.load({ id: 'example' })
+// First call runs the operation and stores its result
+await entity.list()
 
-// Subsequent calls reuse the stored match
+// Subsequent calls reuse the stored state
 const data = entity.data()
-console.log(data.id) // 'example'
+console.log(data.id)
 ```
 
 ### Add custom middleware
@@ -197,13 +231,9 @@ All entities share the same interface.
 
 | Method | Signature | Description |
 | --- | --- | --- |
-| `load` | `load(reqmatch?, ctrl?): Promise<Entity>` | Load a single entity by match criteria. |
 | `list` | `list(reqmatch?, ctrl?): Promise<Entity[]>` | List entities matching the criteria. |
-| `create` | `create(reqdata?, ctrl?): Promise<Entity>` | Create a new entity. |
-| `update` | `update(reqdata?, ctrl?): Promise<Entity>` | Update an existing entity. |
-| `remove` | `remove(reqmatch?, ctrl?): Promise<void>` | Remove an entity. |
-| `data` | `data(data?): any` | Get or set entity data. |
-| `match` | `match(match?): any` | Get or set entity match criteria. |
+| `data` | `data(data?: Partial<Entity>): Entity` | Get or set entity data. |
+| `match` | `match(match?: Partial<Entity>): Partial<Entity>` | Get or set entity match criteria. |
 | `make` | `make(): Entity` | Create a new instance with the same options. |
 | `client` | `client(): YandereApiV2SDK` | Return the parent SDK client. |
 | `entopts` | `entopts(): object` | Return a copy of the entity options. |
@@ -213,10 +243,8 @@ All entities share the same interface.
 Entity operations resolve to the entity data directly — there is no
 result envelope:
 
-- `load`, `create` and `update` resolve to a single entity object.
 - `list` resolves to an **array** of entity objects (iterate it directly;
   there is no `.data` and no `.ok`).
-- `remove` resolves to `void`.
 
 On a failed request these methods **throw**, so wrap calls in
 `try`/`catch` to handle errors. Only `direct()` returns the result
@@ -319,45 +347,45 @@ Create an instance: `const post = client.Post()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `actual_preview_height` | ``$INTEGER`` |  |
-| `actual_preview_width` | ``$INTEGER`` |  |
-| `author` | ``$STRING`` |  |
-| `change` | ``$INTEGER`` |  |
-| `created_at` | ``$INTEGER`` |  |
-| `creator_id` | ``$INTEGER`` |  |
-| `file_size` | ``$INTEGER`` |  |
-| `file_url` | ``$STRING`` |  |
-| `flag_detail` | ``$OBJECT`` |  |
-| `frame` | ``$ARRAY`` |  |
-| `frames_pending` | ``$ARRAY`` |  |
-| `frames_pending_string` | ``$STRING`` |  |
-| `frames_string` | ``$STRING`` |  |
-| `has_child` | ``$BOOLEAN`` |  |
-| `height` | ``$INTEGER`` |  |
-| `id` | ``$INTEGER`` |  |
-| `is_held` | ``$BOOLEAN`` |  |
-| `is_shown_in_index` | ``$BOOLEAN`` |  |
-| `jpeg_file_size` | ``$INTEGER`` |  |
-| `jpeg_height` | ``$INTEGER`` |  |
-| `jpeg_url` | ``$STRING`` |  |
-| `jpeg_width` | ``$INTEGER`` |  |
-| `md5` | ``$STRING`` |  |
-| `parent_id` | ``$INTEGER`` |  |
-| `pool_id` | ``$ARRAY`` |  |
-| `preview_height` | ``$INTEGER`` |  |
-| `preview_url` | ``$STRING`` |  |
-| `preview_width` | ``$INTEGER`` |  |
-| `rating` | ``$STRING`` |  |
-| `sample_file_size` | ``$INTEGER`` |  |
-| `sample_height` | ``$INTEGER`` |  |
-| `sample_url` | ``$STRING`` |  |
-| `sample_width` | ``$INTEGER`` |  |
-| `score` | ``$INTEGER`` |  |
-| `source` | ``$STRING`` |  |
-| `status` | ``$STRING`` |  |
-| `tag` | ``$STRING`` |  |
-| `vote` | ``$OBJECT`` |  |
-| `width` | ``$INTEGER`` |  |
+| `actual_preview_height` | `number` |  |
+| `actual_preview_width` | `number` |  |
+| `author` | `string` |  |
+| `change` | `number` |  |
+| `created_at` | `number` |  |
+| `creator_id` | `number` |  |
+| `file_size` | `number` |  |
+| `file_url` | `string` |  |
+| `flag_detail` | `Record<string, any>` |  |
+| `frame` | `any[]` |  |
+| `frames_pending` | `any[]` |  |
+| `frames_pending_string` | `string` |  |
+| `frames_string` | `string` |  |
+| `has_child` | `boolean` |  |
+| `height` | `number` |  |
+| `id` | `number` |  |
+| `is_held` | `boolean` |  |
+| `is_shown_in_index` | `boolean` |  |
+| `jpeg_file_size` | `number` |  |
+| `jpeg_height` | `number` |  |
+| `jpeg_url` | `string` |  |
+| `jpeg_width` | `number` |  |
+| `md5` | `string` |  |
+| `parent_id` | `number` |  |
+| `pool_id` | `any[]` |  |
+| `preview_height` | `number` |  |
+| `preview_url` | `string` |  |
+| `preview_width` | `number` |  |
+| `rating` | `string` |  |
+| `sample_file_size` | `number` |  |
+| `sample_height` | `number` |  |
+| `sample_url` | `string` |  |
+| `sample_width` | `number` |  |
+| `score` | `number` |  |
+| `source` | `string` |  |
+| `status` | `string` |  |
+| `tag` | `string` |  |
+| `vote` | `Record<string, any>` |  |
+| `width` | `number` |  |
 
 #### Example: List
 
@@ -366,12 +394,16 @@ const posts = await client.Post().list()
 ```
 
 
-## Explanation
+## Advanced
+
+> The sections above cover everyday use. The material below explains the
+> SDK's internals — useful when extending it with custom features, but not
+> needed for normal use.
 
 ### The operation pipeline
 
-Every entity operation (load, list, create, update, remove) follows a
-six-stage pipeline. Each stage fires a feature hook before executing:
+Every entity operation follows a six-stage pipeline. Each stage fires a
+feature hook before executing:
 
 ```
 PrePoint → PreSpec → PreRequest → PreResponse → PreResult → PreDone
@@ -388,11 +420,9 @@ PrePoint → PreSpec → PreRequest → PreResponse → PreResult → PreDone
 - **PreDone**: Final stage before returning to the caller. Entity
   state (match, data) is updated here.
 
-If any stage returns an error, the pipeline short-circuits and the
-error is returned to the caller.
-
-An unexpected exception triggers the `PreUnexpected` hook before
-propagating.
+If any stage errors, the pipeline short-circuits and the error surfaces
+to the caller — see [Error handling](#error-handling) for how that looks
+in this language.
 
 ### Features and hooks
 
@@ -428,16 +458,16 @@ import { YandereApiV2SDK } from '@voxgig-sdk/yandere-api-v2'
 
 ### Entity state
 
-Entity instances are stateful. After a successful `load`, the entity
+Entity instances are stateful. After a successful `list`, the entity
 stores the returned data and match criteria internally. Subsequent
 calls on the same instance can rely on this state.
 
 ```ts
 const post = client.Post()
-await post.load({ id: "example_id" })
+await post.list()
 
-// post.data() now returns the loaded post data
-// post.match() returns { id: "example_id" }
+// post.data() now returns the post data from the last `list`
+// post.match() returns the last match criteria
 ```
 
 Call `make()` to create a fresh instance with the same configuration
