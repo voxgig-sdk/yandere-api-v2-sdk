@@ -6,9 +6,6 @@
     },
     "kit": {
       "config": {
-        "auth": {
-          "prefix": "Bearer"
-        },
         "docs_order": [
           "ts",
           "py",
@@ -496,14 +493,17 @@
           "url": "https://yande.re/wiki/show?title=api_v2"
         },
         "description": "Version 2 API for /post that returns responses in json only. Provides additional information over the standard API with features like tag searches, limiting responses, including tag types, votes, and pool membership.",
+        "meta_source": "https://www.freepublicapis.com",
         "servers": [
           {
             "description": "Yande.re production server",
             "url": "https://yande.re"
           }
         ],
+        "summary": "Version 2 API for /post that returns responses in json only.",
         "title": "Yande.re API v2",
-        "version": "2.0.0"
+        "version": "2.0.0",
+        "website": "https://yande.re"
       },
       "option": {},
       "target": {
@@ -556,6 +556,9 @@
           },
           "name": "go-cli",
           "phase": {
+            "agentguide": {
+              "active": false
+            },
             "entity": {
               "active": false
             },
@@ -606,6 +609,9 @@
           },
           "name": "go-mcp",
           "phase": {
+            "agentguide": {
+              "active": false
+            },
             "entity": {
               "active": false
             },

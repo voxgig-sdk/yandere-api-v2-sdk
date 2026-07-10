@@ -91,6 +91,7 @@ same parameters as `Direct()`.
 
 ```go
 post := client.Post(nil)
+fmt.Println(post.GetName()) // "post"
 ```
 
 ### Fields
@@ -145,6 +146,10 @@ List entities matching the given criteria. Returns an array.
 
 ```go
 results, err := client.Post(nil).List(nil, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(results)
 ```
 
 ### Common Methods

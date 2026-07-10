@@ -15,9 +15,9 @@ main: {
           url: "https://yande.re"
         }
       ]
+      summary: "Version 2 API for /post that returns responses in json only."
       title: "Yande.re API v2"
       version: "2.0.0"
+      website: "https://yande.re"
     }
   }
-}
-
