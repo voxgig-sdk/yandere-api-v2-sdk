@@ -37,7 +37,20 @@ func main() {
 	addr := flag.String("addr", ":8080", "listen address for http transport")
 	flag.Parse()
 
-	client := sdk.NewYandereApiV2SDK(nil)
+	// Configure from the environment: YANDERE_API_V2_APIKEY carries the API key and
+	// YANDERE_API_V2_BASE optionally overrides the API base URL (e.g. production).
+	// Both injectable by a secrets vault. Unset -> nil config defaults.
+	var opts map[string]any
+	if apikey := os.Getenv("YANDERE_API_V2_APIKEY"); apikey != "" {
+		opts = map[string]any{"apikey": apikey}
+	}
+	if base := os.Getenv("YANDERE_API_V2_BASE"); base != "" {
+		if opts == nil {
+			opts = map[string]any{}
+		}
+		opts["base"] = base
+	}
+	client := sdk.NewYandereApiV2SDK(opts)
 	server := mcp.NewServer(
 		&mcp.Implementation{
 			Name:    "yandere-api-v2",
