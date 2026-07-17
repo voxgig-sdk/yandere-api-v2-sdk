@@ -1,4 +1,4 @@
--- ProjectName SDK exists test
+-- YandereApiV2 SDK exists test
 
 local sdk = require("yandere-api-v2_sdk")
 
