@@ -96,11 +96,11 @@ post = client.Post()
 | `file_size` | `int` | No |  |
 | `file_url` | `str` | No |  |
 | `flag_detail` | `dict` | No |  |
-| `frame` | `list` | No |  |
+| `frames` | `list` | No |  |
 | `frames_pending` | `list` | No |  |
 | `frames_pending_string` | `str` | No |  |
 | `frames_string` | `str` | No |  |
-| `has_child` | `bool` | No |  |
+| `has_children` | `bool` | No |  |
 | `height` | `int` | No |  |
 | `id` | `int` | No |  |
 | `is_held` | `bool` | No |  |
@@ -111,7 +111,7 @@ post = client.Post()
 | `jpeg_width` | `int` | No |  |
 | `md5` | `str` | No |  |
 | `parent_id` | `int` | No |  |
-| `pool_id` | `list` | No |  |
+| `pool_ids` | `list` | No |  |
 | `preview_height` | `int` | No |  |
 | `preview_url` | `str` | No |  |
 | `preview_width` | `int` | No |  |
@@ -123,8 +123,8 @@ post = client.Post()
 | `score` | `int` | No |  |
 | `source` | `str` | No |  |
 | `status` | `str` | No |  |
-| `tag` | `str` | No |  |
-| `vote` | `dict` | No |  |
+| `tags` | `str` | No |  |
+| `votes` | `dict` | No |  |
 | `width` | `int` | No |  |
 
 ### Operations

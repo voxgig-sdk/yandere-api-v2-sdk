@@ -3,9 +3,9 @@
 import json
 import pytest
 
-from utility.voxgig_struct import voxgig_struct as vs
+from yandereapiv2_sdk.utility.voxgig_struct import voxgig_struct as vs
 from yandereapiv2_sdk import YandereApiV2SDK
-from core import helpers
+from yandereapiv2_sdk.core import helpers
 from test import runner
 
 
@@ -58,11 +58,11 @@ def _post_direct_setup(mockres):
     calls = []
 
     env = runner.env_override({
-        "YANDEREAPIV__TEST_POST_ENTID": {},
-        "YANDEREAPIV__TEST_LIVE": "FALSE",
+        "YANDERE_API_V2_TEST_POST_ENTID": {},
+        "YANDERE_API_V2_TEST_LIVE": "FALSE",
     })
 
-    live = env.get("YANDEREAPIV__TEST_LIVE") == "TRUE"
+    live = env.get("YANDERE_API_V2_TEST_LIVE") == "TRUE"
 
     if live:
         merged_opts = {

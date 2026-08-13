@@ -124,7 +124,8 @@ Create a mock client for unit testing — no server required:
 ```python
 client = YandereApiV2SDK.test()
 
-# Entity ops return the bare record and raise on error.
+# Entity ops return the ENTITY and raises on error;
+# call data_get() for the record.
 post = client.Post().list()
 # post contains the mock response record
 ```
@@ -220,7 +221,7 @@ All entities share the same interface.
 
 ### Result shape
 
-Entity operations return the bare result data (a `dict` for single-entity
+Entity operations return the ENTITY (call data_get() for the record) (a `dict` for single-entity
 ops, a `list` for `list`) and raise on error. Wrap calls in
 `try`/`except` to handle failures.
 
@@ -251,11 +252,11 @@ On error, `ok` is `False` and `err` contains the error value.
 | `file_size` |  |
 | `file_url` |  |
 | `flag_detail` |  |
-| `frame` |  |
+| `frames` |  |
 | `frames_pending` |  |
 | `frames_pending_string` |  |
 | `frames_string` |  |
-| `has_child` |  |
+| `has_children` |  |
 | `height` |  |
 | `id` |  |
 | `is_held` |  |
@@ -266,7 +267,7 @@ On error, `ok` is `False` and `err` contains the error value.
 | `jpeg_width` |  |
 | `md5` |  |
 | `parent_id` |  |
-| `pool_id` |  |
+| `pool_ids` |  |
 | `preview_height` |  |
 | `preview_url` |  |
 | `preview_width` |  |
@@ -278,8 +279,8 @@ On error, `ok` is `False` and `err` contains the error value.
 | `score` |  |
 | `source` |  |
 | `status` |  |
-| `tag` |  |
-| `vote` |  |
+| `tags` |  |
+| `votes` |  |
 | `width` |  |
 
 Operations: List.
@@ -314,11 +315,11 @@ Create an instance: `post = client.Post()`
 | `file_size` | `int` |  |
 | `file_url` | `str` |  |
 | `flag_detail` | `dict` |  |
-| `frame` | `list` |  |
+| `frames` | `list` |  |
 | `frames_pending` | `list` |  |
 | `frames_pending_string` | `str` |  |
 | `frames_string` | `str` |  |
-| `has_child` | `bool` |  |
+| `has_children` | `bool` |  |
 | `height` | `int` |  |
 | `id` | `int` |  |
 | `is_held` | `bool` |  |
@@ -329,7 +330,7 @@ Create an instance: `post = client.Post()`
 | `jpeg_width` | `int` |  |
 | `md5` | `str` |  |
 | `parent_id` | `int` |  |
-| `pool_id` | `list` |  |
+| `pool_ids` | `list` |  |
 | `preview_height` | `int` |  |
 | `preview_url` | `str` |  |
 | `preview_width` | `int` |  |
@@ -341,8 +342,8 @@ Create an instance: `post = client.Post()`
 | `score` | `int` |  |
 | `source` | `str` |  |
 | `status` | `str` |  |
-| `tag` | `str` |  |
-| `vote` | `dict` |  |
+| `tags` | `str` |  |
+| `votes` | `dict` |  |
 | `width` | `int` |  |
 
 #### Example: List

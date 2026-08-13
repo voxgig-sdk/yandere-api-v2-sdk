@@ -125,11 +125,11 @@ const post = client.Post()
 | `file_size` | `number` | No |  |
 | `file_url` | `string` | No |  |
 | `flag_detail` | `Record<string, any>` | No |  |
-| `frame` | `any[]` | No |  |
+| `frames` | `any[]` | No |  |
 | `frames_pending` | `any[]` | No |  |
 | `frames_pending_string` | `string` | No |  |
 | `frames_string` | `string` | No |  |
-| `has_child` | `boolean` | No |  |
+| `has_children` | `boolean` | No |  |
 | `height` | `number` | No |  |
 | `id` | `number` | No |  |
 | `is_held` | `boolean` | No |  |
@@ -140,7 +140,7 @@ const post = client.Post()
 | `jpeg_width` | `number` | No |  |
 | `md5` | `string` | No |  |
 | `parent_id` | `number` | No |  |
-| `pool_id` | `any[]` | No |  |
+| `pool_ids` | `any[]` | No |  |
 | `preview_height` | `number` | No |  |
 | `preview_url` | `string` | No |  |
 | `preview_width` | `number` | No |  |
@@ -152,8 +152,8 @@ const post = client.Post()
 | `score` | `number` | No |  |
 | `source` | `string` | No |  |
 | `status` | `string` | No |  |
-| `tag` | `string` | No |  |
-| `vote` | `Record<string, any>` | No |  |
+| `tags` | `string` | No |  |
+| `votes` | `Record<string, any>` | No |  |
 | `width` | `number` | No |  |
 
 ### Operations

@@ -1,4 +1,4 @@
-# ProjectName SDK exists test
+# YandereApiV2 SDK exists test
 
 import pytest
 from yandereapiv2_sdk import YandereApiV2SDK

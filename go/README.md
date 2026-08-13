@@ -269,11 +269,11 @@ Only `Direct()` returns a response envelope — a `map[string]any` with
 | `"file_size"` |  |
 | `"file_url"` |  |
 | `"flag_detail"` |  |
-| `"frame"` |  |
+| `"frames"` |  |
 | `"frames_pending"` |  |
 | `"frames_pending_string"` |  |
 | `"frames_string"` |  |
-| `"has_child"` |  |
+| `"has_children"` |  |
 | `"height"` |  |
 | `"id"` |  |
 | `"is_held"` |  |
@@ -284,7 +284,7 @@ Only `Direct()` returns a response envelope — a `map[string]any` with
 | `"jpeg_width"` |  |
 | `"md5"` |  |
 | `"parent_id"` |  |
-| `"pool_id"` |  |
+| `"pool_ids"` |  |
 | `"preview_height"` |  |
 | `"preview_url"` |  |
 | `"preview_width"` |  |
@@ -296,8 +296,8 @@ Only `Direct()` returns a response envelope — a `map[string]any` with
 | `"score"` |  |
 | `"source"` |  |
 | `"status"` |  |
-| `"tag"` |  |
-| `"vote"` |  |
+| `"tags"` |  |
+| `"votes"` |  |
 | `"width"` |  |
 
 Operations: List.
@@ -332,11 +332,11 @@ Create an instance: `post := client.Post(nil)`
 | `file_size` | `int` |  |
 | `file_url` | `string` |  |
 | `flag_detail` | `map[string]any` |  |
-| `frame` | `[]any` |  |
+| `frames` | `[]any` |  |
 | `frames_pending` | `[]any` |  |
 | `frames_pending_string` | `string` |  |
 | `frames_string` | `string` |  |
-| `has_child` | `bool` |  |
+| `has_children` | `bool` |  |
 | `height` | `int` |  |
 | `id` | `int` |  |
 | `is_held` | `bool` |  |
@@ -347,7 +347,7 @@ Create an instance: `post := client.Post(nil)`
 | `jpeg_width` | `int` |  |
 | `md5` | `string` |  |
 | `parent_id` | `int` |  |
-| `pool_id` | `[]any` |  |
+| `pool_ids` | `[]any` |  |
 | `preview_height` | `int` |  |
 | `preview_url` | `string` |  |
 | `preview_width` | `int` |  |
@@ -359,8 +359,8 @@ Create an instance: `post := client.Post(nil)`
 | `score` | `int` |  |
 | `source` | `string` |  |
 | `status` | `string` |  |
-| `tag` | `string` |  |
-| `vote` | `map[string]any` |  |
+| `tags` | `string` |  |
+| `votes` | `map[string]any` |  |
 | `width` | `int` |  |
 
 #### Example: List

@@ -218,9 +218,9 @@ data **directly** — there is no wrapper:
 
 Check `err` first (it is non-`nil` on failure), then use `value`:
 
-    local post, err = client:Post():load()
+    local post, err = client:Post():list()
     if err then error(err) end
-    -- post is the loaded record
+    -- post is the record list
 
 Only `direct()` returns a response envelope — a `table` with `ok`,
 `status`, `headers`, and `data` keys.
@@ -240,11 +240,11 @@ Only `direct()` returns a response envelope — a `table` with `ok`,
 | `file_size` |  |
 | `file_url` |  |
 | `flag_detail` |  |
-| `frame` |  |
+| `frames` |  |
 | `frames_pending` |  |
 | `frames_pending_string` |  |
 | `frames_string` |  |
-| `has_child` |  |
+| `has_children` |  |
 | `height` |  |
 | `id` |  |
 | `is_held` |  |
@@ -255,7 +255,7 @@ Only `direct()` returns a response envelope — a `table` with `ok`,
 | `jpeg_width` |  |
 | `md5` |  |
 | `parent_id` |  |
-| `pool_id` |  |
+| `pool_ids` |  |
 | `preview_height` |  |
 | `preview_url` |  |
 | `preview_width` |  |
@@ -267,8 +267,8 @@ Only `direct()` returns a response envelope — a `table` with `ok`,
 | `score` |  |
 | `source` |  |
 | `status` |  |
-| `tag` |  |
-| `vote` |  |
+| `tags` |  |
+| `votes` |  |
 | `width` |  |
 
 Operations: List.
@@ -303,11 +303,11 @@ Create an instance: `local post = client:Post(nil)`
 | `file_size` | `number` |  |
 | `file_url` | `string` |  |
 | `flag_detail` | `table` |  |
-| `frame` | `table` |  |
+| `frames` | `table` |  |
 | `frames_pending` | `table` |  |
 | `frames_pending_string` | `string` |  |
 | `frames_string` | `string` |  |
-| `has_child` | `boolean` |  |
+| `has_children` | `boolean` |  |
 | `height` | `number` |  |
 | `id` | `number` |  |
 | `is_held` | `boolean` |  |
@@ -318,7 +318,7 @@ Create an instance: `local post = client:Post(nil)`
 | `jpeg_width` | `number` |  |
 | `md5` | `string` |  |
 | `parent_id` | `number` |  |
-| `pool_id` | `table` |  |
+| `pool_ids` | `table` |  |
 | `preview_height` | `number` |  |
 | `preview_url` | `string` |  |
 | `preview_width` | `number` |  |
@@ -330,8 +330,8 @@ Create an instance: `local post = client:Post(nil)`
 | `score` | `number` |  |
 | `source` | `string` |  |
 | `status` | `string` |  |
-| `tag` | `string` |  |
-| `vote` | `table` |  |
+| `tags` | `string` |  |
+| `votes` | `table` |  |
 | `width` | `number` |  |
 
 #### Example: List

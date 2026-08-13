@@ -107,11 +107,11 @@ fmt.Println(post.GetName()) // "post"
 | `file_size` | `int` | No |  |
 | `file_url` | `string` | No |  |
 | `flag_detail` | `map[string]any` | No |  |
-| `frame` | `[]any` | No |  |
+| `frames` | `[]any` | No |  |
 | `frames_pending` | `[]any` | No |  |
 | `frames_pending_string` | `string` | No |  |
 | `frames_string` | `string` | No |  |
-| `has_child` | `bool` | No |  |
+| `has_children` | `bool` | No |  |
 | `height` | `int` | No |  |
 | `id` | `int` | No |  |
 | `is_held` | `bool` | No |  |
@@ -122,7 +122,7 @@ fmt.Println(post.GetName()) // "post"
 | `jpeg_width` | `int` | No |  |
 | `md5` | `string` | No |  |
 | `parent_id` | `int` | No |  |
-| `pool_id` | `[]any` | No |  |
+| `pool_ids` | `[]any` | No |  |
 | `preview_height` | `int` | No |  |
 | `preview_url` | `string` | No |  |
 | `preview_width` | `int` | No |  |
@@ -134,8 +134,8 @@ fmt.Println(post.GetName()) // "post"
 | `score` | `int` | No |  |
 | `source` | `string` | No |  |
 | `status` | `string` | No |  |
-| `tag` | `string` | No |  |
-| `vote` | `map[string]any` | No |  |
+| `tags` | `string` | No |  |
+| `votes` | `map[string]any` | No |  |
 | `width` | `int` | No |  |
 
 ### Operations

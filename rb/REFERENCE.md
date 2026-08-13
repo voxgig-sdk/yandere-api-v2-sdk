@@ -102,11 +102,11 @@ post = client.Post
 | `file_size` | `Integer` | No |  |
 | `file_url` | `String` | No |  |
 | `flag_detail` | `Hash` | No |  |
-| `frame` | `Array` | No |  |
+| `frames` | `Array` | No |  |
 | `frames_pending` | `Array` | No |  |
 | `frames_pending_string` | `String` | No |  |
 | `frames_string` | `String` | No |  |
-| `has_child` | `Boolean` | No |  |
+| `has_children` | `Boolean` | No |  |
 | `height` | `Integer` | No |  |
 | `id` | `Integer` | No |  |
 | `is_held` | `Boolean` | No |  |
@@ -117,7 +117,7 @@ post = client.Post
 | `jpeg_width` | `Integer` | No |  |
 | `md5` | `String` | No |  |
 | `parent_id` | `Integer` | No |  |
-| `pool_id` | `Array` | No |  |
+| `pool_ids` | `Array` | No |  |
 | `preview_height` | `Integer` | No |  |
 | `preview_url` | `String` | No |  |
 | `preview_width` | `Integer` | No |  |
@@ -129,8 +129,8 @@ post = client.Post
 | `score` | `Integer` | No |  |
 | `source` | `String` | No |  |
 | `status` | `String` | No |  |
-| `tag` | `String` | No |  |
-| `vote` | `Hash` | No |  |
+| `tags` | `String` | No |  |
+| `votes` | `Hash` | No |  |
 | `width` | `Integer` | No |  |
 
 ### Operations

@@ -14,12 +14,12 @@ from __future__ import annotations
 
 from urllib.parse import quote
 
-from config import make_config
-from features import _make_feature
-from core.control import YandereApiV2Control
-from core.error import YandereApiV2Error
-from core.result import YandereApiV2Result
-from core.spec import YandereApiV2Spec
+from yandereapiv2_sdk.config import make_config
+from yandereapiv2_sdk.features import _make_feature
+from yandereapiv2_sdk.core.control import YandereApiV2Control
+from yandereapiv2_sdk.core.error import YandereApiV2Error
+from yandereapiv2_sdk.core.result import YandereApiV2Result
+from yandereapiv2_sdk.core.spec import YandereApiV2Spec
 
 
 # True when this SDK was generated with the named feature.

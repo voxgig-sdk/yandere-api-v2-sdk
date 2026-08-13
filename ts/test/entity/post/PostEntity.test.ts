@@ -26,8 +26,8 @@ import {
 describe('PostEntity', async () => {
 
   // Per-test live pacing. Delay is read from sdk-test-control.json's
-  // `test.live.delayMs`; only sleeps when YANDEREAPIV2_TEST_LIVE=TRUE.
-  afterEach(liveDelay('YANDEREAPIV2_TEST_LIVE'))
+  // `test.live.delayMs`; only sleeps when YANDERE_API_V2_TEST_LIVE=TRUE.
+  afterEach(liveDelay('YANDERE_API_V2_TEST_LIVE'))
 
   test('instance', async () => {
     const testsdk = YandereApiV2SDK.test()
@@ -38,7 +38,7 @@ describe('PostEntity', async () => {
 
   test('basic', async (t) => {
 
-    const live = 'TRUE' === process.env.YANDERE_API_V__TEST_LIVE
+    const live = 'TRUE' === process.env.YANDERE_API_V2_TEST_LIVE
     for (const op of ['list']) {
       if (maybeSkipControl(t, 'entityOp', 'post.' + op, live)) return
     }
@@ -48,7 +48,7 @@ describe('PostEntity', async () => {
     // fixture (entity TestData.json). Those don't exist on the live API.
     // Skip live runs unless the user provided a real ENTID env override.
     if (setup.syntheticOnly) {
-      t.skip('live entity test uses synthetic IDs from fixture — set YANDERE_API_V__TEST_POST_ENTID JSON to run live')
+      t.skip('live entity test uses synthetic IDs from fixture — set YANDERE_API_V2_TEST_POST_ENTID JSON to run live')
       return
     }
     const client = setup.client
@@ -63,7 +63,7 @@ describe('PostEntity', async () => {
     const post_ref01_ent = client.Post()
     const post_ref01_match: any = {}
 
-    const post_ref01_list = await post_ref01_ent.list(post_ref01_match)
+    const post_ref01_list = (await post_ref01_ent.list(post_ref01_match)).map((e: any) => e.data())
 
 
   })
@@ -106,18 +106,18 @@ function basicSetup(extra?: any) {
   // basic flow consumes synthetic IDs from the fixture file; without an
   // override those synthetic IDs reach the live API and 4xx. Surface this
   // to the test so it can skip rather than fail.
-  const idmapEnvVal = process.env['YANDERE_API_V__TEST_POST_ENTID']
+  const idmapEnvVal = process.env['YANDERE_API_V2_TEST_POST_ENTID']
   const idmapOverridden = null != idmapEnvVal && idmapEnvVal.trim().startsWith('{')
 
   const env = envOverride({
-    'YANDERE_API_V__TEST_POST_ENTID': idmap,
-    'YANDERE_API_V__TEST_LIVE': 'FALSE',
-    'YANDERE_API_V__TEST_EXPLAIN': 'FALSE',
+    'YANDERE_API_V2_TEST_POST_ENTID': idmap,
+    'YANDERE_API_V2_TEST_LIVE': 'FALSE',
+    'YANDERE_API_V2_TEST_EXPLAIN': 'FALSE',
   })
 
-  idmap = env['YANDERE_API_V__TEST_POST_ENTID']
+  idmap = env['YANDERE_API_V2_TEST_POST_ENTID']
 
-  const live = 'TRUE' === env.YANDERE_API_V__TEST_LIVE
+  const live = 'TRUE' === env.YANDERE_API_V2_TEST_LIVE
 
   if (live) {
     client = new YandereApiV2SDK(merge([
@@ -134,7 +134,7 @@ function basicSetup(extra?: any) {
     client,
     struct,
     data: entityData,
-    explain: 'TRUE' === env.YANDERE_API_V__TEST_EXPLAIN,
+    explain: 'TRUE' === env.YANDERE_API_V2_TEST_EXPLAIN,
     live,
     syntheticOnly: live && !idmapOverridden,
     now: Date.now(),

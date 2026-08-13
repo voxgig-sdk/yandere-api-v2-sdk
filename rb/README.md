@@ -119,7 +119,8 @@ Create a mock client for unit testing — no server required:
 ```ruby
 client = YandereApiV2SDK.test
 
-# Entity ops return the bare mock record (raises on error).
+# Entity ops return the ENTITY (raises on error);
+# call data_get for the mock record.
 post = client.Post.list()
 puts post
 ```
@@ -245,11 +246,11 @@ returns a result `Hash` with these keys:
 | `file_size` |  |
 | `file_url` |  |
 | `flag_detail` |  |
-| `frame` |  |
+| `frames` |  |
 | `frames_pending` |  |
 | `frames_pending_string` |  |
 | `frames_string` |  |
-| `has_child` |  |
+| `has_children` |  |
 | `height` |  |
 | `id` |  |
 | `is_held` |  |
@@ -260,7 +261,7 @@ returns a result `Hash` with these keys:
 | `jpeg_width` |  |
 | `md5` |  |
 | `parent_id` |  |
-| `pool_id` |  |
+| `pool_ids` |  |
 | `preview_height` |  |
 | `preview_url` |  |
 | `preview_width` |  |
@@ -272,8 +273,8 @@ returns a result `Hash` with these keys:
 | `score` |  |
 | `source` |  |
 | `status` |  |
-| `tag` |  |
-| `vote` |  |
+| `tags` |  |
+| `votes` |  |
 | `width` |  |
 
 Operations: List.
@@ -308,11 +309,11 @@ Create an instance: `post = client.Post`
 | `file_size` | `Integer` |  |
 | `file_url` | `String` |  |
 | `flag_detail` | `Hash` |  |
-| `frame` | `Array` |  |
+| `frames` | `Array` |  |
 | `frames_pending` | `Array` |  |
 | `frames_pending_string` | `String` |  |
 | `frames_string` | `String` |  |
-| `has_child` | `Boolean` |  |
+| `has_children` | `Boolean` |  |
 | `height` | `Integer` |  |
 | `id` | `Integer` |  |
 | `is_held` | `Boolean` |  |
@@ -323,7 +324,7 @@ Create an instance: `post = client.Post`
 | `jpeg_width` | `Integer` |  |
 | `md5` | `String` |  |
 | `parent_id` | `Integer` |  |
-| `pool_id` | `Array` |  |
+| `pool_ids` | `Array` |  |
 | `preview_height` | `Integer` |  |
 | `preview_url` | `String` |  |
 | `preview_width` | `Integer` |  |
@@ -335,8 +336,8 @@ Create an instance: `post = client.Post`
 | `score` | `Integer` |  |
 | `source` | `String` |  |
 | `status` | `String` |  |
-| `tag` | `String` |  |
-| `vote` | `Hash` |  |
+| `tags` | `String` |  |
+| `votes` | `Hash` |  |
 | `width` | `Integer` |  |
 
 #### Example: List

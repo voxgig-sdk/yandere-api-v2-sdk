@@ -6,15 +6,15 @@ import re
 
 import pytest
 
-from utility.voxgig_struct import voxgig_struct as vs
+from yandereapiv2_sdk.utility.voxgig_struct import voxgig_struct as vs
 from yandereapiv2_sdk import YandereApiV2SDK
-from core.spec import YandereApiV2Spec
-from core.result import YandereApiV2Result
-from core.response import YandereApiV2Response
-from core.operation import YandereApiV2Operation
-from core.error import YandereApiV2Error
-from core import helpers
-from feature.base_feature import YandereApiV2BaseFeature
+from yandereapiv2_sdk.core.spec import YandereApiV2Spec
+from yandereapiv2_sdk.core.result import YandereApiV2Result
+from yandereapiv2_sdk.core.response import YandereApiV2Response
+from yandereapiv2_sdk.core.operation import YandereApiV2Operation
+from yandereapiv2_sdk.core.error import YandereApiV2Error
+from yandereapiv2_sdk.core import helpers
+from yandereapiv2_sdk.feature.base_feature import YandereApiV2BaseFeature
 
 _TEST_DIR = os.path.dirname(os.path.abspath(__file__))
 
@@ -468,6 +468,10 @@ class TestPrimaryUtility:
             return {"status": 200, "statusText": "OK"}, None
 
         live_client = YandereApiV2SDK({
+            # Concrete base: a live construction must satisfy any server
+            # variables a templated base URL declares; a literal base
+            # sidesteps the requirement.
+            "base": "http://localhost:8080",
             "system": {
                 "fetch": mock_fetch,
             },
@@ -490,6 +494,7 @@ class TestPrimaryUtility:
             return {}, None
 
         blocked_client = YandereApiV2SDK({
+            "base": "http://localhost:8080",
             "system": {
                 "fetch": mock_fetch,
             },
@@ -945,28 +950,23 @@ class TestPrimaryUtility:
         _runset(_get_spec(primary, "prepareParams", "basic"), subject)
 
     def test_prepare_path_basic(self):
+        # Was two hand-written cases that had drifted out of the shared corpus
+        # (the preparePath fixture shipped as an empty `set: []`). Now driven
+        # by the corpus like every other section, so all ports assert the same
+        # separator / blank-segment behaviour.
+        spec = _load_test_spec()
+        primary = _get_spec(spec, "primary")
         client = YandereApiV2SDK.test(None, None)
         utility = client._utility
-        ctx = _make_test_full_ctx(client, utility)
-        ctx.point = {
-            "parts": ["api", "planet", "{id}"],
-            "args": {"params": []},
-        }
 
-        path = utility.prepare_path(ctx)
-        assert path == "api/planet/{id}"
+        def subject(entry):
+            ctxmap = entry.get("ctx")
+            if not isinstance(ctxmap, dict):
+                ctxmap = {}
+            ctx = _make_ctx_from_map(ctxmap, client, utility)
+            return utility.prepare_path(ctx), None
 
-    def test_prepare_path_single(self):
-        client = YandereApiV2SDK.test(None, None)
-        utility = client._utility
-        ctx = _make_test_full_ctx(client, utility)
-        ctx.point = {
-            "parts": ["items"],
-            "args": {"params": []},
-        }
-
-        path = utility.prepare_path(ctx)
-        assert path == "items"
+        _runset(_get_spec(primary, "preparePath", "basic"), subject)
 
     def test_prepare_query_basic(self):
         spec = _load_test_spec()

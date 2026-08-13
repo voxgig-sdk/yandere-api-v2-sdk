@@ -43,8 +43,8 @@ class YandereApiV2TestRunner
 
     public static function env_override(array $m): array
     {
-        $live = self::getenv('YANDEREAPIV2_TEST_LIVE');
-        $override = self::getenv('YANDEREAPIV2_TEST_OVERRIDE');
+        $live = self::getenv('YANDERE_API_V2_TEST_LIVE');
+        $override = self::getenv('YANDERE_API_V2_TEST_OVERRIDE');
 
         if ($live === 'TRUE' || $override === 'TRUE') {
             foreach (array_keys($m) as $key) {
@@ -63,9 +63,9 @@ class YandereApiV2TestRunner
             }
         }
 
-        $explain = self::getenv('YANDEREAPIV2_TEST_EXPLAIN');
+        $explain = self::getenv('YANDERE_API_V2_TEST_EXPLAIN');
         if ($explain !== null && $explain !== '') {
-            $m['YANDEREAPIV2_TEST_EXPLAIN'] = $explain;
+            $m['YANDERE_API_V2_TEST_EXPLAIN'] = $explain;
         }
 
         return $m;

@@ -101,11 +101,11 @@ $post = $client->Post();
 | `file_size` | `int` | No |  |
 | `file_url` | `string` | No |  |
 | `flag_detail` | `array` | No |  |
-| `frame` | `array` | No |  |
+| `frames` | `array` | No |  |
 | `frames_pending` | `array` | No |  |
 | `frames_pending_string` | `string` | No |  |
 | `frames_string` | `string` | No |  |
-| `has_child` | `bool` | No |  |
+| `has_children` | `bool` | No |  |
 | `height` | `int` | No |  |
 | `id` | `int` | No |  |
 | `is_held` | `bool` | No |  |
@@ -116,7 +116,7 @@ $post = $client->Post();
 | `jpeg_width` | `int` | No |  |
 | `md5` | `string` | No |  |
 | `parent_id` | `int` | No |  |
-| `pool_id` | `array` | No |  |
+| `pool_ids` | `array` | No |  |
 | `preview_height` | `int` | No |  |
 | `preview_url` | `string` | No |  |
 | `preview_width` | `int` | No |  |
@@ -128,8 +128,8 @@ $post = $client->Post();
 | `score` | `int` | No |  |
 | `source` | `string` | No |  |
 | `status` | `string` | No |  |
-| `tag` | `string` | No |  |
-| `vote` | `array` | No |  |
+| `tags` | `string` | No |  |
+| `votes` | `array` | No |  |
 | `width` | `int` | No |  |
 
 ### Operations

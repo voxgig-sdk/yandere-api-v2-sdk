@@ -89,7 +89,7 @@ func MakeConfig() map[string]any {
 					},
 					map[string]any{
 						"active": true,
-						"name": "frame",
+						"name": "frames",
 						"req": false,
 						"type": "`$ARRAY`",
 						"index$": 9,
@@ -117,7 +117,7 @@ func MakeConfig() map[string]any {
 					},
 					map[string]any{
 						"active": true,
-						"name": "has_child",
+						"name": "has_children",
 						"req": false,
 						"type": "`$BOOLEAN`",
 						"index$": 13,
@@ -194,7 +194,7 @@ func MakeConfig() map[string]any {
 					},
 					map[string]any{
 						"active": true,
-						"name": "pool_id",
+						"name": "pool_ids",
 						"req": false,
 						"type": "`$ARRAY`",
 						"index$": 24,
@@ -278,14 +278,14 @@ func MakeConfig() map[string]any {
 					},
 					map[string]any{
 						"active": true,
-						"name": "tag",
+						"name": "tags",
 						"req": false,
 						"type": "`$STRING`",
 						"index$": 36,
 					},
 					map[string]any{
 						"active": true,
-						"name": "vote",
+						"name": "votes",
 						"req": false,
 						"type": "`$OBJECT`",
 						"index$": 37,
@@ -371,6 +371,7 @@ func MakeConfig() map[string]any {
 										},
 									},
 								},
+								"kind": "http",
 								"method": "GET",
 								"orig": "/post.json",
 								"parts": []any{
@@ -394,7 +395,6 @@ func MakeConfig() map[string]any {
 								"index$": 0,
 							},
 						},
-						"key$": "list",
 					},
 				},
 				"relations": map[string]any{

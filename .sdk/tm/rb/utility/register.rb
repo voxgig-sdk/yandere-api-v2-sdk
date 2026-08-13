@@ -24,6 +24,7 @@ require_relative 'prepare_method'
 require_relative 'prepare_params'
 require_relative 'prepare_path'
 require_relative 'prepare_query'
+require_relative 'graphql'
 require_relative 'result_basic'
 require_relative 'result_body'
 require_relative 'result_headers'
@@ -55,6 +56,8 @@ YandereApiV2Utility.registrar = ->(u) {
   u.prepare_params = YandereApiV2Utilities::PrepareParams
   u.prepare_path = YandereApiV2Utilities::PreparePath
   u.prepare_query = YandereApiV2Utilities::PrepareQuery
+  u.graphql_body = YandereApiV2Utilities::GraphqlBody
+  u.graphql_errors = YandereApiV2Utilities::GraphqlErrors
   u.result_basic = YandereApiV2Utilities::ResultBasic
   u.result_body = YandereApiV2Utilities::ResultBody
   u.result_headers = YandereApiV2Utilities::ResultHeaders

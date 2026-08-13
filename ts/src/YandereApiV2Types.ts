@@ -15,11 +15,11 @@ export interface Post {
   file_size?: number
   file_url?: string
   flag_detail?: Record<string, any>
-  frame?: any[]
+  frames?: any[]
   frames_pending?: any[]
   frames_pending_string?: string
   frames_string?: string
-  has_child?: boolean
+  has_children?: boolean
   height?: number
   id?: number
   is_held?: boolean
@@ -30,7 +30,7 @@ export interface Post {
   jpeg_width?: number
   md5?: string
   parent_id?: number
-  pool_id?: any[]
+  pool_ids?: any[]
   preview_height?: number
   preview_url?: string
   preview_width?: number
@@ -42,8 +42,8 @@ export interface Post {
   score?: number
   source?: string
   status?: string
-  tag?: string
-  vote?: Record<string, any>
+  tags?: string
+  votes?: Record<string, any>
   width?: number
 }
 
@@ -57,11 +57,11 @@ export interface PostListMatch {
   file_size?: number
   file_url?: string
   flag_detail?: Record<string, any>
-  frame?: any[]
+  frames?: any[]
   frames_pending?: any[]
   frames_pending_string?: string
   frames_string?: string
-  has_child?: boolean
+  has_children?: boolean
   height?: number
   id?: number
   is_held?: boolean
@@ -72,7 +72,7 @@ export interface PostListMatch {
   jpeg_width?: number
   md5?: string
   parent_id?: number
-  pool_id?: any[]
+  pool_ids?: any[]
   preview_height?: number
   preview_url?: string
   preview_width?: number
@@ -84,8 +84,8 @@ export interface PostListMatch {
   score?: number
   source?: string
   status?: string
-  tag?: string
-  vote?: Record<string, any>
+  tags?: string
+  votes?: Record<string, any>
   width?: number
 }
 

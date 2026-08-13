@@ -24,11 +24,11 @@ class Post
     public ?int $file_size = null;
     public ?string $file_url = null;
     public ?array $flag_detail = null;
-    public ?array $frame = null;
+    public ?array $frames = null;
     public ?array $frames_pending = null;
     public ?string $frames_pending_string = null;
     public ?string $frames_string = null;
-    public ?bool $has_child = null;
+    public ?bool $has_children = null;
     public ?int $height = null;
     public ?int $id = null;
     public ?bool $is_held = null;
@@ -39,7 +39,7 @@ class Post
     public ?int $jpeg_width = null;
     public ?string $md5 = null;
     public ?int $parent_id = null;
-    public ?array $pool_id = null;
+    public ?array $pool_ids = null;
     public ?int $preview_height = null;
     public ?string $preview_url = null;
     public ?int $preview_width = null;
@@ -51,8 +51,8 @@ class Post
     public ?int $score = null;
     public ?string $source = null;
     public ?string $status = null;
-    public ?string $tag = null;
-    public ?array $vote = null;
+    public ?string $tags = null;
+    public ?array $votes = null;
     public ?int $width = null;
 }
 
@@ -68,11 +68,11 @@ class PostListMatch
     public ?int $file_size = null;
     public ?string $file_url = null;
     public ?array $flag_detail = null;
-    public ?array $frame = null;
+    public ?array $frames = null;
     public ?array $frames_pending = null;
     public ?string $frames_pending_string = null;
     public ?string $frames_string = null;
-    public ?bool $has_child = null;
+    public ?bool $has_children = null;
     public ?int $height = null;
     public ?int $id = null;
     public ?bool $is_held = null;
@@ -83,7 +83,7 @@ class PostListMatch
     public ?int $jpeg_width = null;
     public ?string $md5 = null;
     public ?int $parent_id = null;
-    public ?array $pool_id = null;
+    public ?array $pool_ids = null;
     public ?int $preview_height = null;
     public ?string $preview_url = null;
     public ?int $preview_width = null;
@@ -95,8 +95,8 @@ class PostListMatch
     public ?int $score = null;
     public ?string $source = null;
     public ?string $status = null;
-    public ?string $tag = null;
-    public ?array $vote = null;
+    public ?string $tags = null;
+    public ?array $votes = null;
     public ?int $width = null;
 }
 

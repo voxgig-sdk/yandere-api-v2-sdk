@@ -35,7 +35,9 @@ const client = new YandereApiV2SDK()
 
 ### 2. List post records
 
-`list()` resolves to an array of Post objects — iterate it directly:
+`list()` resolves to an array of Post ENTITIES — every operation
+resolves to entities, not raw records. Iterate them directly, and call
+`.data()` on one for the record it holds:
 
 ```ts
 const posts = await client.Post().list()
@@ -120,7 +122,8 @@ Create a mock client for unit testing — no server required:
 const client = YandereApiV2SDK.test()
 
 const post = await client.Post().list()
-// post is a bare entity populated with mock response data
+// post is the entity, populated with mock response data
+// — call post.data() for the record itself
 console.log(post)
 ```
 
@@ -293,11 +296,11 @@ The `prepare()` method returns:
 | `file_size` |  |
 | `file_url` |  |
 | `flag_detail` |  |
-| `frame` |  |
+| `frames` |  |
 | `frames_pending` |  |
 | `frames_pending_string` |  |
 | `frames_string` |  |
-| `has_child` |  |
+| `has_children` |  |
 | `height` |  |
 | `id` |  |
 | `is_held` |  |
@@ -308,7 +311,7 @@ The `prepare()` method returns:
 | `jpeg_width` |  |
 | `md5` |  |
 | `parent_id` |  |
-| `pool_id` |  |
+| `pool_ids` |  |
 | `preview_height` |  |
 | `preview_url` |  |
 | `preview_width` |  |
@@ -320,8 +323,8 @@ The `prepare()` method returns:
 | `score` |  |
 | `source` |  |
 | `status` |  |
-| `tag` |  |
-| `vote` |  |
+| `tags` |  |
+| `votes` |  |
 | `width` |  |
 
 Operations: list.
@@ -356,11 +359,11 @@ Create an instance: `const post = client.Post()`
 | `file_size` | `number` |  |
 | `file_url` | `string` |  |
 | `flag_detail` | `Record<string, any>` |  |
-| `frame` | `any[]` |  |
+| `frames` | `any[]` |  |
 | `frames_pending` | `any[]` |  |
 | `frames_pending_string` | `string` |  |
 | `frames_string` | `string` |  |
-| `has_child` | `boolean` |  |
+| `has_children` | `boolean` |  |
 | `height` | `number` |  |
 | `id` | `number` |  |
 | `is_held` | `boolean` |  |
@@ -371,7 +374,7 @@ Create an instance: `const post = client.Post()`
 | `jpeg_width` | `number` |  |
 | `md5` | `string` |  |
 | `parent_id` | `number` |  |
-| `pool_id` | `any[]` |  |
+| `pool_ids` | `any[]` |  |
 | `preview_height` | `number` |  |
 | `preview_url` | `string` |  |
 | `preview_width` | `number` |  |
@@ -383,8 +386,8 @@ Create an instance: `const post = client.Post()`
 | `score` | `number` |  |
 | `source` | `string` |  |
 | `status` | `string` |  |
-| `tag` | `string` |  |
-| `vote` | `Record<string, any>` |  |
+| `tags` | `string` |  |
+| `votes` | `Record<string, any>` |  |
 | `width` | `number` |  |
 
 #### Example: List

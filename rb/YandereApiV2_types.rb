@@ -37,7 +37,7 @@
 # @!attribute [rw] flag_detail
 #   @return [Hash, nil]
 #
-# @!attribute [rw] frame
+# @!attribute [rw] frames
 #   @return [Array, nil]
 #
 # @!attribute [rw] frames_pending
@@ -49,7 +49,7 @@
 # @!attribute [rw] frames_string
 #   @return [String, nil]
 #
-# @!attribute [rw] has_child
+# @!attribute [rw] has_children
 #   @return [Boolean, nil]
 #
 # @!attribute [rw] height
@@ -82,7 +82,7 @@
 # @!attribute [rw] parent_id
 #   @return [Integer, nil]
 #
-# @!attribute [rw] pool_id
+# @!attribute [rw] pool_ids
 #   @return [Array, nil]
 #
 # @!attribute [rw] preview_height
@@ -118,10 +118,10 @@
 # @!attribute [rw] status
 #   @return [String, nil]
 #
-# @!attribute [rw] tag
+# @!attribute [rw] tags
 #   @return [String, nil]
 #
-# @!attribute [rw] vote
+# @!attribute [rw] votes
 #   @return [Hash, nil]
 #
 # @!attribute [rw] width
@@ -136,11 +136,11 @@ Post = Struct.new(
   :file_size,
   :file_url,
   :flag_detail,
-  :frame,
+  :frames,
   :frames_pending,
   :frames_pending_string,
   :frames_string,
-  :has_child,
+  :has_children,
   :height,
   :id,
   :is_held,
@@ -151,7 +151,7 @@ Post = Struct.new(
   :jpeg_width,
   :md5,
   :parent_id,
-  :pool_id,
+  :pool_ids,
   :preview_height,
   :preview_url,
   :preview_width,
@@ -163,8 +163,8 @@ Post = Struct.new(
   :score,
   :source,
   :status,
-  :tag,
-  :vote,
+  :tags,
+  :votes,
   :width,
   keyword_init: true
 )
@@ -198,7 +198,7 @@ Post = Struct.new(
 # @!attribute [rw] flag_detail
 #   @return [Hash, nil]
 #
-# @!attribute [rw] frame
+# @!attribute [rw] frames
 #   @return [Array, nil]
 #
 # @!attribute [rw] frames_pending
@@ -210,7 +210,7 @@ Post = Struct.new(
 # @!attribute [rw] frames_string
 #   @return [String, nil]
 #
-# @!attribute [rw] has_child
+# @!attribute [rw] has_children
 #   @return [Boolean, nil]
 #
 # @!attribute [rw] height
@@ -243,7 +243,7 @@ Post = Struct.new(
 # @!attribute [rw] parent_id
 #   @return [Integer, nil]
 #
-# @!attribute [rw] pool_id
+# @!attribute [rw] pool_ids
 #   @return [Array, nil]
 #
 # @!attribute [rw] preview_height
@@ -279,10 +279,10 @@ Post = Struct.new(
 # @!attribute [rw] status
 #   @return [String, nil]
 #
-# @!attribute [rw] tag
+# @!attribute [rw] tags
 #   @return [String, nil]
 #
-# @!attribute [rw] vote
+# @!attribute [rw] votes
 #   @return [Hash, nil]
 #
 # @!attribute [rw] width
@@ -297,11 +297,11 @@ PostListMatch = Struct.new(
   :file_size,
   :file_url,
   :flag_detail,
-  :frame,
+  :frames,
   :frames_pending,
   :frames_pending_string,
   :frames_string,
-  :has_child,
+  :has_children,
   :height,
   :id,
   :is_held,
@@ -312,7 +312,7 @@ PostListMatch = Struct.new(
   :jpeg_width,
   :md5,
   :parent_id,
-  :pool_id,
+  :pool_ids,
   :preview_height,
   :preview_url,
   :preview_width,
@@ -324,8 +324,8 @@ PostListMatch = Struct.new(
   :score,
   :source,
   :status,
-  :tag,
-  :vote,
+  :tags,
+  :votes,
   :width,
   keyword_init: true
 )

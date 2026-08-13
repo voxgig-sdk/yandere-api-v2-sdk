@@ -51,7 +51,7 @@ main: kit: entity: post: {
       type: "`$OBJECT`"
     }
     {
-      name: "frame"
+      name: "frames"
       req: false
       type: "`$ARRAY`"
     }
@@ -71,7 +71,7 @@ main: kit: entity: post: {
       type: "`$STRING`"
     }
     {
-      name: "has_child"
+      name: "has_children"
       req: false
       type: "`$BOOLEAN`"
     }
@@ -126,7 +126,7 @@ main: kit: entity: post: {
       type: "`$INTEGER`"
     }
     {
-      name: "pool_id"
+      name: "pool_ids"
       req: false
       type: "`$ARRAY`"
     }
@@ -186,12 +186,12 @@ main: kit: entity: post: {
       type: "`$STRING`"
     }
     {
-      name: "tag"
+      name: "tags"
       req: false
       type: "`$STRING`"
     }
     {
-      name: "vote"
+      name: "votes"
       req: false
       type: "`$OBJECT`"
     }

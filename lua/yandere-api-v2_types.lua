@@ -16,11 +16,11 @@
 ---@field file_size? number
 ---@field file_url? string
 ---@field flag_detail? table
----@field frame? table
+---@field frames? table
 ---@field frames_pending? table
 ---@field frames_pending_string? string
 ---@field frames_string? string
----@field has_child? boolean
+---@field has_children? boolean
 ---@field height? number
 ---@field id? number
 ---@field is_held? boolean
@@ -31,7 +31,7 @@
 ---@field jpeg_width? number
 ---@field md5? string
 ---@field parent_id? number
----@field pool_id? table
+---@field pool_ids? table
 ---@field preview_height? number
 ---@field preview_url? string
 ---@field preview_width? number
@@ -43,8 +43,8 @@
 ---@field score? number
 ---@field source? string
 ---@field status? string
----@field tag? string
----@field vote? table
+---@field tags? string
+---@field votes? table
 ---@field width? number
 
 ---@class PostListMatch
@@ -57,11 +57,11 @@
 ---@field file_size? number
 ---@field file_url? string
 ---@field flag_detail? table
----@field frame? table
+---@field frames? table
 ---@field frames_pending? table
 ---@field frames_pending_string? string
 ---@field frames_string? string
----@field has_child? boolean
+---@field has_children? boolean
 ---@field height? number
 ---@field id? number
 ---@field is_held? boolean
@@ -72,7 +72,7 @@
 ---@field jpeg_width? number
 ---@field md5? string
 ---@field parent_id? number
----@field pool_id? table
+---@field pool_ids? table
 ---@field preview_height? number
 ---@field preview_url? string
 ---@field preview_width? number
@@ -84,8 +84,8 @@
 ---@field score? number
 ---@field source? string
 ---@field status? string
----@field tag? string
----@field vote? table
+---@field tags? string
+---@field votes? table
 ---@field width? number
 
 local M = {}

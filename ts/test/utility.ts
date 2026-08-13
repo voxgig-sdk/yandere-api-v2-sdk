@@ -62,8 +62,8 @@ function makeCtrl(explain: boolean) {
 // Overrides configuration values with environment variables if available
 function envOverride(m: Record<string, any>) {
   if (
-    'TRUE' === process.env.YANDEREAPIV2_TEST_LIVE ||
-    'TRUE' === process.env.YANDEREAPIV2_TEST_OVERRIDE
+    'TRUE' === process.env.YANDERE_API_V2_TEST_LIVE ||
+    'TRUE' === process.env.YANDERE_API_V2_TEST_OVERRIDE
   ) {
     Object.entries(m).map(n => {
       let envval = process.env[n[0]]
@@ -74,7 +74,7 @@ function envOverride(m: Record<string, any>) {
     })
   }
 
-  m.YANDEREAPIV2_TEST_EXPLAIN = process.env.YANDEREAPIV2_TEST_EXPLAIN || m.YANDEREAPIV2_TEST_EXPLAIN
+  m.YANDERE_API_V2_TEST_EXPLAIN = process.env.YANDERE_API_V2_TEST_EXPLAIN || m.YANDERE_API_V2_TEST_EXPLAIN
 
   return m
 }

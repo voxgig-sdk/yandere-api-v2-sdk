@@ -125,7 +125,8 @@ Create a mock client for unit testing — no server required:
 ```php
 $client = YandereApiV2SDK::test();
 
-// Entity ops return the bare mock record (throws on error).
+// Entity ops return the ENTITY (throws on error);
+// call data_get() for the mock record.
 $post = $client->Post()->list();
 print_r($post);
 ```
@@ -224,7 +225,7 @@ All entities share the same interface.
 
 ### Result shape
 
-Entity operations return the bare result data (an `array` for single-entity
+Entity operations return the ENTITY (call data_get() for the record) (an `array` for single-entity
 ops, a `list` for `list`) and throw on error. Wrap calls in
 `try`/`catch` to handle failures.
 
@@ -255,11 +256,11 @@ On error, `ok` is `false` and `$err` contains the error value.
 | `file_size` |  |
 | `file_url` |  |
 | `flag_detail` |  |
-| `frame` |  |
+| `frames` |  |
 | `frames_pending` |  |
 | `frames_pending_string` |  |
 | `frames_string` |  |
-| `has_child` |  |
+| `has_children` |  |
 | `height` |  |
 | `id` |  |
 | `is_held` |  |
@@ -270,7 +271,7 @@ On error, `ok` is `false` and `$err` contains the error value.
 | `jpeg_width` |  |
 | `md5` |  |
 | `parent_id` |  |
-| `pool_id` |  |
+| `pool_ids` |  |
 | `preview_height` |  |
 | `preview_url` |  |
 | `preview_width` |  |
@@ -282,8 +283,8 @@ On error, `ok` is `false` and `$err` contains the error value.
 | `score` |  |
 | `source` |  |
 | `status` |  |
-| `tag` |  |
-| `vote` |  |
+| `tags` |  |
+| `votes` |  |
 | `width` |  |
 
 Operations: List.
@@ -318,11 +319,11 @@ Create an instance: `$post = $client->Post();`
 | `file_size` | `int` |  |
 | `file_url` | `string` |  |
 | `flag_detail` | `array` |  |
-| `frame` | `array` |  |
+| `frames` | `array` |  |
 | `frames_pending` | `array` |  |
 | `frames_pending_string` | `string` |  |
 | `frames_string` | `string` |  |
-| `has_child` | `bool` |  |
+| `has_children` | `bool` |  |
 | `height` | `int` |  |
 | `id` | `int` |  |
 | `is_held` | `bool` |  |
@@ -333,7 +334,7 @@ Create an instance: `$post = $client->Post();`
 | `jpeg_width` | `int` |  |
 | `md5` | `string` |  |
 | `parent_id` | `int` |  |
-| `pool_id` | `array` |  |
+| `pool_ids` | `array` |  |
 | `preview_height` | `int` |  |
 | `preview_url` | `string` |  |
 | `preview_width` | `int` |  |
@@ -345,8 +346,8 @@ Create an instance: `$post = $client->Post();`
 | `score` | `int` |  |
 | `source` | `string` |  |
 | `status` | `string` |  |
-| `tag` | `string` |  |
-| `vote` | `array` |  |
+| `tags` | `string` |  |
+| `votes` | `array` |  |
 | `width` | `int` |  |
 
 #### Example: List

@@ -21,7 +21,7 @@ class Config {
 
 
   main = {
-    name: 'ProjectName',
+    name: 'YandereApiV2',
   }
 
 
@@ -119,7 +119,7 @@ class Config {
         },
         {
           "active": true,
-          "name": "frame",
+          "name": "frames",
           "req": false,
           "type": "`$ARRAY`",
           "index$": 9
@@ -147,7 +147,7 @@ class Config {
         },
         {
           "active": true,
-          "name": "has_child",
+          "name": "has_children",
           "req": false,
           "type": "`$BOOLEAN`",
           "index$": 13
@@ -224,7 +224,7 @@ class Config {
         },
         {
           "active": true,
-          "name": "pool_id",
+          "name": "pool_ids",
           "req": false,
           "type": "`$ARRAY`",
           "index$": 24
@@ -308,14 +308,14 @@ class Config {
         },
         {
           "active": true,
-          "name": "tag",
+          "name": "tags",
           "req": false,
           "type": "`$STRING`",
           "index$": 36
         },
         {
           "active": true,
-          "name": "vote",
+          "name": "votes",
           "req": false,
           "type": "`$OBJECT`",
           "index$": 37
@@ -401,6 +401,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/post.json",
               "parts": [

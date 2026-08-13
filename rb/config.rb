@@ -90,7 +90,7 @@ module YandereApiV2Config
             },
             {
               "active" => true,
-              "name" => "frame",
+              "name" => "frames",
               "req" => false,
               "type" => "`$ARRAY`",
               "index$" => 9,
@@ -118,7 +118,7 @@ module YandereApiV2Config
             },
             {
               "active" => true,
-              "name" => "has_child",
+              "name" => "has_children",
               "req" => false,
               "type" => "`$BOOLEAN`",
               "index$" => 13,
@@ -195,7 +195,7 @@ module YandereApiV2Config
             },
             {
               "active" => true,
-              "name" => "pool_id",
+              "name" => "pool_ids",
               "req" => false,
               "type" => "`$ARRAY`",
               "index$" => 24,
@@ -279,14 +279,14 @@ module YandereApiV2Config
             },
             {
               "active" => true,
-              "name" => "tag",
+              "name" => "tags",
               "req" => false,
               "type" => "`$STRING`",
               "index$" => 36,
             },
             {
               "active" => true,
-              "name" => "vote",
+              "name" => "votes",
               "req" => false,
               "type" => "`$OBJECT`",
               "index$" => 37,
@@ -372,6 +372,7 @@ module YandereApiV2Config
                       },
                     ],
                   },
+                  "kind" => "http",
                   "method" => "GET",
                   "orig" => "/post.json",
                   "parts" => [

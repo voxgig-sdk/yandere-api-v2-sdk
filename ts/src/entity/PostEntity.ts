@@ -37,7 +37,7 @@ class PostEntity extends YandereApiV2EntityBase<Post> {
 
 
 
-  async list(this: any, reqmatch?: PostListMatch, ctrl?: Control): Promise<Post[]> {
+  async list(this: any, reqmatch?: PostListMatch, ctrl?: Control): Promise<PostEntity[]> {
 
     const utility = this._utility
 

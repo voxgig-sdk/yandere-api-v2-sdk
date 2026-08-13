@@ -61,11 +61,11 @@ function post_direct_setup(mockres)
   local calls = {}
 
   local env = runner.env_override({
-    ["YANDEREAPIV__TEST_POST_ENTID"] = {},
-    ["YANDEREAPIV__TEST_LIVE"] = "FALSE",
+    ["YANDERE_API_V2_TEST_POST_ENTID"] = {},
+    ["YANDERE_API_V2_TEST_LIVE"] = "FALSE",
   })
 
-  local live = env["YANDEREAPIV__TEST_LIVE"] == "TRUE"
+  local live = env["YANDERE_API_V2_TEST_LIVE"] == "TRUE"
 
   if live then
     local merged_opts = {

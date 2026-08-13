@@ -16,11 +16,11 @@
 import pytest
 
 from yandereapiv2_sdk import YandereApiV2SDK
-from core.error import YandereApiV2Error
-from core.result import YandereApiV2Result
-from core.response import YandereApiV2Response
-from core.spec import YandereApiV2Spec
-from feature.base_feature import YandereApiV2BaseFeature
+from yandereapiv2_sdk.core.error import YandereApiV2Error
+from yandereapiv2_sdk.core.result import YandereApiV2Result
+from yandereapiv2_sdk.core.response import YandereApiV2Response
+from yandereapiv2_sdk.core.spec import YandereApiV2Spec
+from yandereapiv2_sdk.feature.base_feature import YandereApiV2BaseFeature
 
 
 def _client():

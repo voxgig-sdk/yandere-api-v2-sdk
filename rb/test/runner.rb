@@ -23,8 +23,8 @@ module YandereApiV2TestRunner
   end
 
   def self.env_override(m)
-    live = getenv("YANDEREAPIV2_TEST_LIVE")
-    override = getenv("YANDEREAPIV2_TEST_OVERRIDE")
+    live = getenv("YANDERE_API_V2_TEST_LIVE")
+    override = getenv("YANDERE_API_V2_TEST_OVERRIDE")
 
     if live == "TRUE" || override == "TRUE"
       m.each_key do |key|
@@ -44,8 +44,8 @@ module YandereApiV2TestRunner
       end
     end
 
-    explain = getenv("YANDEREAPIV2_TEST_EXPLAIN")
-    m["YANDEREAPIV2_TEST_EXPLAIN"] = explain if explain && !explain.empty?
+    explain = getenv("YANDERE_API_V2_TEST_EXPLAIN")
+    m["YANDERE_API_V2_TEST_EXPLAIN"] = explain if explain && !explain.empty?
 
     m
   end
