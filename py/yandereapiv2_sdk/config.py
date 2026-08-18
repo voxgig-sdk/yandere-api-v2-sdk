@@ -1,7 +1,30 @@
 # YandereApiV2 SDK configuration
 
 
+_shared_config = None
+
+
+def shared_config():
+    """Return the process-wide config, built once on first use.
+
+    The SDK reads the config on every request and never writes to it, so one
+    instance is shared by every client rather than rebuilt per client.
+
+    The returned dict is shared: treat it as read-only. Callers that need to
+    mutate should use make_config, which always returns a fresh copy.
+    """
+    global _shared_config
+    if _shared_config is None:
+        _shared_config = make_config()
+    return _shared_config
+
+
 def make_config():
+    """Build a fresh, fully materialised config dict.
+
+    Every call rebuilds the whole structure, so prefer shared_config unless
+    you need a private copy you intend to mutate.
+    """
     return {
         "main": {
             "name": "YandereApiV2",
@@ -26,277 +49,160 @@ def make_config():
       "post": {
         "fields": [
           {
-            "active": True,
             "name": "actual_preview_height",
-            "req": False,
             "type": "`$INTEGER`",
-            "index$": 0,
           },
           {
-            "active": True,
             "name": "actual_preview_width",
-            "req": False,
             "type": "`$INTEGER`",
-            "index$": 1,
           },
           {
-            "active": True,
             "name": "author",
-            "req": False,
             "type": "`$STRING`",
-            "index$": 2,
           },
           {
-            "active": True,
             "name": "change",
-            "req": False,
             "type": "`$INTEGER`",
-            "index$": 3,
           },
           {
-            "active": True,
             "name": "created_at",
-            "req": False,
             "type": "`$INTEGER`",
-            "index$": 4,
           },
           {
-            "active": True,
             "name": "creator_id",
-            "req": False,
             "type": "`$INTEGER`",
-            "index$": 5,
           },
           {
-            "active": True,
             "name": "file_size",
-            "req": False,
             "type": "`$INTEGER`",
-            "index$": 6,
           },
           {
-            "active": True,
             "name": "file_url",
-            "req": False,
             "type": "`$STRING`",
-            "index$": 7,
           },
           {
-            "active": True,
             "name": "flag_detail",
-            "req": False,
             "type": "`$OBJECT`",
-            "index$": 8,
           },
           {
-            "active": True,
             "name": "frames",
-            "req": False,
             "type": "`$ARRAY`",
-            "index$": 9,
           },
           {
-            "active": True,
             "name": "frames_pending",
-            "req": False,
             "type": "`$ARRAY`",
-            "index$": 10,
           },
           {
-            "active": True,
             "name": "frames_pending_string",
-            "req": False,
             "type": "`$STRING`",
-            "index$": 11,
           },
           {
-            "active": True,
             "name": "frames_string",
-            "req": False,
             "type": "`$STRING`",
-            "index$": 12,
           },
           {
-            "active": True,
             "name": "has_children",
-            "req": False,
             "type": "`$BOOLEAN`",
-            "index$": 13,
           },
           {
-            "active": True,
             "name": "height",
-            "req": False,
             "type": "`$INTEGER`",
-            "index$": 14,
           },
           {
-            "active": True,
             "name": "id",
-            "req": False,
             "type": "`$INTEGER`",
-            "index$": 15,
           },
           {
-            "active": True,
             "name": "is_held",
-            "req": False,
             "type": "`$BOOLEAN`",
-            "index$": 16,
           },
           {
-            "active": True,
             "name": "is_shown_in_index",
-            "req": False,
             "type": "`$BOOLEAN`",
-            "index$": 17,
           },
           {
-            "active": True,
             "name": "jpeg_file_size",
-            "req": False,
             "type": "`$INTEGER`",
-            "index$": 18,
           },
           {
-            "active": True,
             "name": "jpeg_height",
-            "req": False,
             "type": "`$INTEGER`",
-            "index$": 19,
           },
           {
-            "active": True,
             "name": "jpeg_url",
-            "req": False,
             "type": "`$STRING`",
-            "index$": 20,
           },
           {
-            "active": True,
             "name": "jpeg_width",
-            "req": False,
             "type": "`$INTEGER`",
-            "index$": 21,
           },
           {
-            "active": True,
             "name": "md5",
-            "req": False,
             "type": "`$STRING`",
-            "index$": 22,
           },
           {
-            "active": True,
             "name": "parent_id",
-            "req": False,
             "type": "`$INTEGER`",
-            "index$": 23,
           },
           {
-            "active": True,
             "name": "pool_ids",
-            "req": False,
             "type": "`$ARRAY`",
-            "index$": 24,
           },
           {
-            "active": True,
             "name": "preview_height",
-            "req": False,
             "type": "`$INTEGER`",
-            "index$": 25,
           },
           {
-            "active": True,
             "name": "preview_url",
-            "req": False,
             "type": "`$STRING`",
-            "index$": 26,
           },
           {
-            "active": True,
             "name": "preview_width",
-            "req": False,
             "type": "`$INTEGER`",
-            "index$": 27,
           },
           {
-            "active": True,
             "name": "rating",
-            "req": False,
             "type": "`$STRING`",
-            "index$": 28,
           },
           {
-            "active": True,
             "name": "sample_file_size",
-            "req": False,
             "type": "`$INTEGER`",
-            "index$": 29,
           },
           {
-            "active": True,
             "name": "sample_height",
-            "req": False,
             "type": "`$INTEGER`",
-            "index$": 30,
           },
           {
-            "active": True,
             "name": "sample_url",
-            "req": False,
             "type": "`$STRING`",
-            "index$": 31,
           },
           {
-            "active": True,
             "name": "sample_width",
-            "req": False,
             "type": "`$INTEGER`",
-            "index$": 32,
           },
           {
-            "active": True,
             "name": "score",
-            "req": False,
             "type": "`$INTEGER`",
-            "index$": 33,
           },
           {
-            "active": True,
             "name": "source",
-            "req": False,
             "type": "`$STRING`",
-            "index$": 34,
           },
           {
-            "active": True,
             "name": "status",
-            "req": False,
             "type": "`$STRING`",
-            "index$": 35,
           },
           {
-            "active": True,
             "name": "tags",
-            "req": False,
             "type": "`$STRING`",
-            "index$": 36,
           },
           {
-            "active": True,
             "name": "votes",
-            "req": False,
             "type": "`$OBJECT`",
-            "index$": 37,
           },
           {
-            "active": True,
             "name": "width",
-            "req": False,
             "type": "`$INTEGER`",
-            "index$": 38,
           },
         ],
         "name": "post",
@@ -306,11 +212,9 @@ def make_config():
             "name": "list",
             "points": [
               {
-                "active": True,
                 "args": {
                   "query": [
                     {
-                      "active": True,
                       "kind": "query",
                       "name": "api_version",
                       "orig": "api_version",
@@ -318,56 +222,44 @@ def make_config():
                       "type": "`$INTEGER`",
                     },
                     {
-                      "active": True,
                       "kind": "query",
                       "name": "filter",
                       "orig": "filter",
-                      "reqd": False,
                       "type": "`$INTEGER`",
                     },
                     {
-                      "active": True,
                       "example": 0,
                       "kind": "query",
                       "name": "include_pool",
                       "orig": "include_pool",
-                      "reqd": False,
                       "type": "`$INTEGER`",
                     },
                     {
-                      "active": True,
                       "example": 0,
                       "kind": "query",
                       "name": "include_tag",
                       "orig": "include_tag",
-                      "reqd": False,
                       "type": "`$INTEGER`",
                     },
                     {
-                      "active": True,
                       "example": 0,
                       "kind": "query",
                       "name": "include_vote",
                       "orig": "include_vote",
-                      "reqd": False,
                       "type": "`$INTEGER`",
                     },
                     {
-                      "active": True,
                       "example": 20,
                       "kind": "query",
                       "name": "limit",
                       "orig": "limit",
-                      "reqd": False,
                       "type": "`$INTEGER`",
                     },
                     {
-                      "active": True,
                       "example": "holds:false",
                       "kind": "query",
                       "name": "tag",
                       "orig": "tag",
-                      "reqd": False,
                       "type": "`$STRING`",
                     },
                   ],
@@ -393,10 +285,8 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
-                "index$": 0,
               },
             ],
-            "key$": "list",
           },
         },
         "relations": {

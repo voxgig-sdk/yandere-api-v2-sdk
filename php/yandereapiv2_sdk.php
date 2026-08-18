@@ -40,7 +40,7 @@ class YandereApiV2SDK
         $utility = new YandereApiV2Utility();
         $this->_utility = $utility;
 
-        $config = YandereApiV2Config::make_config();
+        $config = YandereApiV2Config::shared_config();
 
         $this->_rootctx = ($utility->make_context)([
             "client" => $this,

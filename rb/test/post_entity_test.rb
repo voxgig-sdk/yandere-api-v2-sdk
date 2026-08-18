@@ -33,7 +33,7 @@ class PostEntityTest < Minitest::Test
     assert_equal 3, seen.length
 
     # Inbound: streaming active -> yields each item from the feature.
-    cfg = YandereApiV2Config.make_config
+    cfg = YandereApiV2Config.shared_config
     if cfg["feature"].is_a?(Hash) && cfg["feature"].key?("streaming")
       sdk = YandereApiV2SDK.test(seed, { "feature" => { "streaming" => { "active" => true } } })
       got = []

@@ -28,7 +28,7 @@ class YandereApiV2SDK
     utility = YandereApiV2Utility.new
     @_utility = utility
 
-    config = YandereApiV2Config.make_config
+    config = YandereApiV2Config.shared_config
 
     @_rootctx = utility.make_context.call({
       "client" => self,

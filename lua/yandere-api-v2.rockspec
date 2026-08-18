@@ -23,6 +23,7 @@ build = {
   modules = {
     ["yandere-api-v2_sdk"] = "yandere-api-v2_sdk.lua",
     ["config"] = "config.lua",
+    ["config_shared"] = "config_shared.lua",
     ["features"] = "features.lua",
   }
 }
