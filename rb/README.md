@@ -237,45 +237,45 @@ returns a result `Hash` with these keys:
 
 | Field | Description |
 | --- | --- |
-| `actual_preview_height` |  |
-| `actual_preview_width` |  |
-| `author` |  |
-| `change` |  |
-| `created_at` |  |
-| `creator_id` |  |
-| `file_size` |  |
-| `file_url` |  |
-| `flag_detail` |  |
-| `frames` |  |
-| `frames_pending` |  |
-| `frames_pending_string` |  |
-| `frames_string` |  |
-| `has_children` |  |
-| `height` |  |
-| `id` |  |
-| `is_held` |  |
-| `is_shown_in_index` |  |
-| `jpeg_file_size` |  |
-| `jpeg_height` |  |
-| `jpeg_url` |  |
-| `jpeg_width` |  |
-| `md5` |  |
-| `parent_id` |  |
-| `pool_ids` |  |
-| `preview_height` |  |
-| `preview_url` |  |
-| `preview_width` |  |
-| `rating` |  |
-| `sample_file_size` |  |
-| `sample_height` |  |
-| `sample_url` |  |
-| `sample_width` |  |
-| `score` |  |
-| `source` |  |
-| `status` |  |
-| `tags` |  |
-| `votes` |  |
-| `width` |  |
+| `actual_preview_height` | Actual height of the preview image |
+| `actual_preview_width` | Actual width of the preview image |
+| `author` | Username of the post creator |
+| `change` | Change number/version |
+| `created_at` | Unix timestamp of when the post was created |
+| `creator_id` | User ID of the post creator |
+| `file_size` | File size in bytes |
+| `file_url` | URL to the full-size image |
+| `flag_detail` | Flag details if the post is flagged |
+| `frames` | Array of frames |
+| `frames_pending` | Array of pending frames |
+| `frames_pending_string` | Pending frames information |
+| `frames_string` | Frames information |
+| `has_children` | Whether the post has child posts |
+| `height` | Original image height |
+| `id` | Post ID |
+| `is_held` | Whether the post is held |
+| `is_shown_in_index` | Whether the post is shown in the index |
+| `jpeg_file_size` | File size of the JPEG version in bytes |
+| `jpeg_height` | Height of the JPEG version |
+| `jpeg_url` | URL to the JPEG version |
+| `jpeg_width` | Width of the JPEG version |
+| `md5` | MD5 hash of the image file |
+| `parent_id` | ID of the parent post |
+| `pool_ids` | Array of pool IDs this post belongs to (included when include_pools=1) |
+| `preview_height` | Height of the preview image |
+| `preview_url` | URL to the preview/thumbnail image |
+| `preview_width` | Width of the preview image |
+| `rating` | Post rating (s=safe, q=questionable, e=explicit) |
+| `sample_file_size` | File size of the sample image in bytes |
+| `sample_height` | Height of the sample image |
+| `sample_url` | URL to the sample-size image |
+| `sample_width` | Width of the sample image |
+| `score` | Post score |
+| `source` | Source URL of the image |
+| `status` | Post status |
+| `tags` | Space-separated list of tags associated with the post |
+| `votes` | Vote information (included when include_votes=1) |
+| `width` | Original image width |
 
 Operations: List.
 
@@ -300,45 +300,45 @@ Create an instance: `post = client.Post`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `actual_preview_height` | `Integer` |  |
-| `actual_preview_width` | `Integer` |  |
-| `author` | `String` |  |
-| `change` | `Integer` |  |
-| `created_at` | `Integer` |  |
-| `creator_id` | `Integer` |  |
-| `file_size` | `Integer` |  |
-| `file_url` | `String` |  |
-| `flag_detail` | `Hash` |  |
-| `frames` | `Array` |  |
-| `frames_pending` | `Array` |  |
-| `frames_pending_string` | `String` |  |
-| `frames_string` | `String` |  |
-| `has_children` | `Boolean` |  |
-| `height` | `Integer` |  |
-| `id` | `Integer` |  |
-| `is_held` | `Boolean` |  |
-| `is_shown_in_index` | `Boolean` |  |
-| `jpeg_file_size` | `Integer` |  |
-| `jpeg_height` | `Integer` |  |
-| `jpeg_url` | `String` |  |
-| `jpeg_width` | `Integer` |  |
-| `md5` | `String` |  |
-| `parent_id` | `Integer` |  |
-| `pool_ids` | `Array` |  |
-| `preview_height` | `Integer` |  |
-| `preview_url` | `String` |  |
-| `preview_width` | `Integer` |  |
-| `rating` | `String` |  |
-| `sample_file_size` | `Integer` |  |
-| `sample_height` | `Integer` |  |
-| `sample_url` | `String` |  |
-| `sample_width` | `Integer` |  |
-| `score` | `Integer` |  |
-| `source` | `String` |  |
-| `status` | `String` |  |
-| `tags` | `String` |  |
-| `votes` | `Hash` |  |
-| `width` | `Integer` |  |
+| `actual_preview_height` | `Integer` | Actual height of the preview image |
+| `actual_preview_width` | `Integer` | Actual width of the preview image |
+| `author` | `String` | Username of the post creator |
+| `change` | `Integer` | Change number/version |
+| `created_at` | `Integer` | Unix timestamp of when the post was created |
+| `creator_id` | `Integer` | User ID of the post creator |
+| `file_size` | `Integer` | File size in bytes |
+| `file_url` | `String` | URL to the full-size image |
+| `flag_detail` | `Hash` | Flag details if the post is flagged |
+| `frames` | `Array` | Array of frames |
+| `frames_pending` | `Array` | Array of pending frames |
+| `frames_pending_string` | `String` | Pending frames information |
+| `frames_string` | `String` | Frames information |
+| `has_children` | `Boolean` | Whether the post has child posts |
+| `height` | `Integer` | Original image height |
+| `id` | `Integer` | Post ID |
+| `is_held` | `Boolean` | Whether the post is held |
+| `is_shown_in_index` | `Boolean` | Whether the post is shown in the index |
+| `jpeg_file_size` | `Integer` | File size of the JPEG version in bytes |
+| `jpeg_height` | `Integer` | Height of the JPEG version |
+| `jpeg_url` | `String` | URL to the JPEG version |
+| `jpeg_width` | `Integer` | Width of the JPEG version |
+| `md5` | `String` | MD5 hash of the image file |
+| `parent_id` | `Integer` | ID of the parent post |
+| `pool_ids` | `Array` | Array of pool IDs this post belongs to (included when include_pools=1) |
+| `preview_height` | `Integer` | Height of the preview image |
+| `preview_url` | `String` | URL to the preview/thumbnail image |
+| `preview_width` | `Integer` | Width of the preview image |
+| `rating` | `String` | Post rating (s=safe, q=questionable, e=explicit) |
+| `sample_file_size` | `Integer` | File size of the sample image in bytes |
+| `sample_height` | `Integer` | Height of the sample image |
+| `sample_url` | `String` | URL to the sample-size image |
+| `sample_width` | `Integer` | Width of the sample image |
+| `score` | `Integer` | Post score |
+| `source` | `String` | Source URL of the image |
+| `status` | `String` | Post status |
+| `tags` | `String` | Space-separated list of tags associated with the post |
+| `votes` | `Hash` | Vote information (included when include_votes=1) |
+| `width` | `Integer` | Original image width |
 
 #### Example: List
 

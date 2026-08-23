@@ -6,7 +6,7 @@ The Golang SDK for the YandereApiV2 API — an entity-oriented client using stan
 
 It exposes the API as capitalised, semantic **Entities** — e.g. `client.Post(nil)` — each with the same small set of operations (`List`) instead of raw URL paths and query strings. You call meaning, not endpoints, which keeps the cognitive load low.
 
-> Other languages, the CLI, and MCP server live alongside this one — see
+> Also generated from this model: `go-cli`, `go-mcp`, `lua`, `php`, `py`, `rb`, `ts` — see
 > the [top-level README](../README.md).
 
 
@@ -260,45 +260,45 @@ Only `Direct()` returns a response envelope — a `map[string]any` with
 
 | Field | Description |
 | --- | --- |
-| `"actual_preview_height"` |  |
-| `"actual_preview_width"` |  |
-| `"author"` |  |
-| `"change"` |  |
-| `"created_at"` |  |
-| `"creator_id"` |  |
-| `"file_size"` |  |
-| `"file_url"` |  |
-| `"flag_detail"` |  |
-| `"frames"` |  |
-| `"frames_pending"` |  |
-| `"frames_pending_string"` |  |
-| `"frames_string"` |  |
-| `"has_children"` |  |
-| `"height"` |  |
-| `"id"` |  |
-| `"is_held"` |  |
-| `"is_shown_in_index"` |  |
-| `"jpeg_file_size"` |  |
-| `"jpeg_height"` |  |
-| `"jpeg_url"` |  |
-| `"jpeg_width"` |  |
-| `"md5"` |  |
-| `"parent_id"` |  |
-| `"pool_ids"` |  |
-| `"preview_height"` |  |
-| `"preview_url"` |  |
-| `"preview_width"` |  |
-| `"rating"` |  |
-| `"sample_file_size"` |  |
-| `"sample_height"` |  |
-| `"sample_url"` |  |
-| `"sample_width"` |  |
-| `"score"` |  |
-| `"source"` |  |
-| `"status"` |  |
-| `"tags"` |  |
-| `"votes"` |  |
-| `"width"` |  |
+| `"actual_preview_height"` | Actual height of the preview image |
+| `"actual_preview_width"` | Actual width of the preview image |
+| `"author"` | Username of the post creator |
+| `"change"` | Change number/version |
+| `"created_at"` | Unix timestamp of when the post was created |
+| `"creator_id"` | User ID of the post creator |
+| `"file_size"` | File size in bytes |
+| `"file_url"` | URL to the full-size image |
+| `"flag_detail"` | Flag details if the post is flagged |
+| `"frames"` | Array of frames |
+| `"frames_pending"` | Array of pending frames |
+| `"frames_pending_string"` | Pending frames information |
+| `"frames_string"` | Frames information |
+| `"has_children"` | Whether the post has child posts |
+| `"height"` | Original image height |
+| `"id"` | Post ID |
+| `"is_held"` | Whether the post is held |
+| `"is_shown_in_index"` | Whether the post is shown in the index |
+| `"jpeg_file_size"` | File size of the JPEG version in bytes |
+| `"jpeg_height"` | Height of the JPEG version |
+| `"jpeg_url"` | URL to the JPEG version |
+| `"jpeg_width"` | Width of the JPEG version |
+| `"md5"` | MD5 hash of the image file |
+| `"parent_id"` | ID of the parent post |
+| `"pool_ids"` | Array of pool IDs this post belongs to (included when include_pools=1) |
+| `"preview_height"` | Height of the preview image |
+| `"preview_url"` | URL to the preview/thumbnail image |
+| `"preview_width"` | Width of the preview image |
+| `"rating"` | Post rating (s=safe, q=questionable, e=explicit) |
+| `"sample_file_size"` | File size of the sample image in bytes |
+| `"sample_height"` | Height of the sample image |
+| `"sample_url"` | URL to the sample-size image |
+| `"sample_width"` | Width of the sample image |
+| `"score"` | Post score |
+| `"source"` | Source URL of the image |
+| `"status"` | Post status |
+| `"tags"` | Space-separated list of tags associated with the post |
+| `"votes"` | Vote information (included when include_votes=1) |
+| `"width"` | Original image width |
 
 Operations: List.
 
@@ -323,45 +323,45 @@ Create an instance: `post := client.Post(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `actual_preview_height` | `int` |  |
-| `actual_preview_width` | `int` |  |
-| `author` | `string` |  |
-| `change` | `int` |  |
-| `created_at` | `int` |  |
-| `creator_id` | `int` |  |
-| `file_size` | `int` |  |
-| `file_url` | `string` |  |
-| `flag_detail` | `map[string]any` |  |
-| `frames` | `[]any` |  |
-| `frames_pending` | `[]any` |  |
-| `frames_pending_string` | `string` |  |
-| `frames_string` | `string` |  |
-| `has_children` | `bool` |  |
-| `height` | `int` |  |
-| `id` | `int` |  |
-| `is_held` | `bool` |  |
-| `is_shown_in_index` | `bool` |  |
-| `jpeg_file_size` | `int` |  |
-| `jpeg_height` | `int` |  |
-| `jpeg_url` | `string` |  |
-| `jpeg_width` | `int` |  |
-| `md5` | `string` |  |
-| `parent_id` | `int` |  |
-| `pool_ids` | `[]any` |  |
-| `preview_height` | `int` |  |
-| `preview_url` | `string` |  |
-| `preview_width` | `int` |  |
-| `rating` | `string` |  |
-| `sample_file_size` | `int` |  |
-| `sample_height` | `int` |  |
-| `sample_url` | `string` |  |
-| `sample_width` | `int` |  |
-| `score` | `int` |  |
-| `source` | `string` |  |
-| `status` | `string` |  |
-| `tags` | `string` |  |
-| `votes` | `map[string]any` |  |
-| `width` | `int` |  |
+| `actual_preview_height` | `int` | Actual height of the preview image |
+| `actual_preview_width` | `int` | Actual width of the preview image |
+| `author` | `string` | Username of the post creator |
+| `change` | `int` | Change number/version |
+| `created_at` | `int` | Unix timestamp of when the post was created |
+| `creator_id` | `int` | User ID of the post creator |
+| `file_size` | `int` | File size in bytes |
+| `file_url` | `string` | URL to the full-size image |
+| `flag_detail` | `map[string]any` | Flag details if the post is flagged |
+| `frames` | `[]any` | Array of frames |
+| `frames_pending` | `[]any` | Array of pending frames |
+| `frames_pending_string` | `string` | Pending frames information |
+| `frames_string` | `string` | Frames information |
+| `has_children` | `bool` | Whether the post has child posts |
+| `height` | `int` | Original image height |
+| `id` | `int` | Post ID |
+| `is_held` | `bool` | Whether the post is held |
+| `is_shown_in_index` | `bool` | Whether the post is shown in the index |
+| `jpeg_file_size` | `int` | File size of the JPEG version in bytes |
+| `jpeg_height` | `int` | Height of the JPEG version |
+| `jpeg_url` | `string` | URL to the JPEG version |
+| `jpeg_width` | `int` | Width of the JPEG version |
+| `md5` | `string` | MD5 hash of the image file |
+| `parent_id` | `int` | ID of the parent post |
+| `pool_ids` | `[]any` | Array of pool IDs this post belongs to (included when include_pools=1) |
+| `preview_height` | `int` | Height of the preview image |
+| `preview_url` | `string` | URL to the preview/thumbnail image |
+| `preview_width` | `int` | Width of the preview image |
+| `rating` | `string` | Post rating (s=safe, q=questionable, e=explicit) |
+| `sample_file_size` | `int` | File size of the sample image in bytes |
+| `sample_height` | `int` | Height of the sample image |
+| `sample_url` | `string` | URL to the sample-size image |
+| `sample_width` | `int` | Width of the sample image |
+| `score` | `int` | Post score |
+| `source` | `string` | Source URL of the image |
+| `status` | `string` | Post status |
+| `tags` | `string` | Space-separated list of tags associated with the post |
+| `votes` | `map[string]any` | Vote information (included when include_votes=1) |
+| `width` | `int` | Original image width |
 
 #### Example: List
 

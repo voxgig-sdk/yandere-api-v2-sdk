@@ -90,45 +90,45 @@ local post = client:Post(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `actual_preview_height` | `number` | No |  |
-| `actual_preview_width` | `number` | No |  |
-| `author` | `string` | No |  |
-| `change` | `number` | No |  |
-| `created_at` | `number` | No |  |
-| `creator_id` | `number` | No |  |
-| `file_size` | `number` | No |  |
-| `file_url` | `string` | No |  |
-| `flag_detail` | `table` | No |  |
-| `frames` | `table` | No |  |
-| `frames_pending` | `table` | No |  |
-| `frames_pending_string` | `string` | No |  |
-| `frames_string` | `string` | No |  |
-| `has_children` | `boolean` | No |  |
-| `height` | `number` | No |  |
-| `id` | `number` | No |  |
-| `is_held` | `boolean` | No |  |
-| `is_shown_in_index` | `boolean` | No |  |
-| `jpeg_file_size` | `number` | No |  |
-| `jpeg_height` | `number` | No |  |
-| `jpeg_url` | `string` | No |  |
-| `jpeg_width` | `number` | No |  |
-| `md5` | `string` | No |  |
-| `parent_id` | `number` | No |  |
-| `pool_ids` | `table` | No |  |
-| `preview_height` | `number` | No |  |
-| `preview_url` | `string` | No |  |
-| `preview_width` | `number` | No |  |
-| `rating` | `string` | No |  |
-| `sample_file_size` | `number` | No |  |
-| `sample_height` | `number` | No |  |
-| `sample_url` | `string` | No |  |
-| `sample_width` | `number` | No |  |
-| `score` | `number` | No |  |
-| `source` | `string` | No |  |
-| `status` | `string` | No |  |
-| `tags` | `string` | No |  |
-| `votes` | `table` | No |  |
-| `width` | `number` | No |  |
+| `actual_preview_height` | `number` | No | Actual height of the preview image |
+| `actual_preview_width` | `number` | No | Actual width of the preview image |
+| `author` | `string` | No | Username of the post creator |
+| `change` | `number` | No | Change number/version |
+| `created_at` | `number` | No | Unix timestamp of when the post was created |
+| `creator_id` | `number` | No | User ID of the post creator |
+| `file_size` | `number` | No | File size in bytes |
+| `file_url` | `string` | No | URL to the full-size image |
+| `flag_detail` | `table` | No | Flag details if the post is flagged |
+| `frames` | `table` | No | Array of frames |
+| `frames_pending` | `table` | No | Array of pending frames |
+| `frames_pending_string` | `string` | No | Pending frames information |
+| `frames_string` | `string` | No | Frames information |
+| `has_children` | `boolean` | No | Whether the post has child posts |
+| `height` | `number` | No | Original image height |
+| `id` | `number` | No | Post ID |
+| `is_held` | `boolean` | No | Whether the post is held |
+| `is_shown_in_index` | `boolean` | No | Whether the post is shown in the index |
+| `jpeg_file_size` | `number` | No | File size of the JPEG version in bytes |
+| `jpeg_height` | `number` | No | Height of the JPEG version |
+| `jpeg_url` | `string` | No | URL to the JPEG version |
+| `jpeg_width` | `number` | No | Width of the JPEG version |
+| `md5` | `string` | No | MD5 hash of the image file |
+| `parent_id` | `number` | No | ID of the parent post |
+| `pool_ids` | `table` | No | Array of pool IDs this post belongs to (included when include_pools=1) |
+| `preview_height` | `number` | No | Height of the preview image |
+| `preview_url` | `string` | No | URL to the preview/thumbnail image |
+| `preview_width` | `number` | No | Width of the preview image |
+| `rating` | `string` | No | Post rating (s=safe, q=questionable, e=explicit) |
+| `sample_file_size` | `number` | No | File size of the sample image in bytes |
+| `sample_height` | `number` | No | Height of the sample image |
+| `sample_url` | `string` | No | URL to the sample-size image |
+| `sample_width` | `number` | No | Width of the sample image |
+| `score` | `number` | No | Post score |
+| `source` | `string` | No | Source URL of the image |
+| `status` | `string` | No | Post status |
+| `tags` | `string` | No | Space-separated list of tags associated with the post |
+| `votes` | `table` | No | Vote information (included when include_votes=1) |
+| `width` | `number` | No | Original image width |
 
 ### Operations
 

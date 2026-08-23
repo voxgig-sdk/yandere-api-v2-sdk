@@ -93,45 +93,45 @@ post = client.Post
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `actual_preview_height` | `Integer` | No |  |
-| `actual_preview_width` | `Integer` | No |  |
-| `author` | `String` | No |  |
-| `change` | `Integer` | No |  |
-| `created_at` | `Integer` | No |  |
-| `creator_id` | `Integer` | No |  |
-| `file_size` | `Integer` | No |  |
-| `file_url` | `String` | No |  |
-| `flag_detail` | `Hash` | No |  |
-| `frames` | `Array` | No |  |
-| `frames_pending` | `Array` | No |  |
-| `frames_pending_string` | `String` | No |  |
-| `frames_string` | `String` | No |  |
-| `has_children` | `Boolean` | No |  |
-| `height` | `Integer` | No |  |
-| `id` | `Integer` | No |  |
-| `is_held` | `Boolean` | No |  |
-| `is_shown_in_index` | `Boolean` | No |  |
-| `jpeg_file_size` | `Integer` | No |  |
-| `jpeg_height` | `Integer` | No |  |
-| `jpeg_url` | `String` | No |  |
-| `jpeg_width` | `Integer` | No |  |
-| `md5` | `String` | No |  |
-| `parent_id` | `Integer` | No |  |
-| `pool_ids` | `Array` | No |  |
-| `preview_height` | `Integer` | No |  |
-| `preview_url` | `String` | No |  |
-| `preview_width` | `Integer` | No |  |
-| `rating` | `String` | No |  |
-| `sample_file_size` | `Integer` | No |  |
-| `sample_height` | `Integer` | No |  |
-| `sample_url` | `String` | No |  |
-| `sample_width` | `Integer` | No |  |
-| `score` | `Integer` | No |  |
-| `source` | `String` | No |  |
-| `status` | `String` | No |  |
-| `tags` | `String` | No |  |
-| `votes` | `Hash` | No |  |
-| `width` | `Integer` | No |  |
+| `actual_preview_height` | `Integer` | No | Actual height of the preview image |
+| `actual_preview_width` | `Integer` | No | Actual width of the preview image |
+| `author` | `String` | No | Username of the post creator |
+| `change` | `Integer` | No | Change number/version |
+| `created_at` | `Integer` | No | Unix timestamp of when the post was created |
+| `creator_id` | `Integer` | No | User ID of the post creator |
+| `file_size` | `Integer` | No | File size in bytes |
+| `file_url` | `String` | No | URL to the full-size image |
+| `flag_detail` | `Hash` | No | Flag details if the post is flagged |
+| `frames` | `Array` | No | Array of frames |
+| `frames_pending` | `Array` | No | Array of pending frames |
+| `frames_pending_string` | `String` | No | Pending frames information |
+| `frames_string` | `String` | No | Frames information |
+| `has_children` | `Boolean` | No | Whether the post has child posts |
+| `height` | `Integer` | No | Original image height |
+| `id` | `Integer` | No | Post ID |
+| `is_held` | `Boolean` | No | Whether the post is held |
+| `is_shown_in_index` | `Boolean` | No | Whether the post is shown in the index |
+| `jpeg_file_size` | `Integer` | No | File size of the JPEG version in bytes |
+| `jpeg_height` | `Integer` | No | Height of the JPEG version |
+| `jpeg_url` | `String` | No | URL to the JPEG version |
+| `jpeg_width` | `Integer` | No | Width of the JPEG version |
+| `md5` | `String` | No | MD5 hash of the image file |
+| `parent_id` | `Integer` | No | ID of the parent post |
+| `pool_ids` | `Array` | No | Array of pool IDs this post belongs to (included when include_pools=1) |
+| `preview_height` | `Integer` | No | Height of the preview image |
+| `preview_url` | `String` | No | URL to the preview/thumbnail image |
+| `preview_width` | `Integer` | No | Width of the preview image |
+| `rating` | `String` | No | Post rating (s=safe, q=questionable, e=explicit) |
+| `sample_file_size` | `Integer` | No | File size of the sample image in bytes |
+| `sample_height` | `Integer` | No | Height of the sample image |
+| `sample_url` | `String` | No | URL to the sample-size image |
+| `sample_width` | `Integer` | No | Width of the sample image |
+| `score` | `Integer` | No | Post score |
+| `source` | `String` | No | Source URL of the image |
+| `status` | `String` | No | Post status |
+| `tags` | `String` | No | Space-separated list of tags associated with the post |
+| `votes` | `Hash` | No | Vote information (included when include_votes=1) |
+| `width` | `Integer` | No | Original image width |
 
 ### Operations
 

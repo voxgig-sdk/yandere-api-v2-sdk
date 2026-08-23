@@ -36,234 +36,273 @@
               "active": true,
               "name": "actual_preview_height",
               "req": false,
+              "short": "Actual height of the preview image",
               "type": "`$INTEGER`"
             },
             {
               "active": true,
               "name": "actual_preview_width",
               "req": false,
+              "short": "Actual width of the preview image",
               "type": "`$INTEGER`"
             },
             {
               "active": true,
               "name": "author",
               "req": false,
+              "short": "Username of the post creator",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "change",
               "req": false,
+              "short": "Change number/version",
               "type": "`$INTEGER`"
             },
             {
               "active": true,
               "name": "created_at",
               "req": false,
+              "short": "Unix timestamp of when the post was created",
               "type": "`$INTEGER`"
             },
             {
               "active": true,
               "name": "creator_id",
               "req": false,
+              "short": "User ID of the post creator",
               "type": "`$INTEGER`"
             },
             {
               "active": true,
               "name": "file_size",
               "req": false,
+              "short": "File size in bytes",
               "type": "`$INTEGER`"
             },
             {
               "active": true,
               "name": "file_url",
               "req": false,
+              "short": "URL to the full-size image",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "flag_detail",
               "req": false,
+              "short": "Flag details if the post is flagged",
               "type": "`$OBJECT`"
             },
             {
               "active": true,
               "name": "frames",
               "req": false,
+              "short": "Array of frames",
               "type": "`$ARRAY`"
             },
             {
               "active": true,
               "name": "frames_pending",
               "req": false,
+              "short": "Array of pending frames",
               "type": "`$ARRAY`"
             },
             {
               "active": true,
               "name": "frames_pending_string",
               "req": false,
+              "short": "Pending frames information",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "frames_string",
               "req": false,
+              "short": "Frames information",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "has_children",
               "req": false,
+              "short": "Whether the post has child posts",
               "type": "`$BOOLEAN`"
             },
             {
               "active": true,
               "name": "height",
               "req": false,
+              "short": "Original image height",
               "type": "`$INTEGER`"
             },
             {
               "active": true,
               "name": "id",
               "req": false,
+              "short": "Post ID",
               "type": "`$INTEGER`"
             },
             {
               "active": true,
               "name": "is_held",
               "req": false,
+              "short": "Whether the post is held",
               "type": "`$BOOLEAN`"
             },
             {
               "active": true,
               "name": "is_shown_in_index",
               "req": false,
+              "short": "Whether the post is shown in the index",
               "type": "`$BOOLEAN`"
             },
             {
               "active": true,
               "name": "jpeg_file_size",
               "req": false,
+              "short": "File size of the JPEG version in bytes",
               "type": "`$INTEGER`"
             },
             {
               "active": true,
               "name": "jpeg_height",
               "req": false,
+              "short": "Height of the JPEG version",
               "type": "`$INTEGER`"
             },
             {
               "active": true,
               "name": "jpeg_url",
               "req": false,
+              "short": "URL to the JPEG version",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "jpeg_width",
               "req": false,
+              "short": "Width of the JPEG version",
               "type": "`$INTEGER`"
             },
             {
               "active": true,
               "name": "md5",
               "req": false,
+              "short": "MD5 hash of the image file",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "parent_id",
               "req": false,
+              "short": "ID of the parent post",
               "type": "`$INTEGER`"
             },
             {
               "active": true,
               "name": "pool_ids",
               "req": false,
+              "short": "Array of pool IDs this post belongs to (included when include_pools=1)",
               "type": "`$ARRAY`"
             },
             {
               "active": true,
               "name": "preview_height",
               "req": false,
+              "short": "Height of the preview image",
               "type": "`$INTEGER`"
             },
             {
               "active": true,
               "name": "preview_url",
               "req": false,
+              "short": "URL to the preview/thumbnail image",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "preview_width",
               "req": false,
+              "short": "Width of the preview image",
               "type": "`$INTEGER`"
             },
             {
               "active": true,
               "name": "rating",
               "req": false,
+              "short": "Post rating (s=safe, q=questionable, e=explicit)",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "sample_file_size",
               "req": false,
+              "short": "File size of the sample image in bytes",
               "type": "`$INTEGER`"
             },
             {
               "active": true,
               "name": "sample_height",
               "req": false,
+              "short": "Height of the sample image",
               "type": "`$INTEGER`"
             },
             {
               "active": true,
               "name": "sample_url",
               "req": false,
+              "short": "URL to the sample-size image",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "sample_width",
               "req": false,
+              "short": "Width of the sample image",
               "type": "`$INTEGER`"
             },
             {
               "active": true,
               "name": "score",
               "req": false,
+              "short": "Post score",
               "type": "`$INTEGER`"
             },
             {
               "active": true,
               "name": "source",
               "req": false,
+              "short": "Source URL of the image",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "status",
               "req": false,
+              "short": "Post status",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "tags",
               "req": false,
+              "short": "Space-separated list of tags associated with the post",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "votes",
               "req": false,
+              "short": "Vote information (included when include_votes=1)",
               "type": "`$OBJECT`"
             },
             {
               "active": true,
               "name": "width",
               "req": false,
+              "short": "Original image width",
               "type": "`$INTEGER`"
             }
           ],

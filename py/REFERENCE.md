@@ -87,45 +87,45 @@ post = client.Post()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `actual_preview_height` | `int` | No |  |
-| `actual_preview_width` | `int` | No |  |
-| `author` | `str` | No |  |
-| `change` | `int` | No |  |
-| `created_at` | `int` | No |  |
-| `creator_id` | `int` | No |  |
-| `file_size` | `int` | No |  |
-| `file_url` | `str` | No |  |
-| `flag_detail` | `dict` | No |  |
-| `frames` | `list` | No |  |
-| `frames_pending` | `list` | No |  |
-| `frames_pending_string` | `str` | No |  |
-| `frames_string` | `str` | No |  |
-| `has_children` | `bool` | No |  |
-| `height` | `int` | No |  |
-| `id` | `int` | No |  |
-| `is_held` | `bool` | No |  |
-| `is_shown_in_index` | `bool` | No |  |
-| `jpeg_file_size` | `int` | No |  |
-| `jpeg_height` | `int` | No |  |
-| `jpeg_url` | `str` | No |  |
-| `jpeg_width` | `int` | No |  |
-| `md5` | `str` | No |  |
-| `parent_id` | `int` | No |  |
-| `pool_ids` | `list` | No |  |
-| `preview_height` | `int` | No |  |
-| `preview_url` | `str` | No |  |
-| `preview_width` | `int` | No |  |
-| `rating` | `str` | No |  |
-| `sample_file_size` | `int` | No |  |
-| `sample_height` | `int` | No |  |
-| `sample_url` | `str` | No |  |
-| `sample_width` | `int` | No |  |
-| `score` | `int` | No |  |
-| `source` | `str` | No |  |
-| `status` | `str` | No |  |
-| `tags` | `str` | No |  |
-| `votes` | `dict` | No |  |
-| `width` | `int` | No |  |
+| `actual_preview_height` | `int` | No | Actual height of the preview image |
+| `actual_preview_width` | `int` | No | Actual width of the preview image |
+| `author` | `str` | No | Username of the post creator |
+| `change` | `int` | No | Change number/version |
+| `created_at` | `int` | No | Unix timestamp of when the post was created |
+| `creator_id` | `int` | No | User ID of the post creator |
+| `file_size` | `int` | No | File size in bytes |
+| `file_url` | `str` | No | URL to the full-size image |
+| `flag_detail` | `dict` | No | Flag details if the post is flagged |
+| `frames` | `list` | No | Array of frames |
+| `frames_pending` | `list` | No | Array of pending frames |
+| `frames_pending_string` | `str` | No | Pending frames information |
+| `frames_string` | `str` | No | Frames information |
+| `has_children` | `bool` | No | Whether the post has child posts |
+| `height` | `int` | No | Original image height |
+| `id` | `int` | No | Post ID |
+| `is_held` | `bool` | No | Whether the post is held |
+| `is_shown_in_index` | `bool` | No | Whether the post is shown in the index |
+| `jpeg_file_size` | `int` | No | File size of the JPEG version in bytes |
+| `jpeg_height` | `int` | No | Height of the JPEG version |
+| `jpeg_url` | `str` | No | URL to the JPEG version |
+| `jpeg_width` | `int` | No | Width of the JPEG version |
+| `md5` | `str` | No | MD5 hash of the image file |
+| `parent_id` | `int` | No | ID of the parent post |
+| `pool_ids` | `list` | No | Array of pool IDs this post belongs to (included when include_pools=1) |
+| `preview_height` | `int` | No | Height of the preview image |
+| `preview_url` | `str` | No | URL to the preview/thumbnail image |
+| `preview_width` | `int` | No | Width of the preview image |
+| `rating` | `str` | No | Post rating (s=safe, q=questionable, e=explicit) |
+| `sample_file_size` | `int` | No | File size of the sample image in bytes |
+| `sample_height` | `int` | No | Height of the sample image |
+| `sample_url` | `str` | No | URL to the sample-size image |
+| `sample_width` | `int` | No | Width of the sample image |
+| `score` | `int` | No | Post score |
+| `source` | `str` | No | Source URL of the image |
+| `status` | `str` | No | Post status |
+| `tags` | `str` | No | Space-separated list of tags associated with the post |
+| `votes` | `dict` | No | Vote information (included when include_votes=1) |
+| `width` | `int` | No | Original image width |
 
 ### Operations
 
