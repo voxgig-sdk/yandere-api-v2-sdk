@@ -171,162 +171,34 @@ Post = Struct.new(
 
 # Request payload for Post#list.
 #
-# @!attribute [rw] actual_preview_height
+# @!attribute [rw] api_version
+#   @return [Integer]
+#
+# @!attribute [rw] filter
 #   @return [Integer, nil]
 #
-# @!attribute [rw] actual_preview_width
+# @!attribute [rw] include_pool
 #   @return [Integer, nil]
 #
-# @!attribute [rw] author
+# @!attribute [rw] include_tag
+#   @return [Integer, nil]
+#
+# @!attribute [rw] include_vote
+#   @return [Integer, nil]
+#
+# @!attribute [rw] limit
+#   @return [Integer, nil]
+#
+# @!attribute [rw] tag
 #   @return [String, nil]
-#
-# @!attribute [rw] change
-#   @return [Integer, nil]
-#
-# @!attribute [rw] created_at
-#   @return [Integer, nil]
-#
-# @!attribute [rw] creator_id
-#   @return [Integer, nil]
-#
-# @!attribute [rw] file_size
-#   @return [Integer, nil]
-#
-# @!attribute [rw] file_url
-#   @return [String, nil]
-#
-# @!attribute [rw] flag_detail
-#   @return [Hash, nil]
-#
-# @!attribute [rw] frames
-#   @return [Array, nil]
-#
-# @!attribute [rw] frames_pending
-#   @return [Array, nil]
-#
-# @!attribute [rw] frames_pending_string
-#   @return [String, nil]
-#
-# @!attribute [rw] frames_string
-#   @return [String, nil]
-#
-# @!attribute [rw] has_children
-#   @return [Boolean, nil]
-#
-# @!attribute [rw] height
-#   @return [Integer, nil]
-#
-# @!attribute [rw] id
-#   @return [Integer, nil]
-#
-# @!attribute [rw] is_held
-#   @return [Boolean, nil]
-#
-# @!attribute [rw] is_shown_in_index
-#   @return [Boolean, nil]
-#
-# @!attribute [rw] jpeg_file_size
-#   @return [Integer, nil]
-#
-# @!attribute [rw] jpeg_height
-#   @return [Integer, nil]
-#
-# @!attribute [rw] jpeg_url
-#   @return [String, nil]
-#
-# @!attribute [rw] jpeg_width
-#   @return [Integer, nil]
-#
-# @!attribute [rw] md5
-#   @return [String, nil]
-#
-# @!attribute [rw] parent_id
-#   @return [Integer, nil]
-#
-# @!attribute [rw] pool_ids
-#   @return [Array, nil]
-#
-# @!attribute [rw] preview_height
-#   @return [Integer, nil]
-#
-# @!attribute [rw] preview_url
-#   @return [String, nil]
-#
-# @!attribute [rw] preview_width
-#   @return [Integer, nil]
-#
-# @!attribute [rw] rating
-#   @return [String, nil]
-#
-# @!attribute [rw] sample_file_size
-#   @return [Integer, nil]
-#
-# @!attribute [rw] sample_height
-#   @return [Integer, nil]
-#
-# @!attribute [rw] sample_url
-#   @return [String, nil]
-#
-# @!attribute [rw] sample_width
-#   @return [Integer, nil]
-#
-# @!attribute [rw] score
-#   @return [Integer, nil]
-#
-# @!attribute [rw] source
-#   @return [String, nil]
-#
-# @!attribute [rw] status
-#   @return [String, nil]
-#
-# @!attribute [rw] tags
-#   @return [String, nil]
-#
-# @!attribute [rw] votes
-#   @return [Hash, nil]
-#
-# @!attribute [rw] width
-#   @return [Integer, nil]
 PostListMatch = Struct.new(
-  :actual_preview_height,
-  :actual_preview_width,
-  :author,
-  :change,
-  :created_at,
-  :creator_id,
-  :file_size,
-  :file_url,
-  :flag_detail,
-  :frames,
-  :frames_pending,
-  :frames_pending_string,
-  :frames_string,
-  :has_children,
-  :height,
-  :id,
-  :is_held,
-  :is_shown_in_index,
-  :jpeg_file_size,
-  :jpeg_height,
-  :jpeg_url,
-  :jpeg_width,
-  :md5,
-  :parent_id,
-  :pool_ids,
-  :preview_height,
-  :preview_url,
-  :preview_width,
-  :rating,
-  :sample_file_size,
-  :sample_height,
-  :sample_url,
-  :sample_width,
-  :score,
-  :source,
-  :status,
-  :tags,
-  :votes,
-  :width,
+  :api_version,
+  :filter,
+  :include_pool,
+  :include_tag,
+  :include_vote,
+  :limit,
+  :tag,
   keyword_init: true
 )
 

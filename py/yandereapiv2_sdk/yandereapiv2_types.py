@@ -58,43 +58,14 @@ class Post(TypedDict, total=False):
     width: int
 
 
-class PostListMatch(TypedDict, total=False):
-    actual_preview_height: int
-    actual_preview_width: int
-    author: str
-    change: int
-    created_at: int
-    creator_id: int
-    file_size: int
-    file_url: str
-    flag_detail: dict
-    frames: list
-    frames_pending: list
-    frames_pending_string: str
-    frames_string: str
-    has_children: bool
-    height: int
-    id: int
-    is_held: bool
-    is_shown_in_index: bool
-    jpeg_file_size: int
-    jpeg_height: int
-    jpeg_url: str
-    jpeg_width: int
-    md5: str
-    parent_id: int
-    pool_ids: list
-    preview_height: int
-    preview_url: str
-    preview_width: int
-    rating: str
-    sample_file_size: int
-    sample_height: int
-    sample_url: str
-    sample_width: int
-    score: int
-    source: str
-    status: str
-    tags: str
-    votes: dict
-    width: int
+class PostListMatchRequired(TypedDict):
+    api_version: int
+
+
+class PostListMatch(PostListMatchRequired, total=False):
+    filter: int
+    include_pool: int
+    include_tag: int
+    include_vote: int
+    limit: int
+    tag: str

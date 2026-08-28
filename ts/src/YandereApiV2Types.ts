@@ -48,44 +48,12 @@ export interface Post {
 }
 
 export interface PostListMatch {
-  actual_preview_height?: number
-  actual_preview_width?: number
-  author?: string
-  change?: number
-  created_at?: number
-  creator_id?: number
-  file_size?: number
-  file_url?: string
-  flag_detail?: Record<string, any>
-  frames?: any[]
-  frames_pending?: any[]
-  frames_pending_string?: string
-  frames_string?: string
-  has_children?: boolean
-  height?: number
-  id?: number
-  is_held?: boolean
-  is_shown_in_index?: boolean
-  jpeg_file_size?: number
-  jpeg_height?: number
-  jpeg_url?: string
-  jpeg_width?: number
-  md5?: string
-  parent_id?: number
-  pool_ids?: any[]
-  preview_height?: number
-  preview_url?: string
-  preview_width?: number
-  rating?: string
-  sample_file_size?: number
-  sample_height?: number
-  sample_url?: string
-  sample_width?: number
-  score?: number
-  source?: string
-  status?: string
-  tags?: string
-  votes?: Record<string, any>
-  width?: number
+  api_version: number
+  filter?: number
+  include_pool?: number
+  include_tag?: number
+  include_vote?: number
+  limit?: number
+  tag?: string
 }
 

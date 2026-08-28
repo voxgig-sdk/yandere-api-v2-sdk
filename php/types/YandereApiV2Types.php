@@ -59,44 +59,12 @@ class Post
 /** Request payload for Post#list. */
 class PostListMatch
 {
-    public ?int $actual_preview_height = null;
-    public ?int $actual_preview_width = null;
-    public ?string $author = null;
-    public ?int $change = null;
-    public ?int $created_at = null;
-    public ?int $creator_id = null;
-    public ?int $file_size = null;
-    public ?string $file_url = null;
-    public ?array $flag_detail = null;
-    public ?array $frames = null;
-    public ?array $frames_pending = null;
-    public ?string $frames_pending_string = null;
-    public ?string $frames_string = null;
-    public ?bool $has_children = null;
-    public ?int $height = null;
-    public ?int $id = null;
-    public ?bool $is_held = null;
-    public ?bool $is_shown_in_index = null;
-    public ?int $jpeg_file_size = null;
-    public ?int $jpeg_height = null;
-    public ?string $jpeg_url = null;
-    public ?int $jpeg_width = null;
-    public ?string $md5 = null;
-    public ?int $parent_id = null;
-    public ?array $pool_ids = null;
-    public ?int $preview_height = null;
-    public ?string $preview_url = null;
-    public ?int $preview_width = null;
-    public ?string $rating = null;
-    public ?int $sample_file_size = null;
-    public ?int $sample_height = null;
-    public ?string $sample_url = null;
-    public ?int $sample_width = null;
-    public ?int $score = null;
-    public ?string $source = null;
-    public ?string $status = null;
-    public ?string $tags = null;
-    public ?array $votes = null;
-    public ?int $width = null;
+    public int $api_version;
+    public ?int $filter = null;
+    public ?int $include_pool = null;
+    public ?int $include_tag = null;
+    public ?int $include_vote = null;
+    public ?int $limit = null;
+    public ?string $tag = null;
 }
 
