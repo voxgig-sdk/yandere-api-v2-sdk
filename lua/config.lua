@@ -227,6 +227,10 @@ local function make_config()
             ["type"] = "`$INTEGER`",
           },
         },
+        ["id"] = {
+          ["field"] = "id",
+          ["name"] = "id",
+        },
         ["name"] = "post",
         ["op"] = {
           ["list"] = {
@@ -289,8 +293,10 @@ local function make_config()
                 ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/post.json",
-                ["parts"] = {
-                  "post.json",
+                ["segments"] = {
+                  {
+                    ["lit"] = "post.json",
+                  },
                 },
                 ["select"] = {
                   ["exist"] = {
@@ -306,6 +312,9 @@ local function make_config()
                 ["transform"] = {
                   ["req"] = "`reqdata`",
                   ["res"] = "`body`",
+                },
+                ["parts"] = {
+                  "post.json",
                 },
               },
             },

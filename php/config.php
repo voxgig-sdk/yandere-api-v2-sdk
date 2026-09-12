@@ -253,6 +253,10 @@ class YandereApiV2Config
               'type' => '`$INTEGER`',
             ],
           ],
+          'id' => [
+            'field' => 'id',
+            'name' => 'id',
+          ],
           'name' => 'post',
           'op' => [
             'list' => [
@@ -315,8 +319,10 @@ class YandereApiV2Config
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/post.json',
-                  'parts' => [
-                    'post.json',
+                  'segments' => [
+                    [
+                      'lit' => 'post.json',
+                    ],
                   ],
                   'select' => [
                     'exist' => [
@@ -332,6 +338,9 @@ class YandereApiV2Config
                   'transform' => [
                     'req' => '`reqdata`',
                     'res' => '`body`',
+                  ],
+                  'parts' => [
+                    'post.json',
                   ],
                 ],
               ],

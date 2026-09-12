@@ -239,6 +239,10 @@ module YandereApiV2Config
               "type" => "`$INTEGER`",
             },
           ],
+          "id" => {
+            "field" => "id",
+            "name" => "id",
+          },
           "name" => "post",
           "op" => {
             "list" => {
@@ -301,8 +305,10 @@ module YandereApiV2Config
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/post.json",
-                  "parts" => [
-                    "post.json",
+                  "segments" => [
+                    {
+                      "lit" => "post.json",
+                    },
                   ],
                   "select" => {
                     "exist" => [
@@ -319,6 +325,9 @@ module YandereApiV2Config
                     "req" => "`reqdata`",
                     "res" => "`body`",
                   },
+                  "parts" => [
+                    "post.json",
+                  ],
                 },
               ],
             },
