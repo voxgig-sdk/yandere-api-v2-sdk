@@ -105,7 +105,7 @@ local results, err = client:Post():list()
 
 | Language | Package | Install |
 | --- | --- | --- |
-| TypeScript | `@voxgig-sdk/yandere-api-v2` | publish pending — [install from git tag](https://github.com/voxgig-sdk/yandere-api-v2-sdk/releases) |
+| TypeScript | `@voxgig-sdk/yandere-api-v2-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/yandere-api-v2-sdk/releases) |
 | Python | `voxgig-sdk-yandere-api-v2` | publish pending — [install from git tag](https://github.com/voxgig-sdk/yandere-api-v2-sdk/releases) |
 | PHP | `voxgig-sdk/yandere-api-v2` | publish pending — [install from git tag](https://github.com/voxgig-sdk/yandere-api-v2-sdk/releases) |
 | Golang | `github.com/voxgig-sdk/yandere-api-v2-sdk/go` | `go get github.com/voxgig-sdk/yandere-api-v2-sdk/go@latest` |
@@ -119,7 +119,7 @@ local results, err = client:Post():list()
 ### TypeScript
 
 ```ts
-import { YandereApiV2SDK } from '@voxgig-sdk/yandere-api-v2'
+import { YandereApiV2SDK } from '@voxgig-sdk/yandere-api-v2-sdk'
 
 const client = new YandereApiV2SDK()
 

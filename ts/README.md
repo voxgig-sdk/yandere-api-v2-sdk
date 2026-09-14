@@ -28,7 +28,7 @@ loading a specific record.
 ### 1. Create a client
 
 ```ts
-import { YandereApiV2SDK } from '@voxgig-sdk/yandere-api-v2'
+import { YandereApiV2SDK } from '@voxgig-sdk/yandere-api-v2-sdk'
 
 const client = new YandereApiV2SDK()
 ```
@@ -479,7 +479,7 @@ yandere-api-v2/
 Import the SDK from the package root:
 
 ```ts
-import { YandereApiV2SDK } from '@voxgig-sdk/yandere-api-v2'
+import { YandereApiV2SDK } from '@voxgig-sdk/yandere-api-v2-sdk'
 ```
 
 ### Entity state
