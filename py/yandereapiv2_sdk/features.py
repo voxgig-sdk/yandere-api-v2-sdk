@@ -1,12 +1,18 @@
 # YandereApiV2 SDK feature factory
 
 from yandereapiv2_sdk.feature.base_feature import YandereApiV2BaseFeature
+from yandereapiv2_sdk.feature.ratelimit_feature import YandereApiV2RatelimitFeature
+from yandereapiv2_sdk.feature.retry_feature import YandereApiV2RetryFeature
 from yandereapiv2_sdk.feature.test_feature import YandereApiV2TestFeature
+from yandereapiv2_sdk.feature.timeout_feature import YandereApiV2TimeoutFeature
 
 
 _FEATURES = {
     "base": lambda: YandereApiV2BaseFeature(),
+    "ratelimit": lambda: YandereApiV2RatelimitFeature(),
+    "retry": lambda: YandereApiV2RetryFeature(),
     "test": lambda: YandereApiV2TestFeature(),
+    "timeout": lambda: YandereApiV2TimeoutFeature(),
 }
 
 

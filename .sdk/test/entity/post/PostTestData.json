@@ -2,13 +2,13 @@
   "existing": {
     "post": {
       "POST00": {
-        "actual_preview_height": "s186",
-        "actual_preview_width": "s187",
+        "actual_preview_height": 390,
+        "actual_preview_width": 391,
         "author": "s188",
-        "change": "s189",
-        "created_at": "s18a",
+        "change": 393,
+        "created_at": 394,
         "creator_id": "CREATOR01",
-        "file_size": "s18c",
+        "file_size": 396,
         "file_url": "s18d",
         "flag_detail": {},
         "frames": [],
@@ -16,40 +16,40 @@
         "frames_pending_string": "s191",
         "frames_string": "s192",
         "has_children": false,
-        "height": "s194",
+        "height": 404,
         "id": "POST00",
         "is_held": true,
         "is_shown_in_index": false,
-        "jpeg_file_size": "s198",
-        "jpeg_height": "s199",
+        "jpeg_file_size": 408,
+        "jpeg_height": 409,
         "jpeg_url": "s19a",
-        "jpeg_width": "s19b",
+        "jpeg_width": 411,
         "md5": "s19c",
         "parent_id": "PARENT01",
         "pool_ids": [],
-        "preview_height": "s19f",
+        "preview_height": 415,
         "preview_url": "s1a0",
-        "preview_width": "s1a1",
+        "preview_width": 417,
         "rating": "s1a2",
-        "sample_file_size": "s1a3",
-        "sample_height": "s1a4",
+        "sample_file_size": 419,
+        "sample_height": 420,
         "sample_url": "s1a5",
-        "sample_width": "s1a6",
-        "score": "s1a7",
+        "sample_width": 422,
+        "score": 423,
         "source": "s1a8",
         "status": "s1a9",
         "tags": "s1aa",
         "votes": {},
-        "width": "s1ac"
+        "width": 428
       },
       "POST01": {
-        "actual_preview_height": "s30c",
-        "actual_preview_width": "s30d",
+        "actual_preview_height": 780,
+        "actual_preview_width": 781,
         "author": "s30e",
-        "change": "s30f",
-        "created_at": "s310",
+        "change": 783,
+        "created_at": 784,
         "creator_id": "CREATOR01",
-        "file_size": "s312",
+        "file_size": 786,
         "file_url": "s313",
         "flag_detail": {},
         "frames": [],
@@ -57,40 +57,40 @@
         "frames_pending_string": "s317",
         "frames_string": "s318",
         "has_children": false,
-        "height": "s31a",
+        "height": 794,
         "id": "POST01",
         "is_held": true,
         "is_shown_in_index": false,
-        "jpeg_file_size": "s31e",
-        "jpeg_height": "s31f",
+        "jpeg_file_size": 798,
+        "jpeg_height": 799,
         "jpeg_url": "s320",
-        "jpeg_width": "s321",
+        "jpeg_width": 801,
         "md5": "s322",
         "parent_id": "PARENT01",
         "pool_ids": [],
-        "preview_height": "s325",
+        "preview_height": 805,
         "preview_url": "s326",
-        "preview_width": "s327",
+        "preview_width": 807,
         "rating": "s328",
-        "sample_file_size": "s329",
-        "sample_height": "s32a",
+        "sample_file_size": 809,
+        "sample_height": 810,
         "sample_url": "s32b",
-        "sample_width": "s32c",
-        "score": "s32d",
+        "sample_width": 812,
+        "score": 813,
         "source": "s32e",
         "status": "s32f",
         "tags": "s330",
         "votes": {},
-        "width": "s332"
+        "width": 818
       },
       "POST02": {
-        "actual_preview_height": "s492",
-        "actual_preview_width": "s493",
+        "actual_preview_height": 1170,
+        "actual_preview_width": 1171,
         "author": "s494",
-        "change": "s495",
-        "created_at": "s496",
+        "change": 1173,
+        "created_at": 1174,
         "creator_id": "CREATOR01",
-        "file_size": "s498",
+        "file_size": 1176,
         "file_url": "s499",
         "flag_detail": {},
         "frames": [],
@@ -98,44 +98,44 @@
         "frames_pending_string": "s49d",
         "frames_string": "s49e",
         "has_children": false,
-        "height": "s4a0",
+        "height": 1184,
         "id": "POST02",
         "is_held": true,
         "is_shown_in_index": false,
-        "jpeg_file_size": "s4a4",
-        "jpeg_height": "s4a5",
+        "jpeg_file_size": 1188,
+        "jpeg_height": 1189,
         "jpeg_url": "s4a6",
-        "jpeg_width": "s4a7",
+        "jpeg_width": 1191,
         "md5": "s4a8",
         "parent_id": "PARENT01",
         "pool_ids": [],
-        "preview_height": "s4ab",
+        "preview_height": 1195,
         "preview_url": "s4ac",
-        "preview_width": "s4ad",
+        "preview_width": 1197,
         "rating": "s4ae",
-        "sample_file_size": "s4af",
-        "sample_height": "s4b0",
+        "sample_file_size": 1199,
+        "sample_height": 1200,
         "sample_url": "s4b1",
-        "sample_width": "s4b2",
-        "score": "s4b3",
+        "sample_width": 1202,
+        "score": 1203,
         "source": "s4b4",
         "status": "s4b5",
         "tags": "s4b6",
         "votes": {},
-        "width": "s4b8"
+        "width": 1208
       }
     }
   },
   "new": {
     "post": {
       "post_ref01": {
-        "actual_preview_height": "s618",
-        "actual_preview_width": "s619",
+        "actual_preview_height": 1560,
+        "actual_preview_width": 1561,
         "author": "s61a",
-        "change": "s61b",
-        "created_at": "s61c",
+        "change": 1563,
+        "created_at": 1564,
         "creator_id": "CREATOR01",
-        "file_size": "s61e",
+        "file_size": 1566,
         "file_url": "s61f",
         "flag_detail": {},
         "frames": [],
@@ -143,30 +143,363 @@
         "frames_pending_string": "s623",
         "frames_string": "s624",
         "has_children": false,
-        "height": "s626",
+        "height": 1574,
         "is_held": true,
         "is_shown_in_index": false,
-        "jpeg_file_size": "s62a",
-        "jpeg_height": "s62b",
+        "jpeg_file_size": 1578,
+        "jpeg_height": 1579,
         "jpeg_url": "s62c",
-        "jpeg_width": "s62d",
+        "jpeg_width": 1581,
         "md5": "s62e",
         "parent_id": "PARENT01",
         "pool_ids": [],
-        "preview_height": "s631",
+        "preview_height": 1585,
         "preview_url": "s632",
-        "preview_width": "s633",
+        "preview_width": 1587,
         "rating": "s634",
-        "sample_file_size": "s635",
-        "sample_height": "s636",
+        "sample_file_size": 1589,
+        "sample_height": 1590,
         "sample_url": "s637",
-        "sample_width": "s638",
-        "score": "s639",
+        "sample_width": 1592,
+        "score": 1593,
         "source": "s63a",
         "status": "s63b",
         "tags": "s63c",
         "votes": {},
-        "width": "s63e"
+        "width": 1598
+      }
+    }
+  },
+  "requests": {
+    "GET /post.json": {
+      "provenance": "operation-contract",
+      "contract": {
+        "operationId": "searchPosts",
+        "parameters": [
+          {
+            "description": "API version - must be set to 2 to use the v2 API",
+            "in": "query",
+            "name": "api_version",
+            "required": true,
+            "schema": {
+              "enum": [
+                2
+              ],
+              "type": "integer"
+            }
+          },
+          {
+            "description": "Tag list for searching posts. All tag searches are supported, including meta tags. Separate multiple tags with + (e.g., tag1+tag2). Supports meta tags like holds:false",
+            "example": "holds:false",
+            "in": "query",
+            "name": "tags",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "Limit the number of responses returned for your query. Must be between 1 and 100.",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "schema": {
+              "default": 20,
+              "maximum": 100,
+              "minimum": 1,
+              "type": "integer"
+            }
+          },
+          {
+            "description": "Include the tag types (e.g. character, copyright, artist) for each of the tags in the response",
+            "in": "query",
+            "name": "include_tags",
+            "required": false,
+            "schema": {
+              "default": 0,
+              "enum": [
+                0,
+                1
+              ],
+              "type": "integer"
+            }
+          },
+          {
+            "description": "Include the votes for each post in the response (not currently implemented)",
+            "in": "query",
+            "name": "include_votes",
+            "required": false,
+            "schema": {
+              "default": 0,
+              "enum": [
+                0,
+                1
+              ],
+              "type": "integer"
+            }
+          },
+          {
+            "description": "Include the pool membership of each post in the response",
+            "in": "query",
+            "name": "include_pools",
+            "required": false,
+            "schema": {
+              "default": 0,
+              "enum": [
+                0,
+                1
+              ],
+              "type": "integer"
+            }
+          },
+          {
+            "description": "Filter parameter (functionality unknown)",
+            "in": "query",
+            "name": "filter",
+            "required": false,
+            "schema": {
+              "enum": [
+                1
+              ],
+              "type": "integer"
+            }
+          }
+        ],
+        "protocol": "http",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "pools": {
+                      "additionalProperties": {
+                        "properties": {
+                          "description": {
+                            "type": "string"
+                          },
+                          "id": {
+                            "type": "integer"
+                          },
+                          "name": {
+                            "type": "string"
+                          }
+                        },
+                        "type": "object"
+                      },
+                      "description": "Pool information (included when include_pools=1)",
+                      "type": "object"
+                    },
+                    "posts": {
+                      "items": {
+                        "properties": {
+                          "actual_preview_height": {
+                            "description": "Actual height of the preview image",
+                            "type": "integer"
+                          },
+                          "actual_preview_width": {
+                            "description": "Actual width of the preview image",
+                            "type": "integer"
+                          },
+                          "author": {
+                            "description": "Username of the post creator",
+                            "type": "string"
+                          },
+                          "change": {
+                            "description": "Change number/version",
+                            "type": "integer"
+                          },
+                          "created_at": {
+                            "description": "Unix timestamp of when the post was created",
+                            "type": "integer"
+                          },
+                          "creator_id": {
+                            "description": "User ID of the post creator",
+                            "type": "integer"
+                          },
+                          "file_size": {
+                            "description": "File size in bytes",
+                            "type": "integer"
+                          },
+                          "file_url": {
+                            "description": "URL to the full-size image",
+                            "type": "string"
+                          },
+                          "flag_detail": {
+                            "description": "Flag details if the post is flagged",
+                            "type": "object"
+                          },
+                          "frames": {
+                            "description": "Array of frames",
+                            "items": {
+                              "type": "string"
+                            },
+                            "type": "array"
+                          },
+                          "frames_pending": {
+                            "description": "Array of pending frames",
+                            "items": {
+                              "type": "string"
+                            },
+                            "type": "array"
+                          },
+                          "frames_pending_string": {
+                            "description": "Pending frames information",
+                            "type": "string"
+                          },
+                          "frames_string": {
+                            "description": "Frames information",
+                            "type": "string"
+                          },
+                          "has_children": {
+                            "description": "Whether the post has child posts",
+                            "type": "boolean"
+                          },
+                          "height": {
+                            "description": "Original image height",
+                            "type": "integer"
+                          },
+                          "id": {
+                            "description": "Post ID",
+                            "type": "integer"
+                          },
+                          "is_held": {
+                            "description": "Whether the post is held",
+                            "type": "boolean"
+                          },
+                          "is_shown_in_index": {
+                            "description": "Whether the post is shown in the index",
+                            "type": "boolean"
+                          },
+                          "jpeg_file_size": {
+                            "description": "File size of the JPEG version in bytes",
+                            "type": "integer"
+                          },
+                          "jpeg_height": {
+                            "description": "Height of the JPEG version",
+                            "type": "integer"
+                          },
+                          "jpeg_url": {
+                            "description": "URL to the JPEG version",
+                            "type": "string"
+                          },
+                          "jpeg_width": {
+                            "description": "Width of the JPEG version",
+                            "type": "integer"
+                          },
+                          "md5": {
+                            "description": "MD5 hash of the image file",
+                            "type": "string"
+                          },
+                          "parent_id": {
+                            "description": "ID of the parent post",
+                            "nullable": true,
+                            "type": "integer"
+                          },
+                          "pool_ids": {
+                            "description": "Array of pool IDs this post belongs to (included when include_pools=1)",
+                            "items": {
+                              "type": "integer"
+                            },
+                            "type": "array"
+                          },
+                          "preview_height": {
+                            "description": "Height of the preview image",
+                            "type": "integer"
+                          },
+                          "preview_url": {
+                            "description": "URL to the preview/thumbnail image",
+                            "type": "string"
+                          },
+                          "preview_width": {
+                            "description": "Width of the preview image",
+                            "type": "integer"
+                          },
+                          "rating": {
+                            "description": "Post rating (s=safe, q=questionable, e=explicit)",
+                            "type": "string"
+                          },
+                          "sample_file_size": {
+                            "description": "File size of the sample image in bytes",
+                            "type": "integer"
+                          },
+                          "sample_height": {
+                            "description": "Height of the sample image",
+                            "type": "integer"
+                          },
+                          "sample_url": {
+                            "description": "URL to the sample-size image",
+                            "type": "string"
+                          },
+                          "sample_width": {
+                            "description": "Width of the sample image",
+                            "type": "integer"
+                          },
+                          "score": {
+                            "description": "Post score",
+                            "type": "integer"
+                          },
+                          "source": {
+                            "description": "Source URL of the image",
+                            "type": "string"
+                          },
+                          "status": {
+                            "description": "Post status",
+                            "type": "string"
+                          },
+                          "tags": {
+                            "description": "Space-separated list of tags associated with the post",
+                            "type": "string"
+                          },
+                          "votes": {
+                            "description": "Vote information (included when include_votes=1)",
+                            "properties": {
+                              "down": {
+                                "type": "integer"
+                              },
+                              "up": {
+                                "type": "integer"
+                              }
+                            },
+                            "type": "object"
+                          },
+                          "width": {
+                            "description": "Original image width",
+                            "type": "integer"
+                          }
+                        },
+                        "type": "object"
+                      },
+                      "type": "array"
+                    },
+                    "tags": {
+                      "additionalProperties": {
+                        "properties": {
+                          "type": {
+                            "description": "Tag type (e.g., character, copyright, artist, general)",
+                            "type": "string"
+                          }
+                        },
+                        "type": "object"
+                      },
+                      "description": "Tag type information (included when include_tags=1)",
+                      "type": "object"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Successful response with post data"
+          },
+          "400": {
+            "description": "Bad request - invalid parameters"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        },
+        "securitySource": "unspecified"
       }
     }
   }
