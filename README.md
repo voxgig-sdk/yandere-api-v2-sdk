@@ -105,12 +105,12 @@ local results, err = client:Post():list()
 
 | Language | Package | Install |
 | --- | --- | --- |
-| TypeScript | `@voxgig-sdk/yandere-api-v2-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/yandere-api-v2-sdk/releases) |
-| Python | `voxgig-sdk-yandere-api-v2` | publish pending — [install from git tag](https://github.com/voxgig-sdk/yandere-api-v2-sdk/releases) |
-| PHP | `voxgig-sdk/yandere-api-v2` | publish pending — [install from git tag](https://github.com/voxgig-sdk/yandere-api-v2-sdk/releases) |
+| TypeScript | `@voxgig-sdk/yandere-api-v2-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/yandere-api-v2-sdk/tags) |
+| Python | `voxgig-sdk-yandere-api-v2` | publish pending — [install from git tag](https://github.com/voxgig-sdk/yandere-api-v2-sdk/tags) |
+| PHP | `voxgig-sdk/yandere-api-v2` | publish pending — [install from git tag](https://github.com/voxgig-sdk/yandere-api-v2-sdk/tags) |
 | Golang | `github.com/voxgig-sdk/yandere-api-v2-sdk/go` | `go get github.com/voxgig-sdk/yandere-api-v2-sdk/go@latest` |
-| Ruby | `voxgig-sdk-yandere-api-v2` | publish pending — [install from git tag](https://github.com/voxgig-sdk/yandere-api-v2-sdk/releases) |
-| Lua | `voxgig-sdk-yandere-api-v2` | publish pending — [install from git tag](https://github.com/voxgig-sdk/yandere-api-v2-sdk/releases) |
+| Ruby | `voxgig-sdk-yandere-api-v2` | publish pending — [install from git tag](https://github.com/voxgig-sdk/yandere-api-v2-sdk/tags) |
+| Lua | `voxgig-sdk-yandere-api-v2` | publish pending — [install from git tag](https://github.com/voxgig-sdk/yandere-api-v2-sdk/tags) |
 | Go CLI | `github.com/voxgig-sdk/yandere-api-v2-sdk/go-cli` | `go install github.com/voxgig-sdk/yandere-api-v2-sdk/go-cli/cmd/yandere-api-v2@latest` |
 | Go MCP server | `github.com/voxgig-sdk/yandere-api-v2-sdk/go-mcp` | `go get github.com/voxgig-sdk/yandere-api-v2-sdk/go-mcp@latest` |
 
