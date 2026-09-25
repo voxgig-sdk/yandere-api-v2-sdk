@@ -1,0 +1,386 @@
+# Entity: post
+
+main: kit: entity: post: {
+
+  alias: field: {}
+
+  fields: {
+    actual_preview_height: {
+      h: "Actual Preview Height"
+      n: "actual_preview_height"
+      r: false
+      sh: "Actual height of the preview image"
+      t: "`$INTEGER`"
+    }
+    actual_preview_width: {
+      h: "Actual Preview Width"
+      n: "actual_preview_width"
+      r: false
+      sh: "Actual width of the preview image"
+      t: "`$INTEGER`"
+    }
+    author: {
+      h: "Author"
+      n: "author"
+      r: false
+      sh: "Username of the post creator"
+      t: "`$STRING`"
+    }
+    change: {
+      h: "Change"
+      n: "change"
+      r: false
+      sh: "Change number/version"
+      t: "`$INTEGER`"
+    }
+    created_at: {
+      h: "Created At"
+      n: "created_at"
+      r: false
+      sh: "Unix timestamp of when the post was created"
+      t: "`$INTEGER`"
+    }
+    creator_id: {
+      h: "Creator Id"
+      n: "creator_id"
+      r: false
+      sh: "User ID of the post creator"
+      t: "`$INTEGER`"
+    }
+    file_size: {
+      h: "File Size"
+      n: "file_size"
+      r: false
+      sh: "File size in bytes"
+      t: "`$INTEGER`"
+    }
+    file_url: {
+      h: "File Url"
+      n: "file_url"
+      r: false
+      sh: "URL to the full-size image"
+      t: "`$STRING`"
+    }
+    flag_detail: {
+      h: "Flag Detail"
+      n: "flag_detail"
+      r: false
+      sh: "Flag details if the post is flagged"
+      t: "`$OBJECT`"
+    }
+    frames: {
+      h: "Frames"
+      n: "frames"
+      r: false
+      sh: "Array of frames"
+      t: "`$ARRAY`"
+    }
+    frames_pending: {
+      h: "Frames Pending"
+      n: "frames_pending"
+      r: false
+      sh: "Array of pending frames"
+      t: "`$ARRAY`"
+    }
+    frames_pending_string: {
+      h: "Frames Pending String"
+      n: "frames_pending_string"
+      r: false
+      sh: "Pending frames information"
+      t: "`$STRING`"
+    }
+    frames_string: {
+      h: "Frames String"
+      n: "frames_string"
+      r: false
+      sh: "Frames information"
+      t: "`$STRING`"
+    }
+    has_children: {
+      h: "Has Children"
+      n: "has_children"
+      r: false
+      sh: "Whether the post has child posts"
+      t: "`$BOOLEAN`"
+    }
+    height: {
+      h: "Height"
+      n: "height"
+      r: false
+      sh: "Original image height"
+      t: "`$INTEGER`"
+    }
+    id: {
+      h: "Id"
+      n: "id"
+      r: false
+      sh: "Post ID"
+      t: "`$INTEGER`"
+    }
+    is_held: {
+      h: "Is Held"
+      n: "is_held"
+      r: false
+      sh: "Whether the post is held"
+      t: "`$BOOLEAN`"
+    }
+    is_shown_in_index: {
+      h: "Is Shown In Index"
+      n: "is_shown_in_index"
+      r: false
+      sh: "Whether the post is shown in the index"
+      t: "`$BOOLEAN`"
+    }
+    jpeg_file_size: {
+      h: "Jpeg File Size"
+      n: "jpeg_file_size"
+      r: false
+      sh: "File size of the JPEG version in bytes"
+      t: "`$INTEGER`"
+    }
+    jpeg_height: {
+      h: "Jpeg Height"
+      n: "jpeg_height"
+      r: false
+      sh: "Height of the JPEG version"
+      t: "`$INTEGER`"
+    }
+    jpeg_url: {
+      h: "Jpeg Url"
+      n: "jpeg_url"
+      r: false
+      sh: "URL to the JPEG version"
+      t: "`$STRING`"
+    }
+    jpeg_width: {
+      h: "Jpeg Width"
+      n: "jpeg_width"
+      r: false
+      sh: "Width of the JPEG version"
+      t: "`$INTEGER`"
+    }
+    md5: {
+      h: "Md5"
+      n: "md5"
+      r: false
+      sh: "MD5 hash of the image file"
+      t: "`$STRING`"
+    }
+    parent_id: {
+      h: "Parent Id"
+      n: "parent_id"
+      r: false
+      sh: "ID of the parent post"
+      t: "`$INTEGER`"
+    }
+    pool_ids: {
+      h: "Pool Ids"
+      n: "pool_ids"
+      r: false
+      sh: "Array of pool IDs this post belongs to (included when include_pools=1)"
+      t: "`$ARRAY`"
+    }
+    preview_height: {
+      h: "Preview Height"
+      n: "preview_height"
+      r: false
+      sh: "Height of the preview image"
+      t: "`$INTEGER`"
+    }
+    preview_url: {
+      h: "Preview Url"
+      n: "preview_url"
+      r: false
+      sh: "URL to the preview/thumbnail image"
+      t: "`$STRING`"
+    }
+    preview_width: {
+      h: "Preview Width"
+      n: "preview_width"
+      r: false
+      sh: "Width of the preview image"
+      t: "`$INTEGER`"
+    }
+    rating: {
+      h: "Rating"
+      n: "rating"
+      r: false
+      sh: "Post rating (s=safe, q=questionable, e=explicit)"
+      t: "`$STRING`"
+    }
+    sample_file_size: {
+      h: "Sample File Size"
+      n: "sample_file_size"
+      r: false
+      sh: "File size of the sample image in bytes"
+      t: "`$INTEGER`"
+    }
+    sample_height: {
+      h: "Sample Height"
+      n: "sample_height"
+      r: false
+      sh: "Height of the sample image"
+      t: "`$INTEGER`"
+    }
+    sample_url: {
+      h: "Sample Url"
+      n: "sample_url"
+      r: false
+      sh: "URL to the sample-size image"
+      t: "`$STRING`"
+    }
+    sample_width: {
+      h: "Sample Width"
+      n: "sample_width"
+      r: false
+      sh: "Width of the sample image"
+      t: "`$INTEGER`"
+    }
+    score: {
+      h: "Score"
+      n: "score"
+      r: false
+      sh: "Post score"
+      t: "`$INTEGER`"
+    }
+    source: {
+      h: "Source"
+      n: "source"
+      r: false
+      sh: "Source URL of the image"
+      t: "`$STRING`"
+    }
+    status: {
+      h: "Status"
+      n: "status"
+      r: false
+      sh: "Post status"
+      t: "`$STRING`"
+    }
+    tags: {
+      h: "Tags"
+      n: "tags"
+      r: false
+      sh: "Space-separated list of tags associated with the post"
+      t: "`$STRING`"
+    }
+    votes: {
+      h: "Votes"
+      n: "votes"
+      r: false
+      sh: "Vote information (included when include_votes=1)"
+      t: "`$OBJECT`"
+    }
+    width: {
+      h: "Width"
+      n: "width"
+      r: false
+      sh: "Original image width"
+      t: "`$INTEGER`"
+    }
+  }
+
+  id: {
+    field: "id"
+    name: "id"
+  }
+
+  name: "post"
+  op: {
+    list: {
+      name: "list"
+      points: [
+        {
+          co: {
+            id: "GET /post.json"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            query: [
+              {
+                k: "query"
+                n: "api_version"
+                or: "api_version"
+                r: true
+                t: "`$INTEGER`"
+              }
+              {
+                k: "query"
+                n: "filter"
+                or: "filter"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                ex: 0
+                k: "query"
+                n: "include_pool"
+                or: "include_pool"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                ex: 0
+                k: "query"
+                n: "include_tag"
+                or: "include_tag"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                ex: 0
+                k: "query"
+                n: "include_vote"
+                or: "include_vote"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                ex: 20
+                k: "query"
+                n: "limit"
+                or: "limit"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                ex: "holds:false"
+                k: "query"
+                n: "tag"
+                or: "tag"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/post.json"
+          q: {
+            exist: [
+              "api_version"
+              "filter"
+              "include_pool"
+              "include_tag"
+              "include_vote"
+              "limit"
+              "tag"
+            ]
+          }
+          s: [
+            {
+              lit: "post.json"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

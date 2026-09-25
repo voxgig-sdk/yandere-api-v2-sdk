@@ -2,7 +2,6 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.PostEntity = void 0;
 const YandereApiV2EntityBase_1 = require("../YandereApiV2EntityBase");
-// TODO: needs Entity superclass
 class PostEntity extends YandereApiV2EntityBase_1.YandereApiV2EntityBase {
     constructor(client, entopts) {
         super(client, entopts);

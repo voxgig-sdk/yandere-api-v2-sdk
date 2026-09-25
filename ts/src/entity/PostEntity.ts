@@ -19,7 +19,6 @@ import type {
   PostListMatch,
 } from '../YandereApiV2Types'
 
-// TODO: needs Entity superclass
 class PostEntity extends YandereApiV2EntityBase<Post> {
 
   constructor(client: YandereApiV2SDK, entopts: any) {

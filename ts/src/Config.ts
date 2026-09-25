@@ -16,12 +16,6 @@ const FEATURE_CLASS: Record<string, typeof BaseFeature> = {
 }
 
 
-// Per-feature plugin DEFINITIONS (voxgig/plugin `Definition` values), from
-// the model's active plugin groups. A feature that takes a `plugins` option
-// (secrets over sekreto) reads its own entry; a feature with no plugins has
-// none. Named imports above make each definition statically reachable, so
-// an SDK carries exactly the plugin modules its model selects — the same
-// leanness the old side-effect registry imports bought, without a registry.
 const FEATURE_PLUGINS: Record<string, any[]> = {
   
 }
@@ -32,7 +26,6 @@ class Config {
   makeFeature(this: any, fn: string) {
     const fc = FEATURE_CLASS[fn]
     const fi = new fc()
-    // TODO: errors etc
     return fi
   }
 
@@ -139,198 +132,237 @@ class Config {
       "fields": [
         {
           "name": "actual_preview_height",
-          "short": "Actual height of the preview image",
-          "type": "`$INTEGER`"
+          "title": "Actual Preview Height",
+          "type": "`$INTEGER`",
+          "short": "Actual height of the preview image"
         },
         {
           "name": "actual_preview_width",
-          "short": "Actual width of the preview image",
-          "type": "`$INTEGER`"
+          "title": "Actual Preview Width",
+          "type": "`$INTEGER`",
+          "short": "Actual width of the preview image"
         },
         {
           "name": "author",
-          "short": "Username of the post creator",
-          "type": "`$STRING`"
+          "title": "Author",
+          "type": "`$STRING`",
+          "short": "Username of the post creator"
         },
         {
           "name": "change",
-          "short": "Change number/version",
-          "type": "`$INTEGER`"
+          "title": "Change",
+          "type": "`$INTEGER`",
+          "short": "Change number/version"
         },
         {
           "name": "created_at",
-          "short": "Unix timestamp of when the post was created",
-          "type": "`$INTEGER`"
+          "title": "Created At",
+          "type": "`$INTEGER`",
+          "short": "Unix timestamp of when the post was created"
         },
         {
           "name": "creator_id",
-          "short": "User ID of the post creator",
-          "type": "`$INTEGER`"
+          "title": "Creator Id",
+          "type": "`$INTEGER`",
+          "short": "User ID of the post creator"
         },
         {
           "name": "file_size",
-          "short": "File size in bytes",
-          "type": "`$INTEGER`"
+          "title": "File Size",
+          "type": "`$INTEGER`",
+          "short": "File size in bytes"
         },
         {
           "name": "file_url",
-          "short": "URL to the full-size image",
-          "type": "`$STRING`"
+          "title": "File Url",
+          "type": "`$STRING`",
+          "short": "URL to the full-size image"
         },
         {
           "name": "flag_detail",
-          "short": "Flag details if the post is flagged",
-          "type": "`$OBJECT`"
+          "title": "Flag Detail",
+          "type": "`$OBJECT`",
+          "short": "Flag details if the post is flagged"
         },
         {
           "name": "frames",
-          "short": "Array of frames",
-          "type": "`$ARRAY`"
+          "title": "Frames",
+          "type": "`$ARRAY`",
+          "short": "Array of frames"
         },
         {
           "name": "frames_pending",
-          "short": "Array of pending frames",
-          "type": "`$ARRAY`"
+          "title": "Frames Pending",
+          "type": "`$ARRAY`",
+          "short": "Array of pending frames"
         },
         {
           "name": "frames_pending_string",
-          "short": "Pending frames information",
-          "type": "`$STRING`"
+          "title": "Frames Pending String",
+          "type": "`$STRING`",
+          "short": "Pending frames information"
         },
         {
           "name": "frames_string",
-          "short": "Frames information",
-          "type": "`$STRING`"
+          "title": "Frames String",
+          "type": "`$STRING`",
+          "short": "Frames information"
         },
         {
           "name": "has_children",
-          "short": "Whether the post has child posts",
-          "type": "`$BOOLEAN`"
+          "title": "Has Children",
+          "type": "`$BOOLEAN`",
+          "short": "Whether the post has child posts"
         },
         {
           "name": "height",
-          "short": "Original image height",
-          "type": "`$INTEGER`"
+          "title": "Height",
+          "type": "`$INTEGER`",
+          "short": "Original image height"
         },
         {
           "name": "id",
-          "short": "Post ID",
-          "type": "`$INTEGER`"
+          "title": "Id",
+          "type": "`$INTEGER`",
+          "short": "Post ID"
         },
         {
           "name": "is_held",
-          "short": "Whether the post is held",
-          "type": "`$BOOLEAN`"
+          "title": "Is Held",
+          "type": "`$BOOLEAN`",
+          "short": "Whether the post is held"
         },
         {
           "name": "is_shown_in_index",
-          "short": "Whether the post is shown in the index",
-          "type": "`$BOOLEAN`"
+          "title": "Is Shown In Index",
+          "type": "`$BOOLEAN`",
+          "short": "Whether the post is shown in the index"
         },
         {
           "name": "jpeg_file_size",
-          "short": "File size of the JPEG version in bytes",
-          "type": "`$INTEGER`"
+          "title": "Jpeg File Size",
+          "type": "`$INTEGER`",
+          "short": "File size of the JPEG version in bytes"
         },
         {
           "name": "jpeg_height",
-          "short": "Height of the JPEG version",
-          "type": "`$INTEGER`"
+          "title": "Jpeg Height",
+          "type": "`$INTEGER`",
+          "short": "Height of the JPEG version"
         },
         {
           "name": "jpeg_url",
-          "short": "URL to the JPEG version",
-          "type": "`$STRING`"
+          "title": "Jpeg Url",
+          "type": "`$STRING`",
+          "short": "URL to the JPEG version"
         },
         {
           "name": "jpeg_width",
-          "short": "Width of the JPEG version",
-          "type": "`$INTEGER`"
+          "title": "Jpeg Width",
+          "type": "`$INTEGER`",
+          "short": "Width of the JPEG version"
         },
         {
           "name": "md5",
-          "short": "MD5 hash of the image file",
-          "type": "`$STRING`"
+          "title": "Md5",
+          "type": "`$STRING`",
+          "short": "MD5 hash of the image file"
         },
         {
           "name": "parent_id",
-          "short": "ID of the parent post",
-          "type": "`$INTEGER`"
+          "title": "Parent Id",
+          "type": "`$INTEGER`",
+          "short": "ID of the parent post"
         },
         {
           "name": "pool_ids",
-          "short": "Array of pool IDs this post belongs to (included when include_pools=1)",
-          "type": "`$ARRAY`"
+          "title": "Pool Ids",
+          "type": "`$ARRAY`",
+          "short": "Array of pool IDs this post belongs to (included when include_pools=1)"
         },
         {
           "name": "preview_height",
-          "short": "Height of the preview image",
-          "type": "`$INTEGER`"
+          "title": "Preview Height",
+          "type": "`$INTEGER`",
+          "short": "Height of the preview image"
         },
         {
           "name": "preview_url",
-          "short": "URL to the preview/thumbnail image",
-          "type": "`$STRING`"
+          "title": "Preview Url",
+          "type": "`$STRING`",
+          "short": "URL to the preview/thumbnail image"
         },
         {
           "name": "preview_width",
-          "short": "Width of the preview image",
-          "type": "`$INTEGER`"
+          "title": "Preview Width",
+          "type": "`$INTEGER`",
+          "short": "Width of the preview image"
         },
         {
           "name": "rating",
-          "short": "Post rating (s=safe, q=questionable, e=explicit)",
-          "type": "`$STRING`"
+          "title": "Rating",
+          "type": "`$STRING`",
+          "short": "Post rating (s=safe, q=questionable, e=explicit)"
         },
         {
           "name": "sample_file_size",
-          "short": "File size of the sample image in bytes",
-          "type": "`$INTEGER`"
+          "title": "Sample File Size",
+          "type": "`$INTEGER`",
+          "short": "File size of the sample image in bytes"
         },
         {
           "name": "sample_height",
-          "short": "Height of the sample image",
-          "type": "`$INTEGER`"
+          "title": "Sample Height",
+          "type": "`$INTEGER`",
+          "short": "Height of the sample image"
         },
         {
           "name": "sample_url",
-          "short": "URL to the sample-size image",
-          "type": "`$STRING`"
+          "title": "Sample Url",
+          "type": "`$STRING`",
+          "short": "URL to the sample-size image"
         },
         {
           "name": "sample_width",
-          "short": "Width of the sample image",
-          "type": "`$INTEGER`"
+          "title": "Sample Width",
+          "type": "`$INTEGER`",
+          "short": "Width of the sample image"
         },
         {
           "name": "score",
-          "short": "Post score",
-          "type": "`$INTEGER`"
+          "title": "Score",
+          "type": "`$INTEGER`",
+          "short": "Post score"
         },
         {
           "name": "source",
-          "short": "Source URL of the image",
-          "type": "`$STRING`"
+          "title": "Source",
+          "type": "`$STRING`",
+          "short": "Source URL of the image"
         },
         {
           "name": "status",
-          "short": "Post status",
-          "type": "`$STRING`"
+          "title": "Status",
+          "type": "`$STRING`",
+          "short": "Post status"
         },
         {
           "name": "tags",
-          "short": "Space-separated list of tags associated with the post",
-          "type": "`$STRING`"
+          "title": "Tags",
+          "type": "`$STRING`",
+          "short": "Space-separated list of tags associated with the post"
         },
         {
           "name": "votes",
-          "short": "Vote information (included when include_votes=1)",
-          "type": "`$OBJECT`"
+          "title": "Votes",
+          "type": "`$OBJECT`",
+          "short": "Vote information (included when include_votes=1)"
         },
         {
           "name": "width",
-          "short": "Original image width",
-          "type": "`$INTEGER`"
+          "title": "Width",
+          "type": "`$INTEGER`",
+          "short": "Original image width"
         }
       ],
       "id": {
@@ -344,58 +376,6 @@ class Config {
           "name": "list",
           "points": [
             {
-              "args": {
-                "query": [
-                  {
-                    "kind": "query",
-                    "name": "api_version",
-                    "orig": "api_version",
-                    "reqd": true,
-                    "type": "`$INTEGER`"
-                  },
-                  {
-                    "kind": "query",
-                    "name": "filter",
-                    "orig": "filter",
-                    "type": "`$INTEGER`"
-                  },
-                  {
-                    "example": 0,
-                    "kind": "query",
-                    "name": "include_pool",
-                    "orig": "include_pool",
-                    "type": "`$INTEGER`"
-                  },
-                  {
-                    "example": 0,
-                    "kind": "query",
-                    "name": "include_tag",
-                    "orig": "include_tag",
-                    "type": "`$INTEGER`"
-                  },
-                  {
-                    "example": 0,
-                    "kind": "query",
-                    "name": "include_vote",
-                    "orig": "include_vote",
-                    "type": "`$INTEGER`"
-                  },
-                  {
-                    "example": 20,
-                    "kind": "query",
-                    "name": "limit",
-                    "orig": "limit",
-                    "type": "`$INTEGER`"
-                  },
-                  {
-                    "example": "holds:false",
-                    "kind": "query",
-                    "name": "tag",
-                    "orig": "tag",
-                    "type": "`$STRING`"
-                  }
-                ]
-              },
               "kind": "http",
               "method": "GET",
               "orig": "/post.json",
@@ -404,6 +384,66 @@ class Config {
                   "lit": "post.json"
                 }
               ],
+              "parts": [
+                "post.json"
+              ],
+              "rename": {},
+              "transform": {
+                "req": "`reqdata`",
+                "res": "`body`"
+              },
+              "args": {
+                "query": [
+                  {
+                    "name": "api_version",
+                    "orig": "api_version",
+                    "type": "`$INTEGER`",
+                    "kind": "query",
+                    "reqd": true
+                  },
+                  {
+                    "name": "filter",
+                    "orig": "filter",
+                    "type": "`$INTEGER`",
+                    "kind": "query"
+                  },
+                  {
+                    "name": "include_pool",
+                    "orig": "include_pool",
+                    "type": "`$INTEGER`",
+                    "kind": "query",
+                    "example": 0
+                  },
+                  {
+                    "name": "include_tag",
+                    "orig": "include_tag",
+                    "type": "`$INTEGER`",
+                    "kind": "query",
+                    "example": 0
+                  },
+                  {
+                    "name": "include_vote",
+                    "orig": "include_vote",
+                    "type": "`$INTEGER`",
+                    "kind": "query",
+                    "example": 0
+                  },
+                  {
+                    "name": "limit",
+                    "orig": "limit",
+                    "type": "`$INTEGER`",
+                    "kind": "query",
+                    "example": 20
+                  },
+                  {
+                    "name": "tag",
+                    "orig": "tag",
+                    "type": "`$STRING`",
+                    "kind": "query",
+                    "example": "holds:false"
+                  }
+                ]
+              },
               "select": {
                 "exist": [
                   "api_version",
@@ -414,14 +454,7 @@ class Config {
                   "limit",
                   "tag"
                 ]
-              },
-              "transform": {
-                "req": "`reqdata`",
-                "res": "`body`"
-              },
-              "parts": [
-                "post.json"
-              ]
+              }
             }
           ]
         }

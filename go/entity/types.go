@@ -1,7 +1,7 @@
 // Typed models for the YandereApiV2 SDK.
 //
-// GENERATED from the API model: main.kit.entity.<e>.fields[] and per-op
-// params (op.<name>.points[].args.params[]). Field/param types come from the
+// GENERATED from the API model: main.kit.entity.<e>.fields{} and per-op
+// params (op.<name>.points[].g.params[]). Field/param types come from the
 // canonical type sentinels via @voxgig/sdkgen canonToType (source of truth:
 // @voxgig/apidef VALID_CANON). Do not edit by hand.
 package entity
@@ -14,45 +14,6 @@ import (
 
 // Post is the typed data model for the post entity.
 type Post struct {
-	ActualPreviewHeight *int `json:"actual_preview_height,omitempty"`
-	ActualPreviewWidth *int `json:"actual_preview_width,omitempty"`
-	Author *string `json:"author,omitempty"`
-	Change *int `json:"change,omitempty"`
-	CreatedAt *int `json:"created_at,omitempty"`
-	CreatorId *int `json:"creator_id,omitempty"`
-	FileSize *int `json:"file_size,omitempty"`
-	FileUrl *string `json:"file_url,omitempty"`
-	FlagDetail *map[string]any `json:"flag_detail,omitempty"`
-	Frames *[]any `json:"frames,omitempty"`
-	FramesPending *[]any `json:"frames_pending,omitempty"`
-	FramesPendingString *string `json:"frames_pending_string,omitempty"`
-	FramesString *string `json:"frames_string,omitempty"`
-	HasChildren *bool `json:"has_children,omitempty"`
-	Height *int `json:"height,omitempty"`
-	Id *int `json:"id,omitempty"`
-	IsHeld *bool `json:"is_held,omitempty"`
-	IsShownInIndex *bool `json:"is_shown_in_index,omitempty"`
-	JpegFileSize *int `json:"jpeg_file_size,omitempty"`
-	JpegHeight *int `json:"jpeg_height,omitempty"`
-	JpegUrl *string `json:"jpeg_url,omitempty"`
-	JpegWidth *int `json:"jpeg_width,omitempty"`
-	Md5 *string `json:"md5,omitempty"`
-	ParentId *int `json:"parent_id,omitempty"`
-	PoolIds *[]any `json:"pool_ids,omitempty"`
-	PreviewHeight *int `json:"preview_height,omitempty"`
-	PreviewUrl *string `json:"preview_url,omitempty"`
-	PreviewWidth *int `json:"preview_width,omitempty"`
-	Rating *string `json:"rating,omitempty"`
-	SampleFileSize *int `json:"sample_file_size,omitempty"`
-	SampleHeight *int `json:"sample_height,omitempty"`
-	SampleUrl *string `json:"sample_url,omitempty"`
-	SampleWidth *int `json:"sample_width,omitempty"`
-	Score *int `json:"score,omitempty"`
-	Source *string `json:"source,omitempty"`
-	Status *string `json:"status,omitempty"`
-	Tags *string `json:"tags,omitempty"`
-	Votes *map[string]any `json:"votes,omitempty"`
-	Width *int `json:"width,omitempty"`
 }
 
 // PostListMatch is the typed request payload for Post.ListTyped.
