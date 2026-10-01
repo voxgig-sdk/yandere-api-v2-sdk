@@ -374,7 +374,7 @@ def make_config():
                 "rename": {},
                 "transform": {
                   "req": "`reqdata`",
-                  "res": "`body`",
+                  "res": "`body.posts`",
                 },
                 "args": {
                   "query": [
@@ -393,21 +393,21 @@ def make_config():
                     },
                     {
                       "name": "include_pool",
-                      "orig": "include_pool",
+                      "orig": "include_pools",
                       "type": "`$INTEGER`",
                       "kind": "query",
                       "example": 0,
                     },
                     {
                       "name": "include_tag",
-                      "orig": "include_tag",
+                      "orig": "include_tags",
                       "type": "`$INTEGER`",
                       "kind": "query",
                       "example": 0,
                     },
                     {
                       "name": "include_vote",
-                      "orig": "include_vote",
+                      "orig": "include_votes",
                       "type": "`$INTEGER`",
                       "kind": "query",
                       "example": 0,
@@ -421,7 +421,7 @@ def make_config():
                     },
                     {
                       "name": "tag",
-                      "orig": "tag",
+                      "orig": "tags",
                       "type": "`$STRING`",
                       "kind": "query",
                       "example": "holds:false",

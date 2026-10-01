@@ -33,6 +33,8 @@ require_relative 'transform_response'
 
 YandereApiV2Utility.registrar = ->(u) {
   u.clean = YandereApiV2Utilities::Clean
+  u.clean_add = YandereApiV2Utilities::CleanAdd
+  u.clean_explain = YandereApiV2Utilities::CleanExplain
   u.done = YandereApiV2Utilities::Done
   u.make_error = YandereApiV2Utilities::MakeError
   u.feature_add = YandereApiV2Utilities::FeatureAdd

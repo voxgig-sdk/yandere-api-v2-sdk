@@ -349,7 +349,7 @@ func MakeConfig() map[string]any {
 								"rename": map[string]any{},
 								"transform": map[string]any{
 									"req": "`reqdata`",
-									"res": "`body`",
+									"res": "`body.posts`",
 								},
 								"args": map[string]any{
 									"query": []any{
@@ -368,21 +368,21 @@ func MakeConfig() map[string]any {
 										},
 										map[string]any{
 											"name": "include_pool",
-											"orig": "include_pool",
+											"orig": "include_pools",
 											"type": "`$INTEGER`",
 											"kind": "query",
 											"example": 0,
 										},
 										map[string]any{
 											"name": "include_tag",
-											"orig": "include_tag",
+											"orig": "include_tags",
 											"type": "`$INTEGER`",
 											"kind": "query",
 											"example": 0,
 										},
 										map[string]any{
 											"name": "include_vote",
-											"orig": "include_vote",
+											"orig": "include_votes",
 											"type": "`$INTEGER`",
 											"kind": "query",
 											"example": 0,
@@ -396,7 +396,7 @@ func MakeConfig() map[string]any {
 										},
 										map[string]any{
 											"name": "tag",
-											"orig": "tag",
+											"orig": "tags",
 											"type": "`$STRING`",
 											"kind": "query",
 											"example": "holds:false",

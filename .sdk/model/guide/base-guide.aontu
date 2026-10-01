@@ -11,6 +11,7 @@ guide: {
   entity: post: {
     path: "/post.json": {
       op: list: method: *GET
+      op: list: transform: res: *("`body.posts`")|top
     }
   }
 

@@ -12,9 +12,14 @@ The SDK exposes the API as capitalised, semantic **Entities** — for example `$
 
 ## Install
 This package is not yet published to Packagist. Install it from the
-GitHub release tag (`php/vX.Y.Z`):
+GitHub release tag (`php/vX.Y.Z`, see [Releases](https://github.com/voxgig-sdk/yandere-api-v2-sdk/releases)), or
+from a clone as a Composer path repository:
 
-- Releases: [https://github.com/voxgig-sdk/yandere-api-v2-sdk/releases](https://github.com/voxgig-sdk/yandere-api-v2-sdk/releases)
+```bash
+git clone https://github.com/voxgig-sdk/yandere-api-v2-sdk
+composer config repositories.yandere-api-v2-sdk path ./yandere-api-v2-sdk/php
+composer require voxgig-sdk/yandere-api-v2-sdk:@dev
+```
 
 
 ## Tutorial: your first API call

@@ -316,7 +316,7 @@ main: kit: entity: post: {
                 ex: 0
                 k: "query"
                 n: "include_pool"
-                or: "include_pool"
+                or: "include_pools"
                 r: false
                 t: "`$INTEGER`"
               }
@@ -324,7 +324,7 @@ main: kit: entity: post: {
                 ex: 0
                 k: "query"
                 n: "include_tag"
-                or: "include_tag"
+                or: "include_tags"
                 r: false
                 t: "`$INTEGER`"
               }
@@ -332,7 +332,7 @@ main: kit: entity: post: {
                 ex: 0
                 k: "query"
                 n: "include_vote"
-                or: "include_vote"
+                or: "include_votes"
                 r: false
                 t: "`$INTEGER`"
               }
@@ -348,7 +348,7 @@ main: kit: entity: post: {
                 ex: "holds:false"
                 k: "query"
                 n: "tag"
-                or: "tag"
+                or: "tags"
                 r: false
                 t: "`$STRING`"
               }
@@ -374,7 +374,7 @@ main: kit: entity: post: {
           ]
           t: {
             req: "`reqdata`"
-            res: "`body`"
+            res: "`body.posts`"
           }
         }
       ]

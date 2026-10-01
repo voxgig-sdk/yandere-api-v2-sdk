@@ -450,7 +450,7 @@
                         "ex": 0,
                         "k": "query",
                         "n": "include_pool",
-                        "or": "include_pool",
+                        "or": "include_pools",
                         "r": false,
                         "t": "`$INTEGER`"
                       },
@@ -459,7 +459,7 @@
                         "ex": 0,
                         "k": "query",
                         "n": "include_tag",
-                        "or": "include_tag",
+                        "or": "include_tags",
                         "r": false,
                         "t": "`$INTEGER`"
                       },
@@ -468,7 +468,7 @@
                         "ex": 0,
                         "k": "query",
                         "n": "include_vote",
-                        "or": "include_vote",
+                        "or": "include_votes",
                         "r": false,
                         "t": "`$INTEGER`"
                       },
@@ -486,7 +486,7 @@
                         "ex": "holds:false",
                         "k": "query",
                         "n": "tag",
-                        "or": "tag",
+                        "or": "tags",
                         "r": false,
                         "t": "`$STRING`"
                       }
@@ -514,7 +514,7 @@
                   ],
                   "t": {
                     "req": "`reqdata`",
-                    "res": "`body`"
+                    "res": "`body.posts`"
                   }
                 }
               ]
@@ -996,7 +996,12 @@
         },
         "base": "http://localhost:8000",
         "clean": {
-          "keys": "key,token,id"
+          "active": true,
+          "hint": "0",
+          "keys": "key,secret,token,password,passwd,authorization,cookie,credential,signature",
+          "mask": "[redacted]",
+          "min": "4",
+          "values": ""
         },
         "entity": {
           "`$CHILD`": {

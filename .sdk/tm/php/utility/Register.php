@@ -37,6 +37,8 @@ require_once __DIR__ . '/TransformResponse.php';
 
 YandereApiV2Utility::setRegistrar(function (YandereApiV2Utility $u): void {
     $u->clean = [YandereApiV2Clean::class, 'call'];
+    $u->clean_add = [YandereApiV2Clean::class, 'add'];
+    $u->clean_explain = [YandereApiV2Done::class, 'clean_explain'];
     $u->done = [YandereApiV2Done::class, 'call'];
     $u->make_error = [YandereApiV2MakeError::class, 'call'];
     $u->feature_add = [YandereApiV2FeatureAdd::class, 'call'];
