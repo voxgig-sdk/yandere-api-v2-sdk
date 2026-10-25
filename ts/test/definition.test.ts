@@ -18,13 +18,17 @@ const PLAN: any[] = [
     "select": {
       "api_version": "v1",
       "filter": "v1",
-      "include_pool": "v1",
-      "include_tag": "v1",
-      "include_vote": "v1",
-      "limit": "v1",
-      "tag": "v1"
+      "include_pool": 0,
+      "include_tag": 0,
+      "include_vote": 0,
+      "limit": 20,
+      "tag": "holds:false"
     },
     "headers": [],
+    "cookies": [],
+    "responseMedia": [
+      "application/json"
+    ],
     "query": [
       "api_version",
       "tags",
@@ -34,59 +38,89 @@ const PLAN: any[] = [
       "include_pools",
       "filter"
     ],
+    "queryArgs": [
+      {
+        "name": "api_version",
+        "wire": "api_version"
+      },
+      {
+        "name": "filter",
+        "wire": "filter"
+      },
+      {
+        "name": "include_pool",
+        "wire": "include_pools"
+      },
+      {
+        "name": "include_tag",
+        "wire": "include_tags"
+      },
+      {
+        "name": "include_vote",
+        "wire": "include_votes"
+      },
+      {
+        "name": "limit",
+        "wire": "limit"
+      },
+      {
+        "name": "tag",
+        "wire": "tags"
+      }
+    ],
     "auth": null,
     "status": 200,
     "sample": {
       "posts": [
         {
-          "actual_preview_height": 1,
-          "actual_preview_width": 1,
-          "author": "x",
-          "change": 1,
+          "id": 1,
+          "tags": "x",
           "created_at": 1,
           "creator_id": 1,
+          "author": "x",
+          "change": 1,
+          "source": "x",
+          "score": 1,
+          "md5": "x",
           "file_size": 1,
           "file_url": "x",
-          "flag_detail": {},
-          "frames": [
-            "x"
-          ],
+          "is_shown_in_index": true,
+          "preview_url": "x",
+          "preview_width": 1,
+          "preview_height": 1,
+          "actual_preview_width": 1,
+          "actual_preview_height": 1,
+          "sample_url": "x",
+          "sample_width": 1,
+          "sample_height": 1,
+          "sample_file_size": 1,
+          "jpeg_url": "x",
+          "jpeg_width": 1,
+          "jpeg_height": 1,
+          "jpeg_file_size": 1,
+          "rating": "x",
+          "has_children": true,
+          "parent_id": 1,
+          "status": "x",
+          "width": 1,
+          "height": 1,
+          "is_held": true,
+          "frames_pending_string": "x",
           "frames_pending": [
             "x"
           ],
-          "frames_pending_string": "x",
           "frames_string": "x",
-          "has_children": true,
-          "height": 1,
-          "id": 1,
-          "is_held": true,
-          "is_shown_in_index": true,
-          "jpeg_file_size": 1,
-          "jpeg_height": 1,
-          "jpeg_url": "x",
-          "jpeg_width": 1,
-          "md5": "x",
-          "parent_id": 1,
+          "frames": [
+            "x"
+          ],
+          "flag_detail": {},
+          "votes": {
+            "up": 1,
+            "down": 1
+          },
           "pool_ids": [
             1
-          ],
-          "preview_height": 1,
-          "preview_url": "x",
-          "preview_width": 1,
-          "rating": "x",
-          "sample_file_size": 1,
-          "sample_height": 1,
-          "sample_url": "x",
-          "sample_width": 1,
-          "score": 1,
-          "source": "x",
-          "status": "x",
-          "tags": "x",
-          "votes": {
-            "down": 1,
-            "up": 1
-          },
-          "width": 1
+          ]
         }
       ],
       "tags": {},

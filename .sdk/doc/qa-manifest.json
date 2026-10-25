@@ -3,5 +3,17 @@
     "SUMMARY.md"
   ],
   "config": ".sdk/doc/qa/vale.ini",
-  "routes": {}
+  "routes": {},
+  "quoted": {
+    "SUMMARY.md": [
+      "Actual height of the preview image",
+      "Actual width of the preview image",
+      "Change number/version",
+      "Successful response with post data",
+      "Unix timestamp of when the post was created",
+      "Username of the post creator",
+      "Version 2 API for /post that returns responses in json only. Provides additional information over the standard API with features like tag searches, limiting responses, including tag types, votes, and pool membership.",
+      "Yande.re production server"
+    ]
+  }
 }

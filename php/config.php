@@ -93,6 +93,7 @@ class YandereApiV2Config
           ],
           'optspec' => [
             'clearTimer' => '`$FUNCTION`',
+            'now' => '`$FUNCTION`',
             'setTimer' => '`$FUNCTION`',
           ],
           'strict' => false,
@@ -428,13 +429,11 @@ class YandereApiV2Config
                   'select' => [
                     'exist' => [
                       'api_version',
-                      'filter',
-                      'include_pool',
-                      'include_tag',
-                      'include_vote',
-                      'limit',
-                      'tag',
                     ],
+                  ],
+                  'response' => [
+                    'kind' => 'json',
+                    'media' => 'application/json',
                   ],
                 ],
               ],

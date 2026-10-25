@@ -7,6 +7,19 @@ import { YandereApiV2EntityBase } from './YandereApiV2EntityBase';
 import { Utility } from './utility/Utility';
 import { BaseFeature } from './feature/base/BaseFeature';
 declare const stdutil: Utility;
+type DirectResult = {
+    ok: false;
+    err: any;
+    status?: undefined;
+    headers?: undefined;
+    data?: undefined;
+} | {
+    ok: boolean;
+    status: number;
+    headers: any;
+    data: any;
+    err?: any;
+};
 declare class YandereApiV2SDK {
     _mode: string;
     _options: any;
@@ -17,32 +30,8 @@ declare class YandereApiV2SDK {
     options(): any;
     utility(): any;
     prepare(fetchargs?: any): Promise<any>;
-    direct(fetchargs?: any): Promise<Error | {
-        ok: boolean;
-        err: any;
-        status?: undefined;
-        headers?: undefined;
-        data?: undefined;
-    } | {
-        ok: boolean;
-        status: number;
-        headers: any;
-        data: any;
-        err?: undefined;
-    }>;
-    _rawRequest(fetchargs?: any): Promise<Error | {
-        ok: boolean;
-        err: any;
-        status?: undefined;
-        headers?: undefined;
-        data?: undefined;
-    } | {
-        ok: boolean;
-        status: number;
-        headers: any;
-        data: any;
-        err?: undefined;
-    }>;
+    direct(fetchargs?: any): Promise<DirectResult>;
+    _rawRequest(fetchargs?: any): Promise<DirectResult>;
     graphql(query: string, variables?: any, ctrl?: any): Promise<any>;
     Post(entopts?: Record<string, any>): PostEntity;
     static test(testoptsarg?: any, sdkoptsarg?: any): YandereApiV2SDK;
@@ -55,3 +44,4 @@ declare class YandereApiV2SDK {
 }
 declare const SDK: typeof YandereApiV2SDK;
 export { stdutil, config, BaseFeature, YandereApiV2EntityBase, YandereApiV2SDK, SDK, };
+export type { DirectResult };

@@ -67,6 +67,7 @@ local function make_config()
         },
         ["optspec"] = {
           ["clearTimer"] = "`$FUNCTION`",
+          ["now"] = "`$FUNCTION`",
           ["setTimer"] = "`$FUNCTION`",
         },
         ["strict"] = false,
@@ -402,13 +403,11 @@ local function make_config()
                 ["select"] = {
                   ["exist"] = {
                     "api_version",
-                    "filter",
-                    "include_pool",
-                    "include_tag",
-                    "include_vote",
-                    "limit",
-                    "tag",
                   },
+                },
+                ["response"] = {
+                  ["kind"] = "json",
+                  ["media"] = "application/json",
                 },
               },
             },

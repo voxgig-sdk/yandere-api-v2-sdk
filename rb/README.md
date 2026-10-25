@@ -12,7 +12,7 @@ The SDK exposes the API as capitalised, semantic **Entities** — for example `c
 
 ## Install
 This package is not yet published to RubyGems. Install it from the
-GitHub release tag (`rb/vX.Y.Z`, see [Releases](https://github.com/voxgig-sdk/yandere-api-v2-sdk/releases)), or
+GitHub release tag (`rb/vX.Y.Z`, see [Tags](https://github.com/voxgig-sdk/yandere-api-v2-sdk/tags)), or
 from a clone:
 
 ```bash
@@ -43,10 +43,11 @@ client = YandereApiV2SDK.new
 
 ```ruby
 begin
-  # list returns an Array of Post records — iterate directly.
-  posts = client.Post.list
+  # list returns an Array of Post entities, one per record; data_get reads the record.
+  posts = client.Post.list({ "api_version" => 1 })
   posts.each do |item|
-    puts "#{item["id"]} #{item["actual_preview_height"]}"
+    record = item.data_get
+    puts "#{record["id"]} #{record["actual_preview_height"]}"
   end
 rescue => err
   warn "list failed: #{err}"
@@ -60,7 +61,7 @@ Entity operations raise on failure, so rescue them:
 
 ```ruby
 begin
-  posts = client.Post.list()
+  posts = client.Post.list({ "api_version" => 1 })
 rescue => err
   warn "list failed: #{err}"
 end
@@ -128,10 +129,10 @@ Create a mock client for unit testing — no server required:
 ```ruby
 client = YandereApiV2SDK.test
 
-# Entity ops return the ENTITY (raises on error);
-# call data_get for the mock record.
-post = client.Post.list()
-puts post
+# list returns an Array of Post entities, one per mock record (raises on
+# error); data_get reads each record.
+posts = client.Post.list({ "api_version" => 1 })
+posts.each { |item| puts item.data_get }
 ```
 
 ### Use a custom fetch function
@@ -215,7 +216,7 @@ All entities share the same interface.
 
 | Method | Signature | Description |
 | --- | --- | --- |
-| `list` | `(reqmatch = nil, ctrl) -> Array` | List entities matching the criteria (call with no argument to list all). Raises on error. |
+| `list` | `(reqmatch = nil, ctrl) -> Array` | List entities matching the criteria (call with no argument to list all), one per record. Raises on error. |
 | `data_get` | `() -> Hash` | Get entity data. |
 | `data_set` | `(data)` | Set entity data. |
 | `match_get` | `() -> Hash` | Get entity match criteria. |
@@ -225,9 +226,10 @@ All entities share the same interface.
 
 ### Result shape
 
-Entity operations return the result data directly. On failure they
-raise a `YandereApiV2Error` (a `StandardError` subclass), so wrap
-calls in `begin`/`rescue` where you need to handle errors.
+Entity operations return the entity, and `list` an `Array` of entities, one
+per record; an entity's `data_get` reads its record. On failure they raise a
+`YandereApiV2Error` (a `StandardError` subclass), so wrap calls in
+`begin`/`rescue` where you need to handle errors.
 
 The `direct` escape hatch is the exception: it never raises and instead
 returns a result `Hash` with these keys:
@@ -352,8 +354,9 @@ Create an instance: `post = client.Post`
 #### Example: List
 
 ```ruby
-# list returns an Array of Post records (raises on error).
-posts = client.Post.list
+# list returns an Array of Post entities, one per record (raises on error).
+posts = client.Post.list({ "api_version" => 1 })
+posts.each { |item| puts item.data_get }
 ```
 
 ## Features
@@ -519,7 +522,7 @@ stores the returned data and match criteria internally.
 
 ```ruby
 post = client.Post
-post.list()
+post.list({ "api_version" => 1 })
 
 # post.data_get now returns the post data from the last list
 # post.match_get returns the last match criteria

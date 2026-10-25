@@ -359,13 +359,11 @@ main: kit: entity: post: {
           q: {
             exist: [
               "api_version"
-              "filter"
-              "include_pool"
-              "include_tag"
-              "include_vote"
-              "limit"
-              "tag"
             ]
+          }
+          rs: {
+            kind: "json"
+            media: "application/json"
           }
           s: [
             {

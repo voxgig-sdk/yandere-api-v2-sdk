@@ -87,6 +87,7 @@ class Config {
             },
             "optspec": {
                 "clearTimer": "`$FUNCTION`",
+                "now": "`$FUNCTION`",
                 "setTimer": "`$FUNCTION`"
             },
             "strict": false,
@@ -421,14 +422,12 @@ class Config {
                             },
                             "select": {
                                 "exist": [
-                                    "api_version",
-                                    "filter",
-                                    "include_pool",
-                                    "include_tag",
-                                    "include_vote",
-                                    "limit",
-                                    "tag"
+                                    "api_version"
                                 ]
+                            },
+                            "response": {
+                                "kind": "json",
+                                "media": "application/json"
                             }
                         }
                     ]
